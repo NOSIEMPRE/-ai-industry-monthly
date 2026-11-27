@@ -5,6 +5,7 @@ window.MONTHLY_DATA.maps = {
     id: "d1",
     code: "D1",
     title: "具身智能图谱：从本体硬件竞速走向数据与通用模型分化",
+    verdict: "具身智能正经历中美本质分化：美国重金押注人手数据采集与通用机器人基础模型，中国依托供应链优势压低本体定价并向灵巧手、模组等核心零部件与工业场景交付下沉。",
     phases: [
       { period: "2022–2023", label: "大模型进入机器人" },
       { period: "2024–2025", label: "机器人基础模型与人形融资潮" },
@@ -81,6 +82,7 @@ window.MONTHLY_DATA.maps = {
     id: "d2",
     code: "D2",
     title: "具身标杆对照：Genesis AI 与星尘智能的两种商业化起点",
+    verdict: "两家标杆勾勒出两条迥异的胜负路径：Genesis AI 凭早期 $500M 重资博弈“通用泛化能力上限”，星尘智能以 8.99 万元量产定价率先验证“商业订单与成本闭环”。",
     cases: [
       {
         name: "Genesis AI",

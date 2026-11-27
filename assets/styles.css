@@ -550,6 +550,96 @@ h1, h2, h3, h4 {
   font-weight: 700;
 }
 
+/* Unified High-Contrast Page Verdict Spotlight Banner */
+.verdict-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 15px 20px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #EFF6FF 0%, #F8FAFF 62%, #FFFFFF 100%);
+  border: 1px solid var(--blue-tint);
+  border-left: 4px solid var(--blue);
+  box-shadow: 0 4px 16px rgba(29, 78, 216, 0.06);
+}
+
+.verdict-badge {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 11px;
+  margin-top: 2px;
+  border-radius: 6px;
+  background: var(--blue);
+  color: #FFFFFF;
+  font: 700 12px/1 var(--font-body);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.verdict-text {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.58;
+  color: var(--ink);
+}
+
+/* Executive Takeaways Slide (01) */
+.exec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.exec-card {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 22px 24px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--blue);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.24s var(--ease), box-shadow 0.24s var(--ease), border-color 0.24s var(--ease);
+}
+
+.exec-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--blue-tint);
+  border-top-color: var(--blue);
+}
+
+.exec-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.exec-num {
+  font: 800 22px/1 var(--font-display);
+  letter-spacing: -0.04em;
+  color: var(--blue);
+}
+
+.exec-verdict {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.42;
+  color: var(--ink);
+}
+
+.exec-evidence {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.68;
+  color: var(--ink-secondary);
+}
+
 /* ========================= Cover (Gallery Portfolio Style) ========================= */
 .screen.cover {
   background:
@@ -2006,6 +2096,27 @@ h1, h2, h3, h4 {
   line-height: 1.68;
 }
 
+.topic-thesis {
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--blue-soft);
+  border: 1px solid var(--blue-tint);
+  border-left: 3px solid var(--blue);
+  font-size: 14.5px;
+  line-height: 1.62;
+  color: var(--ink);
+}
+
+.topic-thesis b {
+  color: var(--blue-deep);
+  font-weight: 700;
+}
+
+.topic-q b {
+  color: var(--ink);
+  font-weight: 700;
+}
+
 .topic-refs {
   display: flex;
   flex-wrap: wrap;
@@ -2317,8 +2428,17 @@ h1, h2, h3, h4 {
   .news-body-grid,
   .trend-core,
   .two-col,
+  .exec-grid,
   .migration-grid {
     grid-template-columns: 1fr;
+  }
+  .verdict-banner {
+    flex-direction: column;
+    gap: 8px;
+    padding: 13px 16px;
+  }
+  .verdict-text {
+    font-size: 15px;
   }
   .topics-grid { grid-template-columns: 1fr; }
   .topic-card,

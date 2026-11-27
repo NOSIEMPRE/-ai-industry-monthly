@@ -68,6 +68,52 @@
     );
   }
 
+  function renderVerdict(text, label) {
+    if (!text) return "";
+    return (
+      '<div class="verdict-banner reveal d1">' +
+        '<span class="verdict-badge">' + esc(label || "核心判断") + "</span>" +
+        '<p class="verdict-text">' + esc(text) + "</p>" +
+      "</div>"
+    );
+  }
+
+  function renderExecutiveSummary() {
+    var ex = data.meta.executiveSummary;
+    if (!ex) return "";
+    var cardsHtml = ex.items
+      .map(function (it) {
+        var refsHtml = (it.refs || [])
+          .map(function (r) {
+            return '<a href="#' + esc(r) + '">' + esc(r.toUpperCase()) + "</a>";
+          })
+          .join("");
+        return (
+          '<div class="exec-card">' +
+            '<div class="exec-card-top">' +
+              '<span class="exec-num">' + esc(it.num) + "</span>" +
+              '<span class="pill soft">' + esc(it.tag) + "</span>" +
+              '<div class="topic-refs" style="margin:0 0 0 auto;padding:0">' + refsHtml + "</div>" +
+            "</div>" +
+            '<h3 class="exec-verdict">' + esc(it.verdict) + "</h3>" +
+            '<p class="exec-evidence">' + esc(it.evidence) + "</p>" +
+          "</div>"
+        );
+      })
+      .join("");
+
+    return (
+      '<section class="screen" id="' + esc(ex.id) + '" data-nav-group="01 本月核心研判" data-nav-code="' + esc(ex.code) + '" data-nav-title="本月核心研判">' +
+        '<div class="wrap">' +
+          '<div class="eyebrow reveal"><span class="pill primary">' + esc(ex.code) + '</span><span class="pill soft">EXECUTIVE TAKEAWAYS</span><span>结论先行 · 四条主线</span></div>' +
+          '<h2 class="slide-title reveal"><span class="num">' + esc(ex.code) + "</span><span>" + esc(ex.title) + "</span></h2>" +
+          '<p class="why-line reveal d1">' + esc(ex.subtitle) + "</p>" +
+          '<div class="exec-grid reveal d2">' + cardsHtml + "</div>" +
+        "</div>" +
+      "</section>"
+    );
+  }
+
   function renderPartDivider(part) {
     return (
       '<section class="screen part-divider" id="' + esc(part.id) + '" data-nav-group="' + esc(part.code + " " + part.title) + '" data-nav-code="' + esc(part.code) + '" data-nav-title="' + esc(part.title) + '">' +
@@ -130,8 +176,8 @@
         '<div class="wrap">' +
           '<div class="eyebrow reveal"><span class="pill primary">' + esc(item.code) + "</span>" + tagsHtml + "<span>" + esc(item.date) + "</span></div>" +
           '<h2 class="slide-title reveal"><span class="num">' + esc(item.code) + "</span><span>" + esc(item.title) + "</span></h2>" +
-          '<p class="why-line reveal d1"><b>核心看点：</b>' + esc(item.why) + "</p>" +
-          /* Background FIRST as requested */
+          renderVerdict(item.why, "核心判断") +
+          /* Background strip below verdict */
           '<div class="news-bg-strip reveal d1">' +
             '<span class="news-bg-label">背景</span>' +
             "<p>" + esc(item.background) + "</p>" +
@@ -231,6 +277,7 @@
         '<div class="wrap">' +
           '<div class="eyebrow reveal"><span class="pill primary">' + esc(ov.code) + '</span><span class="pill soft">月度趋势总结</span><span>2026-11-01 至 11-27</span></div>' +
           '<h2 class="slide-title reveal"><span class="num">' + esc(ov.code) + "</span><span>" + esc(ov.title) + "</span></h2>" +
+          renderVerdict(ov.verdict, "核心判断") +
           '<div class="chart-box reveal d1">' + ribbonSvg + "</div>" +
           '<div class="two-col reveal d2">' +
             '<div class="card"><div class="card-head"><h3>海外 11 月大额股权与 IPO 分布</h3><small>USD BILLIONS (平方根比例)</small></div><div class="chart-box">' + usChart + "</div></div>" +
@@ -278,6 +325,7 @@
         '<div class="wrap">' +
           '<div class="eyebrow reveal"><span class="pill primary">' + esc(section.code) + '</span><span class="pill soft">' + esc(regionLabel) + "</span><span>" + esc(section.period) + "</span></div>" +
           '<h2 class="slide-title reveal"><span class="num">' + esc(section.code) + "</span><span>" + esc(section.title) + "</span></h2>" +
+          renderVerdict(section.verdict, "核心判断") +
           '<div class="filter-bar reveal d1" role="group" aria-label="按赛道筛选">' + filtersHtml + "</div>" +
           '<div class="table-card reveal d2">' +
             '<table class="data-table" id="table-' + regionKey + '">' +
@@ -332,6 +380,7 @@
         '<div class="wrap">' +
           '<div class="eyebrow reveal"><span class="pill primary">' + esc(em.code) + '</span><span class="pill soft">具身智能图谱</span><span>阶段 × 中美对照</span></div>' +
           '<h2 class="slide-title reveal"><span class="num">' + esc(em.code) + "</span><span>" + esc(em.title) + "</span></h2>" +
+          renderVerdict(em.verdict, "核心判断") +
           '<div class="matrix-wrap reveal d1"><div class="matrix-grid">' + heads + body + "</div></div>" +
           '<div class="eyebrow reveal d2" style="justify-content:space-between">' +
             '<div style="display:flex;gap:10px;align-items:center"><span class="co-chip hot">蓝底</span><span>本月动态</span><span class="co-chip">灰底</span><span>阶段代表</span></div>' +
@@ -367,6 +416,7 @@
         '<div class="wrap">' +
           '<div class="eyebrow reveal"><span class="pill primary">' + esc(ec.code) + '</span><span class="pill soft">标杆案例对照</span><span>美国 vs 中国</span></div>' +
           '<h2 class="slide-title reveal"><span class="num">' + esc(ec.code) + "</span><span>" + esc(ec.title) + "</span></h2>" +
+          renderVerdict(ec.verdict, "核心判断") +
           '<div class="two-col reveal d1">' + cards + "</div>" +
         "</div>" +
       "</section>"
@@ -432,7 +482,7 @@
             "</div>" +
           "</div>" +
           '<h2 class="slide-title reveal"><span class="num">' + esc(cm.code) + "</span><span>" + esc(cm.title) + "</span></h2>" +
-          '<div class="compute-thesis reveal d1">' + esc(cm.thesis) + "</div>" +
+          renderVerdict(cm.thesis, "核心判断") +
           '<div class="mapping-board reveal d2" id="computeStages">' + rowsHtml + "</div>" +
           '<div class="compute-inspector reveal d2" id="computeInspector">' +
             '<div class="inspector-left">' +
@@ -459,11 +509,15 @@
             return '<a href="#' + esc(r) + '">' + esc(r.toUpperCase()) + "</a>";
           })
           .join("");
+        var thesisHtml = it.thesis
+          ? '<div class="topic-thesis"><b>初步判断：</b>' + esc(it.thesis) + "</div>"
+          : "";
         return (
           '<div class="topic-card ' + (isWide ? "wide" : "") + '">' +
             '<div class="topic-head"><span class="topic-num">' + esc(it.num) + '</span><div class="topic-refs" style="margin:0;padding:0">' + refsHtml + "</div></div>" +
             "<h3>" + esc(it.title) + "</h3>" +
-            "<p>" + esc(it.desc) + "</p>" +
+            thesisHtml +
+            '<p class="topic-q"><b>研讨焦点：</b>' + esc(it.desc) + "</p>" +
           "</div>"
         );
       })
@@ -487,6 +541,7 @@
 
   var deckHtml = [
     renderCover(),
+    renderExecutiveSummary(),
     renderPartDivider(partsMap.A),
     data.news.map(renderNewsSlide).join(""),
     renderPartDivider(partsMap.B),
@@ -563,7 +618,7 @@
 
   screens.forEach(function (sec) {
     var g = sec.getAttribute("data-nav-group") || "目录";
-    var isDivider = sec.classList.contains("part-divider") || sec.id === "cover" || sec.id === "e1";
+    var isDivider = sec.classList.contains("part-divider") || sec.id === "cover" || sec.id === "exec" || sec.id === "e1";
     var item = {
       id: sec.id,
       code: sec.getAttribute("data-nav-code") || "",

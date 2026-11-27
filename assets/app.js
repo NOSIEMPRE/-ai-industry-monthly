@@ -89,7 +89,6 @@
       '<div class="verdict-strip reveal d1">' +
         '<div class="verdict-rail">' +
           '<span class="verdict-kicker"><i aria-hidden="true"></i>' + esc(label || "核心判断") + "</span>" +
-          '<span class="verdict-en">CORE THESIS</span>' +
         "</div>" +
         '<p class="verdict-statement">' + esc(text) + "</p>" +
       "</div>"
@@ -500,7 +499,6 @@
             '<div class="mapping-rail ' + esc(st.accent) + '">' +
               '<span class="rail-code">' + esc(st.code) + "</span>" +
               "<h4>" + esc(st.name) + "</h4>" +
-              "<p>" + esc(st.subtitle) + "</p>" +
             "</div>" +
             '<div class="mapping-cells ' + colsClass + '">' + nodesHtml + "</div>" +
           "</div>"

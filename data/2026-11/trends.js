@@ -75,15 +75,15 @@ window.MONTHLY_DATA.trends = [
     title: "信息层趋零与按结果交付",
     quote: "AI 正把信息处理成本压向零；下一代巨头将用软件毛利直接交付医疗、法务与工程结果，切入 10 倍于传统软件的服务外包预算。",
     bullets: [
-      "a16z（医疗）：信息层趋于低价不限量，按次收费仅留给稀缺实体干预，主线转向 PMPM 订阅与临床结果挂钩。",
-      "红杉（企业服务）：直接交付专业结果撬动 ~10× 外包池（如 OpenAI 收购 Northslope、Legora 估值 $8.8B）。"
+      "a16z（医疗）：信息咨询趋于低价不限量，按次收费仅留给稀缺线下诊疗，主线转向按人头包月订阅与临床结果挂钩。",
+      "红杉（企业服务）：AI 直接交付专业工作结果，正切入约 10 倍于软件规模的外包市场（如 OpenAI 收购 Northslope、Legora 估值 $8.8B）。"
     ],
     chartType: "pricingAndServices",
     chartCaption: "a16z《Infinite Healthcare》· Sequoia《Services: The New Software》",
     chinaContextTitle: "国内支付约束与本月资金印证",
     chinaContext: [
-      { label: "医疗支付更贴近商保", text: "公立医院以 DRG/DIP 打包为主，PMPM 与结果付费短期更易落地商保慢病管理与特药服务。" },
-      { label: "高客单壁垒决定毛利", text: "国内初级外包单价低、纯替代人力毛利薄，11 月海外大额融资亦全面向研发自动化与推理基础设施集中。" }
+      { label: "医疗支付更贴近商保", text: "国内公立医院以医保按病种打包为主，按人头订阅与结果付费短期更易落地商保慢病管理与特药服务。" },
+      { label: "高客单壁垒决定毛利", text: "国内初级人力外包单价较低，简单替代人力利润薄，本月海外大额资金亦全面向研发自动化与推理基础设施集中。" }
     ],
     sources: [
       { label: "a16z: Infinite Healthcare", url: "https://a16z.com/infinite-healthcare-whats-it-worth/" },

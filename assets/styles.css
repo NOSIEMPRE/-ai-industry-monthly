@@ -595,14 +595,14 @@ h1, h2, h3, h4 {
   font-weight: 700;
 }
 
-/* Redesigned Architectural Swiss-Brutalist Core Thesis Strip (Zero Bulky Box) */
+/* Redesigned Architectural Swiss-Brutalist Core Thesis Strip (Exact Optical Alignment) */
 .verdict-strip {
   position: relative;
   display: grid;
-  grid-template-columns: 118px 1fr;
+  grid-template-columns: 106px 1fr;
   gap: 20px;
-  align-items: baseline;
-  padding: 18px 0 18px;
+  align-items: start;
+  padding: 17px 0;
   border-bottom: 1px solid var(--line-strong);
 }
 
@@ -625,16 +625,15 @@ h1, h2, h3, h4 {
 
 .verdict-rail {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding-top: 2px;
+  align-items: center;
+  min-height: 29px;
 }
 
 .verdict-kicker {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font: 700 12.5px/1 var(--font-body);
+  font: 700 13px/1 var(--font-body);
   letter-spacing: 0.05em;
   color: var(--ink);
   white-space: nowrap;
@@ -648,16 +647,9 @@ h1, h2, h3, h4 {
   flex: none;
 }
 
-.verdict-en {
-  font: 600 9.5px/1 var(--font-mono);
-  letter-spacing: 0.14em;
-  color: var(--muted);
-  padding-left: 14px;
-}
-
 .verdict-statement {
   margin: 0;
-  font-size: clamp(16.5px, 1.32vw, 19px);
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.62;
   letter-spacing: -0.01em;

@@ -124,12 +124,11 @@ window.MONTHLY_DATA.maps = {
     id: "d3",
     code: "D3",
     title: "AI 算力全产业链图谱",
-    thesis: "核心利润仍集中于上游芯片、HBM 与先进封装；电力并网、Neocloud 信用融资与下游应用变现已成决定扩张节奏的三大约束。",
+    thesis: "核心利润仍集中于上游芯片、HBM 与先进封装；电力并网、算力云融资成本与下游应用真实付费已成为决定行业扩张节奏的三大约束。",
     stages: [
       {
         code: "上游 · L1",
         name: "核心芯片与硬件",
-        subtitle: "算力芯片 · 存储 · 整机",
         accent: "stage-a",
         cols: 5,
         nodes: [
@@ -178,7 +177,6 @@ window.MONTHLY_DATA.maps = {
       {
         code: "中游 · L2",
         name: "智算基建（AIDC）",
-        subtitle: "电力 · 液冷 · 园区交付",
         accent: "stage-b",
         cols: 3,
         nodes: [
@@ -211,7 +209,6 @@ window.MONTHLY_DATA.maps = {
       {
         code: "中游 · L3",
         name: "云平台与算力服务",
-        subtitle: "公有智算云 · 推理云",
         accent: "stage-c",
         cols: 2,
         nodes: [
@@ -236,7 +233,6 @@ window.MONTHLY_DATA.maps = {
       {
         code: "下游 · L4",
         name: "模型与应用商业化",
-        subtitle: "大模型 · 推理 · 企业应用",
         accent: "stage-d",
         cols: 3,
         nodes: [

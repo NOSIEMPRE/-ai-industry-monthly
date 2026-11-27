@@ -765,10 +765,17 @@
   });
 
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && drawer.classList.contains("open")) {
-      closeDrawer();
-      return;
+    if (e.key === "Escape") {
+      if (chartModal && chartModal.classList.contains("open")) {
+        closeChartModal();
+        return;
+      }
+      if (drawer.classList.contains("open")) {
+        closeDrawer();
+        return;
+      }
     }
+    if (chartModal && chartModal.classList.contains("open")) return;
     if (e.target.closest("input, textarea, select")) return;
     if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === "ArrowRight") {
       e.preventDefault();
@@ -858,6 +865,100 @@
     segs.forEach(function (el) {
       el.addEventListener("mouseenter", function () { setHover(el.getAttribute("data-vc-idx")); });
       el.addEventListener("mouseleave", function () { setHover(null); });
+    });
+  });
+
+  /* ==================== Click-to-Zoom Interactive SVG Chart Lightbox (Mobile & PC) ==================== */
+  var chartModal = document.createElement("div");
+  chartModal.className = "chart-modal";
+  chartModal.setAttribute("role", "dialog");
+  chartModal.setAttribute("aria-modal", "true");
+  chartModal.setAttribute("aria-hidden", "true");
+  chartModal.innerHTML =
+    '<div class="chart-modal-panel">' +
+      '<div class="chart-modal-bar">' +
+        '<div class="chart-modal-title" id="cmTitle">图表放大查看</div>' +
+        '<div class="chart-modal-controls">' +
+          '<button type="button" class="cm-btn" id="cmZoomOut" aria-label="缩小">−</button>' +
+          '<button type="button" class="cm-btn" id="cmZoomReset" aria-label="重置缩放">100%</button>' +
+          '<button type="button" class="cm-btn" id="cmZoomIn" aria-label="放大">+</button>' +
+          '<button type="button" class="cm-btn close" id="cmClose" aria-label="关闭">✕</button>' +
+        "</div>" +
+      "</div>" +
+      '<div class="chart-modal-viewport" id="cmViewport">' +
+        '<div class="chart-modal-stage" id="cmStage"></div>' +
+      "</div>" +
+      '<div class="chart-modal-tip">矢量无损放大 · 手机端可左右拖动或双指缩放 · 点击空白处或按 Esc 关闭</div>' +
+    "</div>";
+  document.body.appendChild(chartModal);
+
+  var cmTitle = document.getElementById("cmTitle");
+  var cmStage = document.getElementById("cmStage");
+  var cmViewport = document.getElementById("cmViewport");
+  var cmZoomReset = document.getElementById("cmZoomReset");
+  var cmScale = 1;
+  var cmBaseWidth = 960;
+
+  function applyCmScale(nextScale) {
+    cmScale = Math.max(0.8, Math.min(2.6, nextScale));
+    cmStage.style.width = Math.round(cmBaseWidth * cmScale) + "px";
+    cmZoomReset.textContent = Math.round(cmScale * 100) + "%";
+  }
+
+  function openChartModal(svgEl, titleText) {
+    var clone = svgEl.cloneNode(true);
+    // Avoid duplicate IDs inside the live DOM
+    clone.querySelectorAll("[id]").forEach(function (el) { el.removeAttribute("id"); });
+    cmStage.innerHTML = "";
+    cmStage.appendChild(clone);
+    cmTitle.textContent = titleText || "图表放大查看";
+
+    var vb = (svgEl.getAttribute("viewBox") || "").trim().split(/\s+/);
+    var naturalW = vb.length === 4 ? parseFloat(vb[2]) : 960;
+    var isMobile = window.innerWidth <= 900;
+    // On mobile, default to crisp readable width (at least 780px for wide charts, 560px for compact charts)
+    cmBaseWidth = isMobile
+      ? Math.max(naturalW >= 800 ? 820 : 580, window.innerWidth * 1.45)
+      : Math.min(1180, Math.max(naturalW, window.innerWidth * 0.78));
+    applyCmScale(1);
+
+    chartModal.classList.add("open");
+    chartModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    cmViewport.scrollLeft = 0;
+    cmViewport.scrollTop = 0;
+  }
+
+  function closeChartModal() {
+    chartModal.classList.remove("open");
+    chartModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  document.getElementById("cmZoomIn").addEventListener("click", function () { applyCmScale(cmScale + 0.25); });
+  document.getElementById("cmZoomOut").addEventListener("click", function () { applyCmScale(cmScale - 0.25); });
+  cmZoomReset.addEventListener("click", function () { applyCmScale(1); });
+  document.getElementById("cmClose").addEventListener("click", closeChartModal);
+  chartModal.addEventListener("click", function (e) {
+    if (e.target === chartModal) closeChartModal();
+  });
+
+  // Attach click-to-zoom to every SVG chart box across Part A, B, C
+  document.querySelectorAll(".chart-box").forEach(function (box) {
+    var svg = box.querySelector("svg");
+    if (!svg) return;
+    box.classList.add("zoomable");
+    var hint = document.createElement("span");
+    hint.className = "chart-zoom-hint";
+    hint.textContent = "⤢ 放大查看";
+    box.appendChild(hint);
+
+    box.addEventListener("click", function () {
+      var label =
+        svg.getAttribute("aria-label") ||
+        (box.closest(".screen") && box.closest(".screen").getAttribute("data-nav-title")) ||
+        "图表放大查看";
+      openChartModal(svg, label);
     });
   });
 

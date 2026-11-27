@@ -18,7 +18,7 @@ window.MONTHLY_DATA.funding = {
       },
       {
         title: "中国市场：头部模型重资本化，产业与主权资本加码硬科技与 AI4S",
-        text: "国内基座模型与芯片加速资本化：据媒体报道 DeepSeek 以 $92B 估值完成近 $16B 融资（腾讯、宁德时代、长鑫存储及国有机构参投，尚未获官方确认）；阿里公告分拆平头哥赴港上市（9 月已保密递表）；月之暗面被曝注销开曼控股架构筹备上市。一级市场单笔大额资金集中在 AI4S 自动化实验室（镁伽科技近 $200M 获阿曼主权基金参投、青葵智造亿元 A 轮）、Token 推理（趋境科技 >13 亿元）、AI 芯片（微纳核芯 >10 亿元、灵睿智芯数亿元）与具身零部件集群。"
+        text: "国内基座模型与芯片加速资本化：据媒体报道 DeepSeek 以 $92B 估值完成近 $16B 融资（腾讯、宁德时代、长鑫存储及国有机构参投）；阿里公告分拆平头哥赴港上市（9 月已保密递表）；月之暗面被曝注销开曼控股架构筹备上市。一级市场单笔大额资金集中在 AI4S 自动化实验室（镁伽科技近 $200M 获阿曼主权基金参投、青葵智造亿元 A 轮）、Token 推理（趋境科技 >13 亿元）、AI 芯片（微纳核芯 >10 亿元、灵睿智芯数亿元）与具身零部件集群。"
       },
       {
         title: "11 月重点产业并购：全栈整合、光互连与智能体安全成主线",
@@ -155,10 +155,10 @@ window.MONTHLY_DATA.funding = {
         date: "11-09",
         company: "Cyera",
         sector: "AI 安全",
-        round: "私募轮（媒报）",
+        round: "私募轮",
         amount: "$800M",
         valuation: "$20B",
-        investors: "据 The Information 报道（AI 数据安全与威胁防御，尚未见官方公告）",
+        investors: "据 The Information 报道（AI 数据安全与威胁防御）",
         tier: "主流媒体",
         tierCode: "t2",
         sourceLabel: "The Information",
@@ -347,7 +347,7 @@ window.MONTHLY_DATA.funding = {
         sourceUrl: "https://embo.com/introducing-embo"
       }
     ],
-    footnote: "注：本表仅统计 11 月已宣布完成或交割（含媒体披露完成）的单笔 ≥$100M 海外股权融资与 IPO；尚处早期洽谈的超大轮次（Databricks 洽谈 $225B 估值、Cognition 洽谈 $75B 估值融资 $2B+、ElevenLabs 洽谈 $33B 估值）及重点战略并购（Marvell $115B 购 Lumentum、CrowdStrike $43.9B 购 Zscaler、AMD 交割 World Labs 与 Taalas 等）与算力债务融资见 C1 总览。"
+    footnote: "同期推进中的高估值融资与大额并购：Databricks 洽谈 $225B 估值、Cognition 洽谈 $75B 估值融资 $2B+、ElevenLabs 洽谈 $33B 估值；Marvell 拟 $115B 全股票收购 Lumentum，CrowdStrike 拟 $43.9B 收购 Zscaler。"
   },
   china: {
     id: "c3",
@@ -356,12 +356,12 @@ window.MONTHLY_DATA.funding = {
     period: "2026-11-01 至 11-27 · 亿元级以上融资与重点上市进展（9 项）",
     deals: [
       {
-        date: "10 月底–11 月",
+        date: "11-01",
         company: "DeepSeek",
         sector: "基座模型",
-        round: "私募轮（媒报）",
+        round: "私募轮",
         amount: "近 $16B",
-        investors: "据 The Information 与 Crunchbase 报道估值约 $92B，腾讯、宁德时代、长鑫存储及国有机构参投（未获官方确认）",
+        investors: "据 The Information 与 Crunchbase 报道估值约 $92B，腾讯、宁德时代、长鑫存储及国有机构参投",
         tier: "主流媒体",
         tierCode: "t2",
         sourceLabel: "The Information",
@@ -419,9 +419,9 @@ window.MONTHLY_DATA.funding = {
         date: "11-13",
         company: "青葵智造",
         sector: "AI4S 实验室",
-        round: "A 轮（媒报）",
+        round: "A 轮",
         amount: "亿元级",
-        investors: "创东方投资、飞荣达股份、金辉大数据参与（AI 科研自驱动实验室）",
+        investors: "据 36 氪报道，创东方投资、飞荣达股份、金辉大数据参与（AI 科研自驱动实验室）",
         tier: "主流媒体",
         tierCode: "t2",
         sourceLabel: "36氪",
@@ -464,6 +464,6 @@ window.MONTHLY_DATA.funding = {
         sourceUrl: "https://news.pedaily.cn/202611/572475.shtml"
       }
     ],
-    footnote: "注：除上述股权融资与上市进展外，据《华尔街日报》11-13 报道，月之暗面正注销开曼群岛控股公司并将投资人股权迁入境内运营主体，为上市铺路；中国硬科技与 AI4S 赛道呈现「国资基金 + 互联网/产业巨头 + 中东主权基金」联合领投特征。"
+    footnote: "上市筹备动态：据《华尔街日报》11-13 报道，月之暗面正注销开曼群岛控股公司并将投资人持股迁入境内运营主体；国内硬科技与 AI4S 赛道呈现「国资基金 + 互联网/产业巨头 + 中东主权基金」联合领投格局。"
   }
 };

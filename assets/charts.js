@@ -552,17 +552,17 @@ window.MONTHLY_CHARTS = {
           <text y="4" text-anchor="middle" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#1D4ED8">66%</text>
         </g>
         <text x="92" y="38" font-size="12" font-weight="800" fill="#0F172A">全球创投 AI 占比基准</text>
-        <text x="92" y="57" font-size="10.5" fill="#64748B">前三季近 $680B · 算力债 &gt;$680B</text>
+        <text x="92" y="57" font-size="10.5" fill="#64748B">Crunchbase 10 月 $59B</text>
 
         <line x1="258" y1="18" x2="258" y2="74" stroke="#E2E8F0"/>
 
         <!-- Middle: Overseas $148.8B Composition Bar -->
-        <text x="278" y="31" font-size="11.5" font-weight="800" fill="#0F172A">海外 11 月监测股权与 IPO $148.8B（22 笔）</text>
+        <text x="278" y="31" font-size="11.5" font-weight="800" fill="#0F172A">海外 11 月股权与 IPO $148.8B（22 笔）</text>
         <rect x="278" y="42" width="320" height="14" rx="4" fill="#EFF6FF"/>
         <rect class="svg-bar-grow" x="278" y="42" width="256" height="14" rx="4" fill="#1D4ED8"/>
         <rect class="svg-bar-grow" style="transition-delay:0.1s" x="536" y="42" width="23" height="14" rx="3" fill="#60A5FA"/>
         <rect class="svg-bar-grow" style="transition-delay:0.18s" x="561" y="42" width="37" height="14" rx="3" fill="#0F296B"/>
-        <text x="278" y="74" font-size="9.8" fill="#475569"><tspan font-weight="700" fill="#1D4ED8">■ Anthropic $119.5B</tspan> · <tspan font-weight="700" fill="#3B82F6">■ OpenAI $11B</tspan> · <tspan font-weight="700" fill="#0F296B">■ 20 笔非基座 $18.3B</tspan></text>
+        <text x="278" y="74" font-size="9.8" fill="#475569"><tspan font-weight="700" fill="#1D4ED8">■ Anthropic $119.5B</tspan> · <tspan font-weight="700" fill="#3B82F6">■ OpenAI $11B</tspan> · <tspan font-weight="700" fill="#0F296B">■ 非基座 20 笔 $18.3B</tspan></text>
 
         <line x1="636" y1="18" x2="636" y2="74" stroke="#E2E8F0"/>
 

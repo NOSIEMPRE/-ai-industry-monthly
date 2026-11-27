@@ -275,7 +275,7 @@
       "</div>";
 
     return (
-      '<section class="screen" id="' + esc(item.id) + '" data-nav-group="B 机构趋势" data-nav-code="' + esc(item.code) + '" data-nav-title="' + esc(item.title) + '">' +
+      '<section class="screen" id="' + esc(item.id) + '" data-nav-group="B 机构观点与核心趋势" data-nav-code="' + esc(item.code) + '" data-nav-title="' + esc(item.title) + '">' +
         '<div class="wrap">' +
           renderEyebrow(item.code, [item.org], item.reportTitle) +
           '<h2 class="slide-title reveal"><span>' + esc(item.title) + "</span></h2>" +
@@ -327,8 +327,8 @@
           renderVerdict(ov.verdict, "核心判断") +
           '<div class="chart-card reveal d1" style="padding:12px 16px"><div class="chart-box">' + ribbonSvg + "</div></div>" +
           '<div class="two-col reveal d2">' +
-            '<div class="card"><div class="card-head"><h3>海外 11 月大额股权与 IPO 分布</h3><small>USD BILLIONS (SQRT)</small></div><div class="chart-box">' + usChart + "</div></div>" +
-            '<div class="card"><div class="card-head"><h3>中国 11 月硬科技与 AI4S 分布</h3><small>亿元级重点轮次</small></div><div class="chart-box">' + cnChart + "</div></div>" +
+            '<div class="card"><div class="card-head"><h3>海外 11 月大额股权与 IPO 分布</h3></div><div class="chart-box">' + usChart + "</div></div>" +
+            '<div class="card"><div class="card-head"><h3>中国 11 月硬科技与 AI4S 分布</h3></div><div class="chart-box">' + cnChart + "</div></div>" +
           "</div>" +
           renderCollapsible("四维趋势拆解", "海外资金 · 中国格局 · 巨头并购 · 借贷与供给风险", detailHtml) +
         "</div>" +

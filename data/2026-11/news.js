@@ -7,7 +7,7 @@ window.MONTHLY_DATA.news = [
     tags: ["公开上市", "商业检验"],
     title: "Anthropic 纳斯达克上市与破发",
     why: "头部大模型首次接受公开市场检验；上市后的波动反映出外界普遍关注其高增长能否持续，以及企业应用收入能否覆盖高昂的算力投入。",
-    background: "今年初私募估值约 3,800 亿美元，上市估值跃升至约 1.5 万亿美元；与同期推进新一轮融资并筹备上市的 OpenAI（见 A2）形成对照。",
+    background: "今年初私募估值约 3,800 亿美元，上市估值跃升至约 1.5 万亿美元；与同期推进新一轮融资并筹备上市的 OpenAI 形成对照。",
     chartType: "a1Valuation",
     timeline: [
       { time: "11-18", text: "发行价定于 83 美元（高于市场此前指引），总募资约 813 亿美元，超过 SpaceX 今年 6 月的上市规模。", hot: true },
@@ -75,7 +75,7 @@ window.MONTHLY_DATA.news = [
       { label: "加州司法部公告", url: "https://oag.ca.gov/news/press-releases/attorney-general-bonta-serves-investigative-subpoena-nvidia" }
     ],
     views: {
-      bull: "黄仁勋迅速复职消除了领导层真空，且司法部未对其本人立案，下一代 Rubin 芯片量产与算力需求并未受损。",
+      bull: "黄仁勋迅速复职消除了领导层真空，且司法部未对其本人立案，下一代 Rubin 芯片量产将按原计划推进，下游算力需求依然强劲。",
       bear: "风波暴露出公司缺乏继任安排；由于英伟达为下游大量算力集群建设提供信用背书，一旦自身信用受损可能推高全行业建集群成本。"
     },
     viewSources: [
@@ -154,7 +154,7 @@ window.MONTHLY_DATA.news = [
     ],
     views: {
       bull: "产业与运营商巨头直接入股既锁定长期研发资金，又直接绑定政企与行业真实落地场景。",
-      bear: "海外远程租卡受限（见 A5）下，账面巨额资金能否高效转化为先进训练算力仍是核心不确定性。"
+      bear: "在海外远程租卡受限的背景下，账面巨额资金能否高效转化为先进训练算力仍是核心不确定性。"
     },
     viewSources: [
       { label: "Crunchbase News", url: "https://news.crunchbase.com/venture/october-2026-global-startup-funding-strong-china-deepseek/" },

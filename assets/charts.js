@@ -199,7 +199,7 @@ window.MONTHLY_CHARTS = {
       <svg viewBox="0 0 560 124" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="OpenAI 估值演变与募资目标下调">
         <rect width="560" height="124" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
         <!-- Left: Valuation -->
-        <text x="16" y="22" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">估值路径 (USD)</text>
+        <text x="16" y="22" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">估值路径</text>
         <text x="16" y="45" font-size="10.5" fill="#64748B">3 月轮</text>
         <rect class="svg-bar-grow" x="72" y="35" width="96" height="12" rx="4" fill="#94A3B8"/>
         <text x="174" y="45" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#475569">$852B</text>
@@ -215,7 +215,7 @@ window.MONTHLY_CHARTS = {
         <line x1="286" y1="16" x2="286" y2="108" stroke="#E2E8F0"/>
 
         <!-- Right: Round Size contraction -->
-        <text x="302" y="22" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">本轮募资规模收缩 (USD)</text>
+        <text x="302" y="22" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">本轮融资规模调整</text>
         <text x="302" y="45" font-size="10.5" fill="#64748B">最初计划</text>
         <rect x="360" y="35" width="145" height="12" rx="4" fill="none" stroke="#94A3B8" stroke-dasharray="3 2"/>
         <text x="512" y="45" font-size="10.5" font-family="IBM Plex Mono,monospace" fill="#64748B">$30B+</text>
@@ -513,7 +513,7 @@ window.MONTHLY_CHARTS = {
         <line x1="478" y1="18" x2="478" y2="218" stroke="#E2E8F0"/>
 
         <!-- Right Panel: Pharma Production Scale-up & R&D Timelines -->
-        <text x="498" y="26" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">药企 AI 规模化落地与研发提速共识（N = 550 高管）</text>
+        <text x="498" y="26" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">药企 AI 规模化落地与研发提速共识</text>
 
         <!-- Scale Deployment Jump 15% -> 51% -->
         <g transform="translate(498, 42)">
@@ -561,7 +561,7 @@ window.MONTHLY_CHARTS = {
       <svg viewBox="0 0 960 232" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="a16z B2A 代理经济 11307 次实测数据图">
         <rect width="960" height="232" rx="12" fill="#F8FAFC"/>
         <!-- Left: Checkout Conversion Cliff & Recommendation Concentration -->
-        <text x="24" y="26" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">AI Agent 购物实测：结账转化断崖与推荐马太效应（N = 11,307 次执行）</text>
+        <text x="24" y="26" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">结账转化断崖与代理推荐集中度</text>
 
         <!-- Guest Checkout vs Login Wall -->
         <g transform="translate(24, 44)">
@@ -600,7 +600,7 @@ window.MONTHLY_CHARTS = {
         <line x1="504" y1="18" x2="504" y2="214" stroke="#E2E8F0"/>
 
         <!-- Right: Consumer AI Power-User Economy + B2A Playbook -->
-        <text x="524" y="26" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">C 端订阅瓶颈与 B2A 商业化转向（a16z 第 7 版消费报告）</text>
+        <text x="524" y="26" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">C 端订阅瓶颈与代理商业化转向</text>
 
         <!-- Donut: 4.5% paying -->
         <g transform="translate(578, 86)">
@@ -612,10 +612,10 @@ window.MONTHLY_CHARTS = {
         <text x="632" y="88" font-size="11" fill="#475569">头部 1% 重度用户年支出超 <tspan font-weight="800" fill="#1D4ED8">$900</tspan></text>
         <text x="632" y="106" font-size="10.5" fill="#64748B">纯订阅天花板倒逼平台转向交易抽佣与原生广告</text>
 
-        <!-- 3 Playbook Pills -->
+        <!-- 2 Playbook Rules -->
         <rect x="524" y="138" width="412" height="72" rx="10" fill="#FFFFFF" stroke="#DBEAFE"/>
-        <text x="540" y="159" font-size="11" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#1D4ED8">商家赢得 B2A 代理流量的三大关键条件</text>
-        <text x="540" y="179" font-size="11.5" fill="#334155">1. 结构化商品目录与透明退换货政策，确保 AI 爬虫无障碍解析</text>
+        <text x="540" y="159" font-size="11" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#1D4ED8">商家承接代理流量的两大关键条件</text>
+        <text x="540" y="179" font-size="11.5" fill="#334155">1. 结构化商品目录与透明退换货政策，确保 AI 代理无障碍解析</text>
         <text x="540" y="198" font-size="11.5" fill="#334155">2. 消除登录墙与结账摩擦，接入开放结账协议与头部聚合平台</text>
       </svg>
     `;

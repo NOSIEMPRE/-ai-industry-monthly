@@ -61,7 +61,7 @@ window.MONTHLY_DATA.meta = {
     {
       id: "pb",
       code: "B",
-      title: "机构趋势",
+      title: "机构观点与核心趋势",
       desc: "Menlo 企业与医药报告、a16z B2A 经济与红杉服务即软件",
       intro: ""
     },

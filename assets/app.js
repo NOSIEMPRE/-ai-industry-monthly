@@ -31,13 +31,14 @@
   function renderCover() {
     var m = data.meta;
     var counts = {
+      M: (data.macro || []).length,
       A: data.news.length,
       B: data.trends.length,
       C: 3,
       D: 3,
       E: 1
     };
-    var targets = { A: "#a1", B: "#b1", C: "#c1", D: "#d1", E: "#e1" };
+    var targets = { M: "#m1", A: "#a1", B: "#b1", C: "#c1", D: "#d1", E: "#e1" };
     var agendaHtml = m.parts
       .map(function (p) {
         return (
@@ -121,6 +122,47 @@
           '<div class="part-code reveal">' + esc(part.code) + "</div>" +
           '<h2 class="reveal d1">' + esc(part.title) + "</h2>" +
           '<p class="reveal d2">' + esc(part.intro) + "</p>" +
+        "</div>" +
+      "</section>"
+    );
+  }
+
+  function renderMacroSlide(item) {
+    var tagsHtml = (item.tags || [])
+      .map(function (t, idx) {
+        return '<span class="pill ' + (idx === 0 ? "soft" : "") + '">' + esc(t) + "</span>";
+      })
+      .join("");
+
+    var chartSvg = item.chartType && charts[item.chartType] ? charts[item.chartType]() : "";
+
+    var renderBulletList = function (list) {
+      return (
+        '<ul class="clean-list syn-list">' +
+          (list || [])
+            .map(function (b) {
+              return '<li><strong class="syn-lead">' + esc(b.lead) + "：</strong>" + esc(b.text) + "</li>";
+            })
+            .join("") +
+        "</ul>"
+      );
+    };
+
+    return (
+      '<section class="screen" id="' + esc(item.id) + '" data-nav-group="M 宏观环境" data-nav-code="' + esc(item.code) + '" data-nav-title="' + esc(item.title) + '">' +
+        '<div class="wrap">' +
+          '<div class="eyebrow reveal"><span class="pill primary">' + esc(item.code) + "</span>" + tagsHtml + "<span>" + esc(item.date) + "</span></div>" +
+          '<h2 class="slide-title reveal"><span class="num">' + esc(item.code) + "</span><span>" + esc(item.title) + "</span></h2>" +
+          renderVerdict(item.verdict, "核心判断") +
+          '<div class="chart-card reveal d2">' +
+            '<div class="chart-box">' + chartSvg + "</div>" +
+            '<p class="chart-caption">' + esc(item.chartCaption) + "</p>" +
+          "</div>" +
+          '<div class="two-col reveal d3">' +
+            '<div class="card"><div class="card-head"><h3>' + esc(item.factsTitle) + "</h3><small>MACRO FACTS</small></div>" + renderBulletList(item.facts) + "</div>" +
+            '<div class="card blue-wash"><div class="card-head"><h3>' + esc(item.impactTitle) + "</h3><small>AI INDUSTRY IMPACT</small></div>" + renderBulletList(item.impacts) + "</div>" +
+          "</div>" +
+          renderSources(item.sources) +
         "</div>" +
       "</section>"
     );
@@ -542,6 +584,8 @@
   var deckHtml = [
     renderCover(),
     renderExecutiveSummary(),
+    partsMap.M ? renderPartDivider(partsMap.M) : "",
+    (data.macro || []).map(renderMacroSlide).join(""),
     renderPartDivider(partsMap.A),
     data.news.map(renderNewsSlide).join(""),
     renderPartDivider(partsMap.B),
@@ -589,7 +633,10 @@
     )
     .concat([
       { sortKey: 1102.5, html: "11-02 · Marvell 全股票收购 Lumentum <b>$115B</b>" },
+      { sortKey: 1103.5, html: "11-03 · 美国中期选举民主党重掌参众两院，地方限制数据中心议案大胜" },
       { sortKey: 1106.5, html: "11-06 · CoreWeave 债券收益率突破 <b>16%</b>" },
+      { sortKey: 1110.5, html: "11-10 · 美国 10 月核心 CPI 环比 <b>+0.3%</b>，核心 PCE 升至 <b>3.3%</b>" },
+      { sortKey: 1114.5, html: "11-14 · 美联储报告：<b>87%</b> 受访市场人士将 AI 列为首要风险" },
       { sortKey: 1116, html: "11-16 · BIS 发布东南亚及远程算力管制新规" },
       { sortKey: 1117.5, html: "11-17 · AMD 交割 World Labs <b>$8.2B</b> &amp; Taalas <b>$2.9B</b>" },
       { sortKey: 1119, html: "11-19 · 远程算力使用限制正式生效" },

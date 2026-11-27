@@ -5,6 +5,150 @@
    ========================================================================== */
 
 window.MONTHLY_CHARTS = {
+  /* ==================== PART M: MACRO ECONOMY & POLICY CHARTS ==================== */
+
+  m1MacroFed: function () {
+    return `
+      <svg viewBox="0 0 960 226" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2026年11月美国核心通胀、美联储利率与AI算力债风险图表">
+        <rect width="960" height="226" rx="12" fill="#F8FAFC"/>
+        <!-- Left Panel: Inflation & Fed Rate Trajectory -->
+        <text x="24" y="26" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">美国核心通胀粘性与美联储再紧缩预期（2026.10–12）</text>
+
+        <!-- Inflation bars vs 2% target -->
+        <g transform="translate(24, 44)">
+          <text x="0" y="13" font-size="11.5" fill="#475569">美联储长期通胀目标</text>
+          <rect x="148" y="2" width="180" height="13" rx="4" fill="#E2E8F0"/>
+          <rect x="148" y="2" width="90" height="13" rx="4" fill="#94A3B8"/>
+          <text x="338" y="13" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">2.0% YoY</text>
+
+          <text x="0" y="40" font-size="11.5" font-weight="700" fill="#0F172A">10 月核心 PCE 同比</text>
+          <rect x="148" y="29" width="180" height="13" rx="4" fill="#DBEAFE"/>
+          <rect class="svg-bar-grow" x="148" y="29" width="148" height="13" rx="4" fill="#1D4ED8"/>
+          <text x="338" y="40" font-size="12" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#1D4ED8">3.3% (↑)</text>
+
+          <text x="0" y="67" font-size="11.5" fill="#334155">10 月核心 CPI 环比</text>
+          <rect x="148" y="56" width="180" height="13" rx="4" fill="#E2E8F0"/>
+          <rect class="svg-bar-grow" style="transition-delay:0.1s" x="148" y="56" width="114" height="13" rx="4" fill="#3B82F6"/>
+          <text x="338" y="67" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#2563EB">+0.3% (连三月)</text>
+        </g>
+
+        <!-- Fed Rate Path Box -->
+        <g transform="translate(24, 130)">
+          <rect width="434" height="76" rx="9" fill="#FFFFFF" stroke="#DBEAFE"/>
+          <text x="14" y="19" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#1D4ED8">联邦基金利率目标区间与 FOMC 节奏</text>
+          <rect x="14" y="27" width="148" height="24" rx="6" fill="#F1F5FB" stroke="#CBD5E1"/>
+          <text x="88" y="43" text-anchor="middle" font-size="11" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#334155">10月 3.75–4.00%</text>
+          <text x="174" y="43" font-size="13" font-weight="800" fill="#2563EB">→</text>
+          <rect x="196" y="27" width="176" height="24" rx="6" fill="#1D4ED8"/>
+          <text x="284" y="43" text-anchor="middle" font-size="11" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#FFFFFF">12月预期 4.00–4.25%</text>
+          <text x="14" y="67" font-size="9.8" fill="#64748B">10 月 FOMC 10–2 票决（2 票赞成加息）· 纽约联储提示 2027 进一步加息风险</text>
+        </g>
+
+        <!-- Vertical divider -->
+        <line x1="478" y1="18" x2="478" y2="208" stroke="#E2E8F0"/>
+
+        <!-- Right Panel: Fed Financial Stability & AI Debt Boom -->
+        <text x="498" y="26" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">美联储 11 月《金融稳定报告》：AI 债务与风险权重跃升</text>
+
+        <!-- 87% Donut -->
+        <g transform="translate(550, 82)">
+          <circle r="33" fill="none" stroke="#DBEAFE" stroke-width="11"/>
+          <circle r="33" fill="none" stroke="#1D4ED8" stroke-width="11" stroke-dasharray="180 207" transform="rotate(-90)"/>
+          <text y="5" text-anchor="middle" font-size="14" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#1D4ED8">87%</text>
+        </g>
+        <text x="602" y="65" font-size="12" font-weight="800" fill="#0F172A">受访市场人士将 AI 列为首要风险</text>
+        <text x="602" y="85" font-size="11" fill="#475569">较 2026 春季调查（50%）大幅跃升 <tspan font-weight="800" fill="#1D4ED8">+37pp</tspan></text>
+        <text x="602" y="103" font-size="10.5" fill="#64748B">聚焦：估值偏高 · 循环融资 · 网络安全</text>
+
+        <!-- Debt 5x jump bar -->
+        <g transform="translate(498, 130)">
+          <rect width="438" height="76" rx="9" fill="#FFFFFF" stroke="#E2E8F0"/>
+          <text x="14" y="19" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F296B">先进算力基础设施年度发债规模（≈5× 扩张）</text>
+          <text x="14" y="45" font-size="10.5" fill="#64748B">2023 全年</text>
+          <rect x="74" y="35" width="44" height="12" rx="4" fill="#94A3B8"/>
+          <text x="124" y="45" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">$130B</text>
+          <text x="172" y="45" font-size="12" font-weight="800" fill="#2563EB">→</text>
+          <text x="194" y="45" font-size="10.5" font-weight="700" fill="#0F172A">2026 前 10 月</text>
+          <rect class="svg-bar-grow" x="274" y="35" width="102" height="12" rx="4" fill="#0F296B"/>
+          <text x="382" y="45" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#0F296B">&gt;$680B</text>
+          <text x="14" y="67" font-size="9.8" fill="#64748B">占非金融投资级公司债发行比重由 &lt;6% 升至 <tspan font-weight="700" fill="#1D4ED8">31%</tspan>；公开存量债超 $1.1T</text>
+        </g>
+      </svg>
+    `;
+  },
+
+  m2Midterm: function () {
+    return `
+      <svg viewBox="0 0 960 226" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2026年美国中期选举结果与地方数据中心限制议案图表">
+        <rect width="960" height="226" rx="12" fill="#F8FAFC"/>
+        <!-- Left Panel: Congress Flip & Voter Sentiment -->
+        <text x="24" y="26" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">2026 中期选举格局：民主党重掌两院，AI 基建进入选票核心</text>
+
+        <!-- Two chamber cards -->
+        <g transform="translate(24, 42)">
+          <rect width="206" height="58" rx="9" fill="#EFF6FF" stroke="#93C5FD"/>
+          <text x="14" y="21" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#1D4ED8">美国众议院 · 翻蓝</text>
+          <text x="14" y="44" font-size="14" font-weight="800" fill="#0F172A">民主党约 255–259 席</text>
+        </g>
+        <g transform="translate(244, 42)">
+          <rect width="214" height="58" rx="9" fill="#EFF6FF" stroke="#93C5FD"/>
+          <text x="14" y="21" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#1D4ED8">美国参议院 · 翻蓝</text>
+          <text x="14" y="44" font-size="14" font-weight="800" fill="#0F172A">民主党约 54–56 席</text>
+        </g>
+
+        <!-- Voter sentiment bars -->
+        <g transform="translate(24, 118)">
+          <text x="0" y="13" font-size="11" fill="#334155">不信任科技大厂优先社会利益 (USC)</text>
+          <rect x="218" y="2" width="174" height="12" rx="4" fill="#DBEAFE"/>
+          <rect class="svg-bar-grow" x="218" y="2" width="124" height="12" rx="4" fill="#0F296B"/>
+          <text x="400" y="13" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#0F296B">71%</text>
+
+          <text x="0" y="41" font-size="11" fill="#334155">AI/数据中心为投票主要因素 (NBC)</text>
+          <rect x="218" y="30" width="174" height="12" rx="4" fill="#DBEAFE"/>
+          <rect class="svg-bar-grow" style="transition-delay:0.08s" x="218" y="30" width="97" height="12" rx="4" fill="#1D4ED8"/>
+          <text x="400" y="41" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#1D4ED8">56%</text>
+
+          <text x="0" y="69" font-size="11" fill="#334155">上述关切选民中投给民主党比例</text>
+          <rect x="218" y="58" width="174" height="12" rx="4" fill="#E2E8F0"/>
+          <rect class="svg-bar-grow" style="transition-delay:0.16s" x="218" y="58" width="108" height="12" rx="4" fill="#3B82F6"/>
+          <text x="400" y="69" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#2563EB">62%</text>
+        </g>
+
+        <!-- Vertical divider -->
+        <line x1="478" y1="18" x2="478" y2="208" stroke="#E2E8F0"/>
+
+        <!-- Right Panel: Ballot Measures & Moratorium Surge -->
+        <text x="498" y="26" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">地方数据中心限制浪潮与 2028 新增容量冲击</text>
+
+        <!-- 37 vs 1 Ballot bar -->
+        <g transform="translate(498, 44)">
+          <text x="0" y="13" font-size="11.5" font-weight="700" fill="#0F172A">全美地方数据中心投票议案结果（Redbud / ARI 统计）</text>
+          <rect x="0" y="22" width="438" height="22" rx="5" fill="#E2E8F0"/>
+          <rect class="svg-bar-grow" x="0" y="22" width="420" height="22" rx="5" fill="#1D4ED8"/>
+          <text x="14" y="37" font-size="11" font-weight="700" fill="#FFFFFF">限制 / 暂停新建方大胜（初计 37:1 · 终计约 43:1）</text>
+          <rect x="424" y="22" width="14" height="22" rx="4" fill="#64748B"/>
+        </g>
+
+        <!-- Moratorium 40 -> 500+ & Texas 30% -->
+        <g transform="translate(498, 108)">
+          <rect width="212" height="96" rx="9" fill="#FFFFFF" stroke="#DBEAFE"/>
+          <text x="14" y="22" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">全美地方数据中心禁令数</text>
+          <text x="14" y="54" font-size="22" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#1D4ED8">40 → 500+</text>
+          <text x="14" y="75" font-size="10.5" fill="#475569">2026 年初至 8 月激增逾 12 倍</text>
+          <text x="14" y="90" font-size="9.5" fill="#94A3B8">新任州长或追加全州暂缓令</text>
+        </g>
+
+        <g transform="translate(724, 108)">
+          <rect width="212" height="96" rx="9" fill="#FFFFFF" stroke="#CBD5E1"/>
+          <text x="14" y="22" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">得州许可冻结牵动产能</text>
+          <text x="14" y="54" font-size="22" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#0F296B">~30%</text>
+          <text x="14" y="75" font-size="10.5" fill="#475569">占美国 2028 年计划新增容量</text>
+          <text x="14" y="90" font-size="9.5" fill="#94A3B8">迫使大厂转向表后发电与出海</text>
+        </g>
+      </svg>
+    `;
+  },
+
   /* ==================== PART A: NEWS VISUAL MICRO-CHARTS (Replacing Bulky Number Cards) ==================== */
 
   a1Valuation: function () {

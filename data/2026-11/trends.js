@@ -13,7 +13,7 @@ window.MONTHLY_DATA.trends = [
       "模型层高度集中：Anthropic、OpenAI、Google 三家占据约 69% 的企业 API/部署支出；但传统核心系统（CRM/HRIS/ERP）暂未出现大规模替换。"
     ],
     chartType: "menloEnterprise",
-    chartCaption: "图：Menlo Ventures《2026: The State of Enterprise AI》（2026 年 11 月）——企业年化支出结构与 $77.3B 应用层细分",
+    chartCaption: "Menlo Ventures《2026: The State of Enterprise AI》（2026 年 11 月）",
     chinaContextTitle: "开源趋势与国内对照",
     chinaContext: [
       { label: "中国开源模型进入海外企业支出", text: "Menlo 报告指出，开源模型在特定企业任务中占比持续攀升，其中中国开源模型（Kimi、DeepSeek、GLM、Qwen）占据开源企业支出的主导份额。" },
@@ -35,7 +35,7 @@ window.MONTHLY_DATA.trends = [
       "竞争格局剧烈分化：病历转录（$950M）已被 Microsoft 与 Epic 等原有巨头收割约 46% 份额；高增长资金转向临床助手（5.5× 至 $550M）与 AI 制药，但买方验证门槛抬升，采购周期拉长至 10–11 个月。"
     ],
     chartType: "menloPharma",
-    chartCaption: "图：Menlo Ventures《2026: The State of AI in Healthcare》（2026 年 11 月，N = 550 高管调研）医药与医疗细分支出及研发提速预期",
+    chartCaption: "Menlo Ventures《2026: The State of AI in Healthcare》（2026 年 11 月）",
     chinaContextTitle: "前沿动向与国内医药对照",
     chinaContext: [
       { label: "前沿实验室与药企深度结盟", text: "Anthropic 推出 Claude Science、OpenAI 发布 GPT-Rosalind 并收购 Orchestra·Bio，Chai Discovery 与 Genesis Therapeutics 等垂直平台密集签下跨国药企多管线合作。" },
@@ -57,7 +57,7 @@ window.MONTHLY_DATA.trends = [
       "支付摩擦决定转化生死：支持游客结账的网站 Agent 结账到达率达 81%，而强制登录网站失败率高达 100%；综合交易平台与多品牌零售商拿走 55% 份额。"
     ],
     chartType: "a16zB2A",
-    chartCaption: "图：a16z《B2A Economy》（2026 年 11 月，11,307 次实测）结账转化断崖、推荐趋同率与 C 端付费结构对照",
+    chartCaption: "a16z《B2A Economy》（2026 年 11 月）",
     chinaContextTitle: "超级 App 生态与国内对照",
     chinaContext: [
       { label: "围墙花园与代理博弈", text: "欧美电商以独立站与开放网页为主，免登录与结构化接口决定 B2A 转化；国内电商高度集中于淘宝、京东、抖音、微信等强登录超级 App，Agent 交易入口大概率由平台自建或官方协议开放。" },
@@ -79,7 +79,7 @@ window.MONTHLY_DATA.trends = [
       "红杉（企业服务）：AI 直接交付会计、法务、工程部署结果，预算池从 1× 企业软件座位跃迁至 ~10× 专业服务外包预算（如 OpenAI 收购部署团队 Northslope、Legora 估值 $8.8B）。"
     ],
     chartType: "pricingAndServices",
-    chartCaption: "图：a16z 医疗 AI 四级定价演进（左）与红杉“服务即软件”预算空间跃迁（右）",
+    chartCaption: "a16z《Infinite Healthcare》· Sequoia《Services: The New Software》",
     chinaContextTitle: "国内支付体系、毛利结构与 11 月资金印证",
     chinaContext: [
       { label: "国内医疗支付框架", text: "国内公立医院以医保 DRG/DIP 按病种打包为核心，PMPM 订阅与结果付费目前更贴近商保健康管理、慢病随访与特药服务。" },

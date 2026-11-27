@@ -72,7 +72,8 @@
 ## 四、投融资跟踪与日报系统对接规范（原 C3 内部方案）
 
 ### 1. 数据来源与数据库清单
-- **内部日报源**：`https://ai-daily.ihainan.me/#s03`（商业投融资每日汇总，作为月度收敛的一手线索池）
+- **内部日报源**：`https://ai-daily.ihainan.me/`（商业投融资每日汇总，作为月度收敛的一手线索池）
+  - 检索 Skill 安装命令：`npx skills add annielxy2000-glitch/ai-daily-search-skill`
 - **PitchBook**：美国全量一级市场融资核验与分赛道总量统计（可联系静怡协调账号使用）
 - **Crunchbase**：月度全球创投总额与 AI 占比基准（月报公开）
 - **IT 桔子 / 投资界 / 36氪**：中国月度投融资明细与首发线索

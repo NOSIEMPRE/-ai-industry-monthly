@@ -206,7 +206,7 @@
 
     var synHtml = ov.synthesis
       .map(function (s) {
-        return '<div class="card soft"><div class="card-head"><h3>' + esc(s.title) + '</h3></div><p style="margin:0;font-size:13.5px;color:var(--ink-secondary)">' + esc(s.text) + "</p></div>";
+        return '<div class="card soft"><div class="card-head"><h3>' + esc(s.title) + '</h3></div><p class="syn-text">' + esc(s.text) + "</p></div>";
       })
       .join("");
 
@@ -250,14 +250,14 @@
       .map(function (d) {
         return (
           '<tr data-sector="' + esc(d.sector) + '">' +
-            '<td class="mono">' + esc(d.date) + "</td>" +
-            '<td class="co-name">' + esc(d.company) + "</td>" +
-            '<td><span class="pill soft">' + esc(d.sector) + "</span></td>" +
-            "<td>" + esc(d.round) + "</td>" +
-            '<td class="mono">' + esc(d.amount) + "</td>" +
-            (hasValuation ? '<td class="mono">' + esc(d.valuation || "—") + "</td>" : "") +
-            "<td>" + esc(d.investors) + "</td>" +
-            '<td><a class="tier-tag ' + esc(d.tierCode) + '" href="' + esc(d.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(d.sourceLabel) + " ↗</a></td>" +
+            '<td class="mono col-date" data-label="日期">' + esc(d.date) + "</td>" +
+            '<td class="co-name col-company" data-label="公司">' + esc(d.company) + "</td>" +
+            '<td class="col-sector" data-label="赛道"><span class="pill soft">' + esc(d.sector) + "</span></td>" +
+            '<td class="col-round" data-label="轮次">' + esc(d.round) + "</td>" +
+            '<td class="mono col-amount" data-label="金额">' + esc(d.amount) + "</td>" +
+            (hasValuation ? '<td class="mono col-valuation" data-label="估值">' + esc(d.valuation || "—") + "</td>" : "") +
+            '<td class="col-investors" data-label="投资方">' + esc(d.investors) + "</td>" +
+            '<td class="col-source" data-label="信源"><a class="tier-tag ' + esc(d.tierCode) + '" href="' + esc(d.sourceUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(d.sourceLabel) + " ↗</a></td>" +
           "</tr>"
         );
       })

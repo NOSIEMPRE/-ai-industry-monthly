@@ -53,8 +53,8 @@ body {
   background-size: 32px 32px;
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.68;
+  font-size: 16px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -106,7 +106,8 @@ button:focus-visible {
   border: 1px solid var(--line-strong);
   background: var(--surface);
   color: var(--ink);
-  font: 600 12px/1 var(--font-body);
+  font: 600 12.5px/1 var(--font-body);
+  white-space: nowrap;
   cursor: pointer;
   transition: all 0.2s var(--ease);
 }
@@ -124,15 +125,23 @@ button:focus-visible {
 
 .brand-pill {
   flex: none;
+  min-width: 0;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font: 700 12px/1 var(--font-mono);
+  font: 700 12.5px/1 var(--font-mono);
   letter-spacing: 0.04em;
   color: var(--ink);
+  white-space: nowrap;
+}
+
+.brand-pill > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .brand-dot {
+  flex: none;
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -445,6 +454,7 @@ button:focus-visible {
 .screen {
   min-height: auto;
   padding: calc(74px + env(safe-area-inset-top, 0px)) max(32px, 4.5vw) 68px;
+  scroll-margin-top: 52px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -473,18 +483,19 @@ button:focus-visible {
   flex-wrap: wrap;
   align-items: center;
   gap: 8px;
-  font: 600 11.5px/1 var(--font-mono);
-  letter-spacing: 0.06em;
+  font: 600 12.5px/1.3 var(--font-mono);
+  letter-spacing: 0.05em;
   color: var(--muted);
 }
 
 .pill {
   display: inline-flex;
   align-items: center;
-  padding: 5px 10px;
+  padding: 5px 11px;
   border-radius: 999px;
-  font: 600 11px/1 var(--font-mono);
-  letter-spacing: 0.04em;
+  font: 600 12px/1.1 var(--font-mono);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
   border: 1px solid var(--line-strong);
   background: var(--surface);
   color: var(--ink-secondary);
@@ -509,9 +520,9 @@ h1, h2, h3, h4 {
 }
 
 .slide-title {
-  font-size: clamp(21px, 2.25vw, 32px);
+  font-size: clamp(22px, 2.4vw, 34px);
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1.28;
   color: var(--ink);
   display: flex;
   align-items: baseline;
@@ -527,9 +538,9 @@ h1, h2, h3, h4 {
 
 .why-line {
   margin: -4px 0 2px;
-  font-size: 13.5px;
+  font-size: 15px;
   color: var(--ink-secondary);
-  line-height: 1.55;
+  line-height: 1.62;
   padding-left: 12px;
   border-left: 2.5px solid var(--blue-bright);
 }
@@ -682,14 +693,14 @@ h1, h2, h3, h4 {
 }
 
 .agenda-title {
-  font-size: 15.5px;
+  font-size: 16.5px;
   font-weight: 700;
   color: var(--ink);
 }
 
 .agenda-desc {
-  font-size: 12px;
-  line-height: 1.45;
+  font-size: 13.2px;
+  line-height: 1.52;
   color: var(--muted);
 }
 
@@ -799,7 +810,7 @@ h1, h2, h3, h4 {
 
 .card-head {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 10px;
   padding-bottom: 10px;
@@ -808,31 +819,36 @@ h1, h2, h3, h4 {
 }
 
 .card-head h3 {
-  font-size: 14px;
+  font-size: 15.5px;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  line-height: 1.42;
+  letter-spacing: 0.01em;
   color: var(--ink);
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
 }
 
 .card-head h3::before {
   content: "";
+  flex: none;
   width: 6px;
   height: 6px;
+  margin-top: 0.5em;
   border-radius: 2px;
   background: var(--blue-bright);
 }
 
 .card-head small {
-  font: 500 11px/1 var(--font-mono);
+  flex: none;
+  white-space: nowrap;
+  font: 500 11.5px/1.4 var(--font-mono);
   color: var(--muted);
 }
 
 /* ========================= Part A: News Layout (Background Top -> Facts + Views Below) ========================= */
 .news-bg-strip {
-  padding: 12px 18px;
+  padding: 13px 18px;
   border-radius: var(--radius-md);
   background: linear-gradient(90deg, var(--blue-soft) 0%, #FFFFFF 100%);
   border: 1px solid var(--blue-tint);
@@ -843,20 +859,21 @@ h1, h2, h3, h4 {
 
 .news-bg-label {
   flex: none;
-  font: 700 11px/1 var(--font-mono);
+  font: 700 12px/1 var(--font-mono);
   letter-spacing: 0.08em;
   color: var(--blue);
   background: #FFFFFF;
   border: 1px solid var(--blue-tint);
   padding: 5px 10px;
   border-radius: 6px;
+  white-space: nowrap;
 }
 
 .news-bg-strip p {
   margin: 0;
-  font-size: 13.5px;
+  font-size: 14.8px;
   color: var(--ink-secondary);
-  line-height: 1.55;
+  line-height: 1.65;
 }
 
 /* Live Stock Quote Bar (NASDAQ: ANT) */
@@ -928,19 +945,22 @@ h1, h2, h3, h4 {
 
 .lq-right {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  font-size: 10.5px;
+  gap: 8px 10px;
+  font-size: 11.5px;
   color: #94A3B8;
 }
 
 .lq-refresh {
-  padding: 4px 9px;
+  flex: none;
+  white-space: nowrap;
+  padding: 5px 10px;
   border-radius: 6px;
   border: 1px solid rgba(148, 163, 184, 0.35);
   background: rgba(255, 255, 255, 0.06);
   color: #E2E8F0;
-  font: 600 10.5px/1 var(--font-mono);
+  font: 600 11px/1 var(--font-mono);
   cursor: pointer;
   transition: all 0.18s var(--ease);
 }
@@ -952,6 +972,8 @@ h1, h2, h3, h4 {
 }
 
 .lq-link {
+  flex: none;
+  white-space: nowrap;
   color: #93C5FD;
   font-weight: 600;
 }
@@ -1010,9 +1032,10 @@ h1, h2, h3, h4 {
 .tl-item {
   position: relative;
   display: grid;
-  grid-template-columns: 76px 1fr;
+  grid-template-columns: 84px 1fr;
   gap: 10px;
-  font-size: 13.4px;
+  font-size: 14.8px;
+  line-height: 1.65;
   color: var(--ink-secondary);
 }
 
@@ -1020,7 +1043,7 @@ h1, h2, h3, h4 {
   content: "";
   position: absolute;
   left: -21px;
-  top: 7px;
+  top: 8px;
   width: 9px;
   height: 9px;
   border-radius: 50%;
@@ -1035,8 +1058,9 @@ h1, h2, h3, h4 {
 }
 
 .tl-item time {
-  font: 600 11.5px/1.6 var(--font-mono);
+  font: 600 12.5px/1.65 var(--font-mono);
   color: var(--muted);
+  white-space: nowrap;
 }
 
 .tl-item.hot time {
@@ -1057,11 +1081,11 @@ h1, h2, h3, h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 15px 17px;
+  padding: 16px 18px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--line);
-  font-size: 13.5px;
-  line-height: 1.65;
+  font-size: 14.8px;
+  line-height: 1.68;
   color: var(--ink-secondary);
 }
 
@@ -1078,7 +1102,7 @@ h1, h2, h3, h4 {
 .view-badge {
   display: inline-block;
   margin-bottom: 6px;
-  font: 700 11px/1 var(--font-mono);
+  font: 700 11.5px/1 var(--font-mono);
   letter-spacing: 0.05em;
 }
 
@@ -1092,7 +1116,7 @@ h1, h2, h3, h4 {
   flex-wrap: wrap;
   align-items: center;
   gap: 6px 12px;
-  font: 500 11.5px/1.4 var(--font-mono);
+  font: 500 12.5px/1.5 var(--font-mono);
   color: var(--muted);
 }
 
@@ -1129,9 +1153,9 @@ h1, h2, h3, h4 {
 
 .trend-quote {
   margin: 0;
-  font-size: clamp(18px, 1.9vw, 24px);
+  font-size: clamp(19px, 2vw, 25px);
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.44;
   color: var(--ink);
   padding-left: 16px;
   border-left: 3.5px solid var(--blue);
@@ -1143,13 +1167,14 @@ h1, h2, h3, h4 {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 10px;
 }
 
 .clean-list li {
   position: relative;
   padding-left: 15px;
-  font-size: 13.8px;
+  font-size: 15px;
+  line-height: 1.68;
   color: var(--ink-secondary);
 }
 
@@ -1211,9 +1236,19 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 900px), (hover: none) {
+  .chart-box.zoomable {
+    display: flex;
+    flex-direction: column;
+  }
   .chart-zoom-hint {
-    opacity: 0.92;
+    position: static;
+    align-self: flex-end;
+    margin-top: 8px;
+    opacity: 1;
     transform: none;
+    pointer-events: auto;
+    font-size: 11.5px;
+    padding: 5px 10px;
   }
 }
 
@@ -1362,7 +1397,7 @@ h1, h2, h3, h4 {
 
 .chart-caption {
   margin: 10px 0 0;
-  font: 500 11.5px/1.4 var(--font-mono);
+  font: 500 12.5px/1.45 var(--font-mono);
   color: var(--muted);
 }
 
@@ -1373,7 +1408,7 @@ h1, h2, h3, h4 {
 }
 
 .china-item {
-  padding: 14px 16px;
+  padding: 15px 17px;
   border-radius: var(--radius-sm);
   background: var(--surface-soft);
   border: 1px solid var(--line);
@@ -1381,16 +1416,23 @@ h1, h2, h3, h4 {
 
 .china-item b {
   display: block;
-  font-size: 13px;
+  font-size: 14.5px;
   color: var(--blue-deep);
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .china-item p {
   margin: 0;
-  font-size: 13px;
+  font-size: 14.2px;
   color: var(--ink-secondary);
-  line-height: 1.55;
+  line-height: 1.62;
+}
+
+.syn-text {
+  margin: 0;
+  font-size: 14.8px;
+  line-height: 1.72;
+  color: var(--ink-secondary);
 }
 
 /* ========================= Part C: Funding Overview & Interactive Tables ========================= */
@@ -1437,12 +1479,13 @@ h1, h2, h3, h4 {
 }
 
 .filter-btn {
-  padding: 6px 12px;
+  padding: 7px 14px;
   border-radius: 999px;
   border: 1px solid var(--line-strong);
   background: var(--surface);
   color: var(--ink-secondary);
-  font: 600 12px/1 var(--font-body);
+  font: 600 13px/1 var(--font-body);
+  white-space: nowrap;
   cursor: pointer;
   transition: all 0.16s var(--ease);
 }
@@ -1468,27 +1511,28 @@ h1, h2, h3, h4 {
 
 .data-table {
   width: 100%;
-  min-width: 780px;
+  min-width: 980px;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 14.5px;
 }
 
 .data-table th {
   text-align: left;
-  padding: 14px 16px;
+  padding: 13px 14px;
   background: var(--surface-soft);
   border-bottom: 1px solid var(--line);
-  font: 600 11.5px/1.2 var(--font-mono);
+  font: 600 12.5px/1.2 var(--font-mono);
   color: var(--muted);
   letter-spacing: 0.04em;
   white-space: nowrap;
 }
 
 .data-table td {
-  padding: 16px 16px;
+  padding: 13px 14px;
   border-bottom: 1px solid var(--line);
   color: var(--ink-secondary);
   vertical-align: middle;
+  line-height: 1.55;
 }
 
 .data-table tbody tr:last-child td {
@@ -1500,7 +1544,7 @@ h1, h2, h3, h4 {
 }
 
 .data-table td.mono {
-  font: 600 12.5px/1.3 var(--font-mono);
+  font: 600 13.5px/1.35 var(--font-mono);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   color: var(--ink);
@@ -1509,15 +1553,26 @@ h1, h2, h3, h4 {
 .data-table td.co-name {
   font-weight: 700;
   color: var(--ink);
+  white-space: nowrap;
+}
+
+.data-table td.col-sector,
+.data-table td.col-round,
+.data-table td.col-source {
+  white-space: nowrap;
+}
+
+.data-table td.col-investors {
+  min-width: 260px;
 }
 
 .tier-tag {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 4px 9px;
+  padding: 5px 10px;
   border-radius: 999px;
-  font: 600 11px/1 var(--font-mono);
+  font: 600 12px/1 var(--font-mono);
   white-space: nowrap;
 }
 
@@ -1533,9 +1588,10 @@ h1, h2, h3, h4 {
 }
 
 .footnote-bar {
-  font-size: 12.5px;
+  font-size: 13.5px;
+  line-height: 1.62;
   color: var(--muted);
-  padding: 12px 16px;
+  padding: 13px 16px;
   border-radius: var(--radius-sm);
   background: var(--surface-soft);
   border: 1px solid var(--line);
@@ -1599,7 +1655,8 @@ h1, h2, h3, h4 {
   padding: 19px 18px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  font-size: 13.5px;
+  font-size: 14.5px;
+  line-height: 1.6;
   color: var(--ink-secondary);
 }
 
@@ -1609,7 +1666,7 @@ h1, h2, h3, h4 {
 .matrix-cell b {
   display: block;
   color: var(--ink);
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 6px;
 }
 
@@ -1623,7 +1680,7 @@ h1, h2, h3, h4 {
 .co-chip {
   padding: 4px 9px;
   border-radius: 6px;
-  font: 600 11px/1.1 var(--font-mono);
+  font: 600 11.5px/1.1 var(--font-mono);
   background: var(--surface-soft);
   border: 1px solid var(--line-strong);
   color: var(--ink-secondary);
@@ -1639,31 +1696,32 @@ h1, h2, h3, h4 {
 .case-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13.8px;
+  font-size: 14.8px;
 }
 
 .case-table td {
-  padding: 11px 8px;
+  padding: 12px 8px;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
 }
 
 .case-table tr:last-child td { border-bottom: 0; }
 .case-table td:first-child {
-  width: 82px;
-  font: 600 11.5px/1.5 var(--font-mono);
+  width: 86px;
+  font: 600 12.5px/1.5 var(--font-mono);
   color: var(--muted);
   white-space: nowrap;
 }
 
 /* ========================= Part D3: Interactive Compute Full Industry Mapping ========================= */
 .compute-thesis {
-  padding: 12px 18px;
+  padding: 13px 18px;
   border-radius: var(--radius-md);
   background: var(--surface);
   border: 1px solid var(--blue-tint);
   border-left: 4px solid var(--blue);
-  font-size: 13.4px;
+  font-size: 14.8px;
+  line-height: 1.62;
   color: var(--ink-secondary);
   box-shadow: var(--shadow-sm);
 }
@@ -1763,27 +1821,27 @@ h1, h2, h3, h4 {
 }
 
 .cn-title {
-  font-size: 12.8px;
+  font-size: 13.5px;
   font-weight: 800;
   color: var(--ink);
-  line-height: 1.25;
+  line-height: 1.3;
 }
 
 .cn-tag {
   flex: none;
-  font: 600 9.5px/1 var(--font-mono);
+  font: 600 10.5px/1 var(--font-mono);
   color: var(--blue);
   background: #FFFFFF;
   border: 1px solid var(--blue-tint);
-  padding: 3px 6px;
+  padding: 3px 7px;
   border-radius: 999px;
   white-space: nowrap;
 }
 
 .cn-sub {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--muted);
-  line-height: 1.3;
+  line-height: 1.38;
 }
 
 .logo-wall {
@@ -1842,8 +1900,8 @@ h1, h2, h3, h4 {
 
 .inspector-text {
   margin: 0;
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: 14.2px;
+  line-height: 1.62;
   color: #E2E8F0;
 }
 
@@ -1854,7 +1912,7 @@ h1, h2, h3, h4 {
 }
 
 .migration-card {
-  padding: 11px 14px;
+  padding: 13px 15px;
   border-radius: var(--radius-sm);
   background: var(--surface);
   border: 1px solid var(--line);
@@ -1862,16 +1920,16 @@ h1, h2, h3, h4 {
 
 .migration-card b {
   display: block;
-  font: 700 11.5px/1.2 var(--font-mono);
+  font: 700 12.5px/1.25 var(--font-mono);
   color: var(--blue);
-  margin-bottom: 3px;
+  margin-bottom: 4px;
 }
 
 .migration-card p {
   margin: 0;
-  font-size: 12.2px;
+  font-size: 13.5px;
   color: var(--ink-secondary);
-  line-height: 1.48;
+  line-height: 1.56;
 }
 
 /* ========================= Part E: Seminar Topics (3-over-2 Bento Grid) ========================= */
@@ -1919,18 +1977,18 @@ h1, h2, h3, h4 {
 }
 
 .topic-card h3 {
-  font-size: 15.8px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--ink);
   margin-bottom: 2px;
-  line-height: 1.38;
+  line-height: 1.4;
 }
 
 .topic-card p {
   margin: 0;
-  font-size: 13.4px;
+  font-size: 14.5px;
   color: var(--ink-secondary);
-  line-height: 1.62;
+  line-height: 1.68;
 }
 
 .topic-refs {
@@ -2175,18 +2233,46 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 900px) {
+  body {
+    font-size: 15.5px;
+  }
+  .topbar {
+    gap: 6px;
+    padding-left: max(10px, env(safe-area-inset-left, 0px));
+    padding-right: max(10px, env(safe-area-inset-right, 0px));
+  }
+  .nav-trigger {
+    padding: 0 9px;
+    font-size: 11.5px;
+    gap: 5px;
+    height: 30px;
+  }
+  .counter {
+    gap: 4px;
+    font-size: 11px;
+  }
+  .counter button {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
   .screen,
   .screen.cover,
   .screen.part-divider {
     min-height: auto;
-    padding: calc(70px + env(safe-area-inset-top, 0px)) 16px 40px;
+    padding: calc(70px + env(safe-area-inset-top, 0px)) 16px 42px;
   }
   .card {
     padding: 18px 16px;
   }
   .edge-tab { display: none; }
   .ticker { display: none; }
-  .brand-pill { flex: 1; }
+  .brand-pill {
+    flex: 1;
+    font-size: 11px;
+    gap: 5px;
+    letter-spacing: 0;
+  }
   .halftone-canvas {
     width: 320px;
     height: 320px;
@@ -2217,6 +2303,116 @@ h1, h2, h3, h4 {
   .metric-row { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* Mobile Stacked Deal Cards for C2 & C3 (Zero Horizontal Scrolling & Zero Vertical Text Folding) */
+@media (max-width: 768px) {
+  .table-card {
+    overflow-x: visible;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .data-table {
+    display: block;
+    min-width: 0;
+    width: 100%;
+  }
+  .data-table thead {
+    display: none;
+  }
+  .data-table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .data-table tbody tr {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px 10px;
+    padding: 14px 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+  .data-table tbody tr::before {
+    content: "";
+    flex-basis: 100%;
+    height: 0;
+    order: 4;
+  }
+  .data-table tbody tr:hover td {
+    background: transparent;
+  }
+  .data-table tbody td {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    border: 0;
+  }
+  .data-table td.col-company {
+    order: 1;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--ink);
+    white-space: normal;
+  }
+  .data-table td.col-sector {
+    order: 2;
+  }
+  .data-table td.col-date {
+    order: 3;
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .data-table td.col-amount {
+    order: 5;
+    flex-basis: auto;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--blue);
+    background: var(--blue-soft);
+    border: 1px solid var(--blue-tint);
+    padding: 3px 9px;
+    border-radius: 6px;
+  }
+  .data-table td.col-round {
+    order: 6;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink-secondary);
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+    padding: 3px 9px;
+    border-radius: 6px;
+  }
+  .data-table td.col-valuation {
+    order: 7;
+    font-size: 12.5px;
+    color: var(--muted);
+  }
+  .data-table td.col-valuation::before {
+    content: "估值 ";
+    font-weight: 500;
+    margin-right: 3px;
+  }
+  .data-table td.col-investors {
+    order: 8;
+    flex: 1 0 100%;
+    min-width: 0;
+    font-size: 14px;
+    line-height: 1.62;
+    color: var(--ink-secondary);
+    padding-top: 2px;
+  }
+  .data-table td.col-source {
+    order: 9;
+    flex: 1 0 100%;
+    padding-top: 4px;
+  }
+}
+
 @media (max-width: 560px) {
   .agenda-grid,
   .kpi-grid-4,
@@ -2228,7 +2424,8 @@ h1, h2, h3, h4 {
     gap: 2px;
   }
   .slide-title {
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 1.32;
     flex-direction: column;
     gap: 4px;
   }

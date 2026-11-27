@@ -1749,7 +1749,7 @@ h1, h2, h3, h4 {
 
 .mapping-row {
   display: grid;
-  grid-template-columns: 118px 1fr;
+  grid-template-columns: 142px 1fr;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
@@ -2151,6 +2151,22 @@ h1, h2, h3, h4 {
 .mapping-board.lens-active .compute-node-btn.highlighted {
   background: #F0F6FF;
   box-shadow: inset 0 0 0 1.5px var(--blue-bright);
+}
+
+.mapping-board.china-lens .logo-badge[data-cn="1"] {
+  border-color: var(--blue);
+  background: var(--blue-soft);
+  box-shadow: 0 2px 8px rgba(29, 78, 216, 0.16);
+}
+
+.mapping-board.china-lens .logo-badge:not([data-cn="1"]) {
+  opacity: 0.24;
+  filter: grayscale(0.75);
+}
+
+.mapping-board.china-lens .compute-node-btn.dimmed .logo-badge[data-cn="1"] {
+  opacity: 1;
+  filter: none;
 }
 
 .logo-badge {

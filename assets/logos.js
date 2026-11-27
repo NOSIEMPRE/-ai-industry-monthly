@@ -126,14 +126,74 @@ window.BRAND_LOGOS = (function () {
       '<svg viewBox="0 0 76 24" class="brand-svg" aria-label="Harvey"><path d="M5 6v12M13 6v12M5 12h8" stroke="#1D4ED8" stroke-width="2.2" stroke-linecap="round"/><text x="20" y="16" font-family="Georgia,serif" font-weight="700" font-size="13" fill="#0F172A">Harvey</text></svg>',
 
     OpenEvidence:
-      '<svg viewBox="0 0 108 24" class="brand-svg" aria-label="OpenEvidence"><circle cx="9" cy="12" r="5.5" fill="none" stroke="#1D4ED8" stroke-width="2"/><path d="M9 9v6M6 12h6" stroke="#1D4ED8" stroke-width="1.6"/><text x="19" y="16" font-family="Inter,sans-serif" font-weight="700" font-size="11" fill="#0F172A">OpenEvidence</text></svg>'
+      '<svg viewBox="0 0 108 24" class="brand-svg" aria-label="OpenEvidence"><circle cx="9" cy="12" r="5.5" fill="none" stroke="#1D4ED8" stroke-width="2"/><path d="M9 9v6M6 12h6" stroke="#1D4ED8" stroke-width="1.6"/><text x="19" y="16" font-family="Inter,sans-serif" font-weight="700" font-size="11" fill="#0F172A">OpenEvidence</text></svg>',
+
+    CXMT:
+      '<svg viewBox="0 0 78 24" class="brand-svg" aria-label="长鑫存储"><rect x="3" y="6" width="13" height="12" rx="2.5" fill="none" stroke="#1D4ED8" stroke-width="1.8"/><path d="M6.5 9.5h6M6.5 14.5h6" stroke="#1D4ED8" stroke-width="1.6"/><text x="21" y="16" font-family="Noto Sans SC,sans-serif" font-weight="800" font-size="11.5" fill="#0F172A">长鑫存储</text></svg>',
+
+    Inspur:
+      '<svg viewBox="0 0 78 24" class="brand-svg" aria-label="浪潮信息"><path d="M3 14c3-5 6-5 9 0s6 5 9 0" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round"/><text x="24" y="16" font-family="Noto Sans SC,sans-serif" font-weight="800" font-size="11.5" fill="#0F172A">浪潮信息</text></svg>',
+
+    StateGrid:
+      '<svg viewBox="0 0 78 24" class="brand-svg" aria-label="国家电网"><circle cx="10" cy="12" r="6.5" fill="none" stroke="#1D4ED8" stroke-width="1.8"/><path d="M10 7.5L7.5 12.5h3l-1 4 3.5-5h-3z" fill="#1D4ED8"/><text x="21" y="16" font-family="Noto Sans SC,sans-serif" font-weight="800" font-size="11.5" fill="#0F172A">国家电网</text></svg>',
+
+    CGN:
+      '<svg viewBox="0 0 78 24" class="brand-svg" aria-label="中国广核"><circle cx="10" cy="12" r="2.6" fill="#1D4ED8"/><ellipse cx="10" cy="12" rx="7" ry="3.2" fill="none" stroke="#60A5FA" stroke-width="1.3"/><ellipse cx="10" cy="12" rx="3.2" ry="7" fill="none" stroke="#1D4ED8" stroke-width="1.3"/><text x="21" y="16" font-family="Noto Sans SC,sans-serif" font-weight="800" font-size="11.5" fill="#0F172A">中国广核</text></svg>',
+
+    Envicool:
+      '<svg viewBox="0 0 68 24" class="brand-svg" aria-label="英维克"><path d="M10 5c2.5 3.5 5 6.2 5 8.8a5 5 0 1 1-10 0C5 11.2 7.5 8.5 10 5z" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="1.8"/><text x="21" y="16" font-family="Noto Sans SC,sans-serif" font-weight="800" font-size="11.5" fill="#0F172A">英维克</text></svg>',
+
+    Megmeet:
+      '<svg viewBox="0 0 78 24" class="brand-svg" aria-label="麦格米特"><path d="M4 16V8l5 5 5-5v8" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round"/><text x="20" y="16" font-family="Noto Sans SC,sans-serif" font-weight="800" font-size="11.5" fill="#0F172A">麦格米特</text></svg>',
+
+    TelecomOps:
+      '<svg viewBox="0 0 88 24" class="brand-svg" aria-label="三大运营商"><path d="M5 16h10M7 12h6M9 8h2M10 8v8" stroke="#1D4ED8" stroke-width="1.8" stroke-linecap="round"/><text x="21" y="16" font-family="Noto Sans SC,sans-serif" font-weight="800" font-size="11.5" fill="#0F172A">三大运营商</text></svg>',
+
+    GDS:
+      '<svg viewBox="0 0 78 24" class="brand-svg" aria-label="万国数据"><rect x="3" y="6" width="5" height="12" rx="1" fill="#1D4ED8"/><rect x="10" y="9" width="5" height="9" rx="1" fill="#60A5FA"/><text x="20" y="16" font-family="Noto Sans SC,sans-serif" font-weight="800" font-size="11.5" fill="#0F172A">万国数据</text></svg>',
+
+    Volcengine:
+      '<svg viewBox="0 0 78 24" class="brand-svg" aria-label="火山引擎"><polygon points="4,17 10,6 16,17" fill="#1D4ED8"/><polygon points="8,17 10,12 12,17" fill="#FFFFFF"/><text x="21" y="16" font-family="Noto Sans SC,sans-serif" font-weight="800" font-size="11.5" fill="#0F172A">火山引擎</text></svg>',
+
+    Kimi:
+      '<svg viewBox="0 0 60 24" class="brand-svg" aria-label="Kimi"><circle cx="9" cy="12" r="5.5" fill="#0F296B"/><circle cx="11" cy="10" r="1.8" fill="#60A5FA"/><text x="19" y="16" font-family="Inter,sans-serif" font-weight="800" font-size="12.5" fill="#0F172A">Kimi</text></svg>',
+
+    WPS:
+      '<svg viewBox="0 0 74 24" class="brand-svg" aria-label="WPS AI"><path d="M3 8l3 9 3.5-6 3.5 6 3-9" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><text x="21" y="16" font-family="Inter,sans-serif" font-weight="800" font-size="12" fill="#0F172A">WPS AI</text></svg>',
+
+    Feishu:
+      '<svg viewBox="0 0 60 24" class="brand-svg" aria-label="飞书"><path d="M4 15L15 6l-3 11-4-3z" fill="#1D4ED8"/><text x="20" y="16" font-family="Noto Sans SC,sans-serif" font-weight="800" font-size="11.5" fill="#0F172A">飞书</text></svg>'
+  };
+
+  var chinaKeys = {
+    Huawei: 1,
+    Cambricon: 1,
+    SMIC: 1,
+    CXMT: 1,
+    Innolight: 1,
+    Foxconn: 1,
+    Inspur: 1,
+    StateGrid: 1,
+    CGN: 1,
+    Envicool: 1,
+    Megmeet: 1,
+    TelecomOps: 1,
+    GDS: 1,
+    AlibabaCloud: 1,
+    Volcengine: 1,
+    Approaching: 1,
+    DeepSeek: 1,
+    Kimi: 1,
+    WPS: 1,
+    Feishu: 1
   };
 
   function render(key, fallbackLabel) {
+    var cnAttr = chinaKeys[key] ? ' data-cn="1"' : "";
     if (marks[key]) {
-      return '<span class="logo-badge" title="' + (fallbackLabel || key) + '">' + marks[key] + "</span>";
+      return '<span class="logo-badge"' + cnAttr + ' title="' + (fallbackLabel || key) + '">' + marks[key] + "</span>";
     }
-    return '<span class="logo-badge text-only">' + (fallbackLabel || key) + "</span>";
+    return '<span class="logo-badge text-only"' + cnAttr + ">" + (fallbackLabel || key) + "</span>";
   }
 
   return { render: render };

@@ -121,143 +121,156 @@ window.MONTHLY_DATA.maps = {
   compute: {
     id: "d3",
     code: "D3",
-    title: "算力行业全图谱：从芯片到模型服务的产业链全景与约束迁移",
-    thesis: "价值捕获仍高度集中于上游芯片、HBM 与先进封装；新增容量不等于可售算力，电力交付、Neocloud 信用融资与模型端商业回收已成为决定行业斜率的三大关键变量。",
+    title: "AI 算力全产业链图谱：从核心芯片到模型应用商业化的价值分布与瓶颈迁移",
+    thesis: "价值捕获高度集中于上游核心芯片、HBM 与先进封装；新增装机容量不等于可售算力，电力并网交付、Neocloud 信用融资与下游应用商业变现已成为决定行业斜率的三大关键变量。",
     stages: [
       {
-        code: "A",
-        name: "硬件供给",
-        subtitle: "把计算能力做出来",
+        code: "上游 · L1",
+        name: "核心芯片与硬件",
+        subtitle: "算力芯片 · 存储 · 整机",
         accent: "stage-a",
         cols: 5,
         nodes: [
           {
-            title: "芯片设计 / IP",
+            title: "AI 芯片与 IP",
             sub: "GPU · ASIC · 软件栈",
-            tag: "利润池高",
+            tag: "核心利润池",
+            lenses: ["profit", "china"],
             logos: ["NVIDIA", "AMD", "Broadcom", "Huawei", "Cambricon"],
-            detail: "NVIDIA Q2 FY27 数据中心收入 $890.2 亿（GAAP 毛利率 75.0%），Rubin 全面量产；Broadcom Q3 FY26 AI 半导体 $167 亿（同比 +221%），FY27 锁量约 $1,150 亿；国内华为昇腾推出 Atlas 950 超节点，寒武纪 Q3 营收 35.3 亿元（同比 +104%）。"
+            detail: "NVIDIA Q2 FY27 数据中心收入 $890.2 亿（GAAP 毛利率 75.0%），Rubin 全面量产；Broadcom Q3 FY26 AI 半导体 $167 亿（同比 +221%），FY27 锁量约 $1,150 亿；国内华为昇腾推出 Atlas 950 超节点，寒武纪 Q3 营收 35.3 亿元（同比 +104%），阿里平头哥真武芯片累计出货 56 万颗并分拆赴港上市。"
           },
           {
-            title: "制造 / 封装 / 设备",
-            sub: "先进制程 · CoWoS · 光刻",
-            tag: "供给锁量",
+            title: "晶圆代工与先进封装",
+            sub: "先进制程 · CoWoS · 设备",
+            tag: "产能锁量",
+            lenses: ["profit", "bottleneck", "china"],
             logos: ["TSMC", "ASML", "AMAT", "SMIC"],
-            detail: "TSMC Q3 2026 HPC 占比达 68%、营业利润率 58.7%，全年 CapEx $600–640 亿；ASML 称 2027–28 年产能仍无法完全满足客户需求，部分意向排至 2029–30 年。"
+            detail: "TSMC Q3 2026 HPC 占比达 68%、营业利润率 58.7%，全年 CapEx $600–640 亿；ASML 称 2027–28 年产能仍无法完全满足需求；国内中芯国际 Q3 产能利用率升至 97.3%，国产先进封装与光刻设备加速推进。"
           },
           {
-            title: "HBM / 存储",
-            sub: "容量 · 带宽 · 企业级 SSD",
+            title: "高带宽存储（HBM）",
+            sub: "HBM · 企业级 SSD",
             tag: "长约锁量",
-            logos: ["SKHynix", "Samsung", "Micron"],
-            detail: "解码阶段受显存带宽硬约束，NVIDIA 单季供应与产能承诺由 $1,190 亿跃升至 $2,790 亿，核心用于锁定 HBM 内存产能。"
+            lenses: ["profit", "bottleneck"],
+            logos: ["SKHynix", "Samsung", "Micron", "CXMT"],
+            detail: "解码阶段受显存带宽硬约束，NVIDIA 单季供应与产能承诺跃升至 $2,790 亿用于锁定 HBM 产能；SK 海力士正持续扩产 HBM4，国内长鑫存储（CXMT）加速 DRAM 与高带宽存储追赶，仍是国产链条核心攻坚环节。"
           },
           {
-            title: "网络 / 互连 / 光模块",
+            title: "高速互连与光通信",
             sub: "Scale-up · Scale-out · 1.6T",
             tag: "带宽瓶颈",
+            lenses: ["profit", "bottleneck", "china"],
             logos: ["NVIDIA", "Broadcom", "Arista", "Innolight"],
-            detail: "十万卡集群 MFU 高度依赖柜内 NVLink/铜缆与柜间 InfiniBand/高速以太网及 800G/1.6T 光模块，规模越大网络占比越高。"
+            detail: "十万卡集群 MFU 高度依赖柜内 NVLink/铜缆与柜间 InfiniBand/高速以太网及 800G/1.6T 光模块；Marvell 11 月宣布 $115B 收购 Lumentum 补齐光互连，中国光模块龙头（中际旭创等）稳居全球核心供给地位。"
           },
           {
-            title: "服务器 / 整机柜",
-            sub: "整柜集成 · 液冷 · 测试",
+            title: "AI 服务器与整机柜",
+            sub: "整柜集成 · 液冷适配 · ODM",
             tag: "整柜交付",
-            logos: ["Supermicro", "Foxconn", "Dell"],
-            detail: "GB200/GB300 NVL72 将 72 颗 GPU 集成进单台 100–140 kW 液冷机柜，交付单位从“单卡/服务器”全面升级为“整机柜系统”。"
+            lenses: ["china"],
+            logos: ["Supermicro", "Foxconn", "Dell", "Inspur"],
+            detail: "GB200/GB300 NVL72 将 72 颗 GPU 集成进单台 100–140 kW 液冷机柜，交付单位全面升级为整机柜系统；Dell Q3 AI 服务器在手订单达 $1,323 亿，中国供应链（工业富联、浪潮信息等）具备全球领先的整柜制造与交付能力。"
           }
         ]
       },
       {
-        code: "B",
-        name: "物理基础设施",
-        subtitle: "让设备通电并运行",
+        code: "中游 · L2",
+        name: "智算基建（AIDC）",
+        subtitle: "电力 · 液冷 · 园区交付",
         accent: "stage-b",
         cols: 3,
         nodes: [
           {
-            title: "电力 / 能源",
-            sub: "并网排队 · 核电 PPA · 表后发电",
-            tag: "GW / MW 瓶颈",
-            logos: ["Bloom", "GEVernova", "Constellation", "Google"],
-            detail: "美国核心电网并网排队平均超 4 年，大厂密集采用核电 PPA 与燃气轮机/燃料电池表后发电（Behind-the-meter）桥接供电；1 GW IT 负载约对应 7,100 台 NVL72 机柜。"
+            title: "电力与能源供给",
+            sub: "电网接入 · 核电 PPA · 算电协同",
+            tag: "GW 级约束",
+            lenses: ["bottleneck", "china"],
+            logos: ["Bloom", "GEVernova", "Constellation", "StateGrid", "CGN"],
+            detail: "美国核心电网并网排队超 4 年且得州许可冻结牵动近三成 2028 年新增容量，大厂密集转向核电 PPA 与表后发电；中国依托特高压电网、核电/新能源基地及“东数西算”算电协同（国家电网、中国广核等），电力供给成为显著结构性优势。"
           },
           {
-            title: "配电 / 液冷 / 机电",
-            sub: "高功率机柜 · CDU · 变压器",
+            title: "供配电与液冷散热",
+            sub: "HVDC · 变压器 · 冷板液冷 CDU",
             tag: "交期瓶颈",
-            logos: ["Vertiv", "Eaton", "Microsoft"],
-            detail: "单柜功率密度突破 100 kW 后冷板液冷与 CDU 成为刚需，大型变压器、开关柜与燃气轮机交期已排至数年以后。"
+            lenses: ["bottleneck", "china"],
+            logos: ["Vertiv", "Eaton", "Envicool", "Megmeet"],
+            detail: "单柜功率密度突破 100 kW 后冷板液冷、CDU 与高压直流（HVDC）成为刚需，大型变压器与机电交期排至数年后；中国厂商在液冷散热（英维克等）与服务器电源/配电设备（麦格米特等）已深度切入国内外头部智算供应链。"
           },
           {
-            title: "数据中心开发 / 运营",
-            sub: "Powered Shell · BTS 定制租赁",
-            tag: "容量变租约",
-            logos: ["Equinix", "DigitalRealty", "CoreWeave"],
-            detail: "新增容量 ≠ 可售算力：选址、地方审批、并网通电与上架调试决定了硬件何时真正转化为可售机柜容量。"
+            title: "智算中心开发与运营",
+            sub: "AIDC 园区 · 定制机房 · 东数西算",
+            tag: "园区交付",
+            lenses: ["china"],
+            logos: ["Equinix", "DigitalRealty", "TelecomOps", "GDS"],
+            detail: "新增装机不等于可售算力，选址审批、并网通电与上架调试决定交付节奏；海外以 Equinix、Digital Realty 等商业 REITs 为主，中国则由三大运营商（移动/电信/联通）国有智算集群与万国数据等头部 IDC 共同承建。"
           }
         ]
       },
       {
-        code: "C",
-        name: "算力供给",
-        subtitle: "把设备卖成服务",
+        code: "中游 · L3",
+        name: "云平台与算力服务",
+        subtitle: "公有智算云 · 推理云",
         accent: "stage-c",
         cols: 2,
         nodes: [
           {
-            title: "超大云厂商（Hyperscalers）",
-            sub: "自研芯片 · 自建园区 · 对外出租",
-            tag: "现金流 / CapEx",
-            logos: ["AWS", "Google", "Microsoft", "Oracle", "AlibabaCloud"],
-            detail: "依靠自身经营现金流承接重资产 CapEx，同时加码自研 ASIC（TPU v7/v8、Trainium）平衡对外购 GPU 的单一依赖。"
+            title: "超大规模云厂商（Hyperscalers）",
+            sub: "自研芯片 · 公有智算云 · 全栈基建",
+            tag: "重 CapEx",
+            lenses: ["china"],
+            logos: ["AWS", "Google", "Microsoft", "Oracle", "AlibabaCloud", "Volcengine"],
+            detail: "依靠自身经营现金流承接重资产 CapEx 并加码自研 ASIC（TPU、Trainium、含光/真武）以降低单一芯片依赖；国内阿里云、火山引擎、腾讯云构成公有智算云与企业 AI 平台主力。"
           },
           {
-            title: "Neocloud / GPU 推理云",
-            sub: "借债买卡 · 长约出租 · Token 推理工厂",
-            tag: "利息 / 折旧 / 利用率",
+            title: "专业智算云与推理云（Neocloud）",
+            sub: "裸金属集群 · 弹性算力 · Token 工厂",
+            tag: "杠杆 / 折旧",
+            lenses: ["bottleneck", "china"],
             logos: ["CoreWeave", "Nebius", "Lambda", "fal", "Approaching"],
-            detail: "产业链风险最集中于中游：以杠杆债务买卡配长约（CoreWeave 总债 $516 亿、债息 >16%），回报高度敏感于利用率与 GPU 经济寿命；推理云（fal、趋境科技）成为高增速分支。"
+            detail: "中游信用与折旧风险最集中：CoreWeave 总债 $516 亿、债券收益率升破 16%，回报高度敏感于利用率与 GPU 经济寿命；专注高吞吐推理的 Token 工厂（海外 fal、国内趋境科技）成为高增速分支。"
           }
         ]
       },
       {
-        code: "D",
-        name: "需求与回收",
-        subtitle: "把算力变成收入",
+        code: "下游 · L4",
+        name: "模型与应用商业化",
+        subtitle: "大模型 · 推理 · 企业应用",
         accent: "stage-d",
         cols: 3,
         nodes: [
           {
-            title: "训练 / 后训练",
-            sub: "预训练 · RL · 万卡集中负载",
-            tag: "集群消耗",
+            title: "基础模型训练与后训练",
+            sub: "预训练 · 强化学习 · 万卡集群",
+            tag: "研发前置",
+            lenses: ["profit", "china"],
             logos: ["OpenAI", "Anthropic", "Meta", "DeepSeek"],
-            detail: "前沿实验室签下千亿美元级长期算力承诺（如 Anthropic 对 Google 与 Broadcom 的长期 TPU 协议），训练投入属研发型资本前置。"
+            detail: "前沿实验室签下千亿美元级长期算力承诺，训练投入属研发型资本前置；海外 Anthropic 上市、OpenAI 私募迈向万亿估值，国内 DeepSeek、通义、智谱、Kimi 持续迭代开源与闭源旗舰模型。"
           },
           {
-            title: "推理 / Agent 运行",
-            sub: "Token 消耗 · 长上下文 · 异步长任务",
-            tag: "持续运行",
-            logos: ["OpenAI", "Anthropic", "Cursor"],
-            detail: "推理思考模型与长周期 Agent 触发算力乘数效应，推理成本直接计入 COGS，单位 Token 效率与延迟决定盈利能力。"
+            title: "模型推理与 Agent 运行",
+            sub: "长上下文 · 推理思考 · 异步智能体",
+            tag: "Token 消耗",
+            lenses: ["china"],
+            logos: ["OpenAI", "Anthropic", "Cursor", "Volcengine", "Kimi"],
+            detail: "推理思考模型与自主 Agent 贡献约 80% 企业 Token 消耗，推理成本直接计入 COGS；海内外头部模型 API 与火山引擎、Kimi、腾讯混元等在编程与长上下文场景持续拉动推理调用量。"
           },
           {
-            title: "企业应用 / 付费回收",
-            sub: "软件订阅 · 按量 · 按结果交付",
-            tag: "回收闭环",
-            logos: ["Microsoft", "Harvey", "OpenEvidence"],
-            detail: "终端企业与个人付费是整条算力链条的最终现金流源头，决定前期数千亿美元 CapEx 的回本斜率与可持续性。"
+            title: "企业软件与垂直应用",
+            sub: "企业订阅 · 按量计费 · 按结果交付",
+            tag: "商业变现",
+            lenses: ["china"],
+            logos: ["Microsoft", "Harvey", "OpenEvidence", "WPS", "Feishu"],
+            detail: "终端企业与个人付费是整条算力产业链的最终现金流源头：海外形成编程、医疗与法务高客单闭环（Menlo 统计企业 AI 年化支出达 $1,768 亿），国内以 WPS AI、飞书、钉钉及垂直行业软件推进规模化付费落地。"
           }
         ]
       }
     ],
     migration: [
-      { step: "上游 · 供给锁量", text: "HBM、CoWoS 先进封装与光刻设备持续锁量，定价权集中在芯片与晶圆龙头。" },
-      { step: "中游 · 交付与信用", text: "电力并网、液冷机电交期与 Neocloud 高息债务融资成为新增可售容量的核心约束。" },
-      { step: "下游 · 商业回收", text: "模型与企业应用的真实付费增速与 Token 效率，决定前期巨额 CapEx 的回本斜率。" }
+      { step: "上游 · 核心硬件锁量", text: "HBM、CoWoS 先进封装与光刻设备持续锁量，定价权与高毛利集中在芯片与晶圆代工龙头。" },
+      { step: "中游 · 智算基建与信用", text: "电力并网、液冷机电交期与 Neocloud 高息债务融资成为新增可售算力的核心约束。" },
+      { step: "下游 · 模型与应用变现", text: "基础模型调用量与企业软件真实付费增速，决定前期数千亿美元 CapEx 的投入产出斜率。" }
     ],
-    cashflow: "企业与模型应用付费 → 算力云与 Neocloud → 数据中心与芯片硬件商",
+    cashflow: "企业与个人应用付费 → 模型与智算云平台 → AIDC 基建与上游芯片硬件",
     sources: [
       { label: "NVIDIA Q2 FY27 IR", url: "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/default.aspx" },
       { label: "AMD Q3 2026 IR", url: "https://ir.amd.com/news-events/press-releases/detail/1303/amd-reports-third-quarter-2026-financial-results" },

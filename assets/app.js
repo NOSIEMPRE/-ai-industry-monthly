@@ -379,12 +379,6 @@
     var firstNode = cm.stages[0].nodes[0];
     var nodeIdx = 0;
 
-    var lensTags = {
-      profit: ["芯片设计 / IP", "制造 / 封装 / 设备", "HBM / 存储", "训练 / 后训练"],
-      bottleneck: ["制造 / 封装 / 设备", "HBM / 存储", "网络 / 互连 / 光模块", "电力 / 能源", "配电 / 液冷 / 机电", "Neocloud / GPU 推理云"],
-      china: ["芯片设计 / IP", "制造 / 封装 / 设备", "网络 / 互连 / 光模块", "服务器 / 整机柜", "超大云厂商（Hyperscalers）", "Neocloud / GPU 推理云", "训练 / 后训练"]
-    };
-
     var rowsHtml = cm.stages
       .map(function (st) {
         var colsClass = "cols-" + (st.cols || st.nodes.length);
@@ -395,12 +389,9 @@
             var logoItems = (nd.logos || [])
               .map(function (logoKey) { return logosLib.render(logoKey); })
               .join("");
-            var lenses = [];
-            if (lensTags.profit.indexOf(nd.title) !== -1) lenses.push("profit");
-            if (lensTags.bottleneck.indexOf(nd.title) !== -1) lenses.push("bottleneck");
-            if (lensTags.china.indexOf(nd.title) !== -1) lenses.push("china");
+            var lenses = nd.lenses || [];
             return (
-              '<button type="button" class="compute-node-btn ' + (isFirst ? "active" : "") + '" data-node-idx="' + currentIdx + '" data-lenses="' + lenses.join(",") + '" data-stage="STAGE ' + esc(st.code) + " · " + esc(st.name) + '" data-title="' + esc(nd.title) + '" data-detail="' + esc(nd.detail) + '">' +
+              '<button type="button" class="compute-node-btn ' + (isFirst ? "active" : "") + '" data-node-idx="' + currentIdx + '" data-lenses="' + lenses.join(",") + '" data-stage="' + esc(st.code) + " · " + esc(st.name) + '" data-title="' + esc(nd.title) + '" data-detail="' + esc(nd.detail) + '">' +
                 '<div class="cn-top"><span class="cn-title">' + esc(nd.title) + '</span><span class="cn-tag">' + esc(nd.tag) + "</span></div>" +
                 '<div class="cn-sub">' + esc(nd.sub) + "</div>" +
                 '<div class="logo-wall">' + logoItems + "</div>" +
@@ -412,7 +403,7 @@
         return (
           '<div class="mapping-row">' +
             '<div class="mapping-rail ' + esc(st.accent) + '">' +
-              '<span class="rail-code">STAGE ' + esc(st.code) + "</span>" +
+              '<span class="rail-code">' + esc(st.code) + "</span>" +
               "<h4>" + esc(st.name) + "</h4>" +
               "<p>" + esc(st.subtitle) + "</p>" +
             "</div>" +
@@ -429,7 +420,7 @@
       .join("");
 
     return (
-      '<section class="screen" id="' + esc(cm.id) + '" data-nav-group="D 产业图谱" data-nav-code="' + esc(cm.code) + '" data-nav-title="算力行业全图谱">' +
+      '<section class="screen" id="' + esc(cm.id) + '" data-nav-group="D 产业图谱" data-nav-code="' + esc(cm.code) + '" data-nav-title="AI 算力全产业链图谱">' +
         '<div class="wrap">' +
           '<div class="lens-bar reveal">' +
             '<div class="eyebrow"><span class="pill primary">' + esc(cm.code) + '</span><span class="pill soft">算力全产业链 Mapping</span><span>点击环节拆解数据 · 切换视角高亮</span></div>' +
@@ -445,7 +436,7 @@
           '<div class="mapping-board reveal d2" id="computeStages">' + rowsHtml + "</div>" +
           '<div class="compute-inspector reveal d2" id="computeInspector">' +
             '<div class="inspector-left">' +
-              '<div class="inspector-kicker" id="inspectorKicker">STAGE A · 硬件供给 / ' + esc(firstNode.title) + "</div>" +
+              '<div class="inspector-kicker" id="inspectorKicker">' + esc(cm.stages[0].code) + " · " + esc(cm.stages[0].name) + " / " + esc(firstNode.title) + "</div>" +
               '<p class="inspector-text" id="inspectorText">' + esc(firstNode.detail) + "</p>" +
             "</div>" +
             '<div style="font:600 11.5px/1.5 var(--font-mono);color:#93C5FD;max-width:300px">现金流方向：<br><span style="color:#FFFFFF">' + esc(cm.cashflow) + "</span></div>" +
@@ -867,10 +858,11 @@
           var lens = lb.getAttribute("data-lens");
           lensBtns.forEach(function (b) { b.classList.toggle("active", b === lb); });
           if (lens === "all") {
-            computeStages.classList.remove("lens-active");
+            computeStages.classList.remove("lens-active", "china-lens");
             nodeBtns.forEach(function (n) { n.classList.remove("dimmed", "highlighted"); });
           } else {
             computeStages.classList.add("lens-active");
+            computeStages.classList.toggle("china-lens", lens === "china");
             nodeBtns.forEach(function (n) {
               var tags = (n.getAttribute("data-lenses") || "").split(",");
               var hit = tags.indexOf(lens) !== -1;

@@ -925,8 +925,10 @@
   var cmBaseWidth = 960;
 
   function applyCmScale(nextScale) {
-    cmScale = Math.max(0.8, Math.min(2.6, nextScale));
-    cmStage.style.width = Math.round(cmBaseWidth * cmScale) + "px";
+    cmScale = Math.max(0.5, Math.min(3.0, nextScale));
+    var px = Math.round(cmBaseWidth * cmScale);
+    cmStage.style.width = px + "px";
+    cmStage.style.minWidth = px + "px";
     cmZoomReset.textContent = Math.round(cmScale * 100) + "%";
   }
 
@@ -941,10 +943,10 @@
     var vb = (svgEl.getAttribute("viewBox") || "").trim().split(/\s+/);
     var naturalW = vb.length === 4 ? parseFloat(vb[2]) : 960;
     var isMobile = window.innerWidth <= 900;
-    // On mobile, default to crisp readable width (at least 780px for wide charts, 560px for compact charts)
+    // On mobile, render at ~1.18x natural SVG width so every chart label is immediately large & crisp (~12-15px)
     cmBaseWidth = isMobile
-      ? Math.max(naturalW >= 800 ? 820 : 580, window.innerWidth * 1.45)
-      : Math.min(1180, Math.max(naturalW, window.innerWidth * 0.78));
+      ? Math.max(Math.round(naturalW * 1.18), naturalW >= 800 ? 1120 : (naturalW >= 500 ? 700 : 540))
+      : Math.min(1220, Math.max(Math.round(naturalW * 1.1), window.innerWidth * 0.78));
     applyCmScale(1);
 
     chartModal.classList.add("open");

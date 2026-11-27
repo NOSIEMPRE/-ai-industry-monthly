@@ -1356,15 +1356,16 @@ h1, h2, h3, h4 {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   touch-action: pan-x pan-y pinch-zoom;
-  padding: 18px;
+  padding: 16px;
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  align-items: safe center;
+  justify-content: safe center;
   background: #F8FAFC;
 }
 
 .chart-modal-stage {
-  margin: auto;
+  flex: none;
+  margin: 0;
   transition: width 0.22s var(--ease);
 }
 
@@ -2305,6 +2306,20 @@ h1, h2, h3, h4 {
 
 /* Mobile Stacked Deal Cards for C2 & C3 (Zero Horizontal Scrolling & Zero Vertical Text Folding) */
 @media (max-width: 768px) {
+  .chart-modal {
+    padding: max(8px, env(safe-area-inset-top, 0px)) max(6px, env(safe-area-inset-right, 0px)) max(8px, env(safe-area-inset-bottom, 0px)) max(6px, env(safe-area-inset-left, 0px));
+  }
+  .chart-modal-panel {
+    border-radius: 14px;
+  }
+  .chart-modal-viewport {
+    padding: 12px;
+    align-items: safe center;
+    justify-content: flex-start;
+  }
+  .chart-modal-bar {
+    padding: 10px 12px;
+  }
   .table-card {
     overflow-x: visible;
     background: transparent;

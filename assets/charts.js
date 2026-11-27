@@ -252,7 +252,7 @@ window.MONTHLY_CHARTS = {
       <svg viewBox="0 0 560 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="英伟达 11 月治理震荡股价波动与信用担保外溢">
         <rect width="560" height="128" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
         <!-- Left: 11-Day Volatility Path -->
-        <text x="16" y="22" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">11 天治理震荡：股价剧烈过山车</text>
+        <text x="16" y="22" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">黄仁勋辞任复职：股价剧烈波动</text>
         <polyline points="28,46 112,78 192,98 262,52" fill="none" stroke="#1D4ED8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
         <circle cx="28" cy="46" r="4" fill="#94A3B8"/>
         <text x="28" y="38" font-size="9.5" font-family="IBM Plex Mono,monospace" fill="#64748B">10月初</text>
@@ -278,7 +278,7 @@ window.MONTHLY_CHARTS = {
         <text x="318" y="48" font-size="10.5" fill="#0F172A"><tspan font-weight="800" fill="#1D4ED8">Q3 营收 $115.8B</tspan> · 同比 +103%（基本面强）</text>
 
         <rect x="308" y="62" width="236" height="24" rx="6" fill="#FFFFFF" stroke="#CBD5E1"/>
-        <text x="318" y="78" font-size="10.5" fill="#334155"><tspan font-weight="800" fill="#0F296B">标普 AA 列入负面观察</tspan> · 穆迪维持 Aa1</text>
+        <text x="318" y="78" font-size="10.5" fill="#334155"><tspan font-weight="800" fill="#0F296B">评级机构提示风险</tspan> · 担忧创始人依赖</text>
 
         <rect x="308" y="92" width="236" height="24" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
         <text x="318" y="108" font-size="10" fill="#475569">涉 <tspan font-weight="800" fill="#0F172A">$500B</tspan> 算力融资 25% 担保 · 12-03 参院作证</text>

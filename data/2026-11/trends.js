@@ -7,7 +7,7 @@ window.MONTHLY_DATA.trends = [
     org: "Menlo Ventures · 2026.11",
     reportTitle: "2026: The State of Enterprise AI",
     title: "企业 AI 支出与 Agent 主导",
-    quote: "企业 AI 已从试点预算跃迁为独立增量池（55% 来自净新增预算），自主 Agent 贡献 80% Token 用量并主导连续算力消耗。",
+    quote: "企业 AI 已从试点预算跃迁为独立的新增投入池，自主 Agent 正在取代单次对话，成为驱动企业持续算力消耗的主导形态。",
     bullets: [
       "截至 2026-09 年化部署支出达 $176.8B（同比 5.4×），实际增速（4.7×）远超年初财务规划（1.9×）。",
       "Anthropic、OpenAI、Google 占约 69% 企业支出，但传统 CRM/HRIS/ERP 核心系统暂未现大规模替换。"
@@ -29,7 +29,7 @@ window.MONTHLY_DATA.trends = [
     org: "Menlo Ventures · 2026.11",
     reportTitle: "2026: The State of AI in Healthcare",
     title: "医疗与 AI 制药规模化爆发",
-    quote: "医疗以 $3.7B 超越法律成最大垂直市场，制药支出暴涨 23 倍；51% 药企进入规模化部署，原有巨头正在收割浅层文书工具。",
+    quote: "医疗已跃升为 AI 最大垂直行业，制药与生命科学进入规模化部署；传统软件巨头正在收割浅层文书工具，增量机会转向临床决策与新药研发。",
     bullets: [
       "生命科学与制药支出暴涨 23× 至 $700M（外部新药研发平台与数据占 $600M），买方验证周期拉长至 10–11 个月。",
       "病历转录（$950M）约 46% 份额已被 Microsoft、Epic 收割，增量资金转向临床助手（5.5×）与新药发现。"
@@ -73,7 +73,7 @@ window.MONTHLY_DATA.trends = [
     org: "a16z 医疗 & 红杉 Sequoia",
     reportTitle: "Infinite Healthcare · Services: The New Software",
     title: "信息层趋零与按结果交付",
-    quote: "AI 正把信息处理成本压向零；下一代巨头将用软件毛利直接交付医疗、法务与工程结果，切入 10 倍于传统软件的服务外包预算。",
+    quote: "AI 正把信息处理成本压向零；下一代头部公司将用软件级效率直接交付医疗、法务与工程结果，切入远大于传统软件的专业服务外包市场。",
     bullets: [
       "a16z（医疗）：信息咨询趋于低价不限量，按次收费仅留给稀缺线下诊疗，主线转向按人头包月订阅与临床结果挂钩。",
       "红杉（企业服务）：AI 直接交付专业工作结果，正切入约 10 倍于软件规模的外包市场（如 OpenAI 收购 Northslope、Legora 估值 $8.8B）。"

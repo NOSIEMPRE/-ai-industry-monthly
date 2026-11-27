@@ -82,7 +82,7 @@ window.MONTHLY_DATA.maps = {
     id: "d2",
     code: "D2",
     title: "具身标杆案例拆解",
-    verdict: "Genesis AI 凭 $500M A 轮押注通用操作泛化上限，星尘智能以 8.99 万元量产定价率先跑通商业订单与成本闭环。",
+    verdict: "两家标杆呈现截然不同的起点：Genesis AI 重资押注通用操作的泛化上限，星尘智能则依靠极致量产定价率先跑通商业订单与成本闭环。",
     cases: [
       {
         name: "Genesis AI",

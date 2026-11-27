@@ -5,9 +5,8 @@ window.MONTHLY_DATA.news = [
     id: "a1",
     code: "A1",
     tags: ["公开上市", "商业检验"],
-    date: "11-18 定价 · 11-19 上市 · 11-24 破发",
     title: "Anthropic 纳斯达克上市与破发",
-    why: "头部大模型公司首次接受公开市场每日检验，光靠技术领先和高速增长已不足以支撑万亿美元体量，能否靠企业应用赚回高昂算力成本成为新的标尺。",
+    why: "头部大模型公司首次接受公开市场每日检验，光靠技术领先和高速增长已不足以支撑超高估值，能否靠企业应用赚回高昂算力成本成为新的标尺。",
     background: "年初私募估值 $380B，10 个月后按发行价计上市估值达约 $1.5T；与同期放缓私募的 OpenAI（A2）走出不同路径。",
     liveQuote: {
       symbol: "ANT",
@@ -41,9 +40,8 @@ window.MONTHLY_DATA.news = [
     id: "a2",
     code: "A2",
     tags: ["私募降速", "筹资转向"],
-    date: "首笔交割约 11-06",
     title: "OpenAI 私募目标下调",
-    why: "私募机构对单轮数百亿美元的巨额融资已接近承接上限，头部大模型公司单靠私募输血的阶段接近尾声，正加速筹备上市与多元筹资。",
+    why: "私募机构对超大规模单轮融资已接近承接上限，头部大模型公司单靠私募输血的阶段接近尾声，正加速筹备上市与多元筹资。",
     background: "今年 3 月刚以 $852B 估值募资 $122B；据报道计划 2027 年上市，当前正处于从私募向公开上市过渡的窗口期。",
     chartType: "a2Round",
     timeline: [
@@ -67,31 +65,30 @@ window.MONTHLY_DATA.news = [
   {
     id: "a3",
     code: "A3",
-    tags: ["治理震荡", "关键人物风险"],
-    date: "11-09 至 11-26",
-    title: "英伟达 11 天治理震荡",
-    why: "英伟达芯片需求与营收依然翻倍增长（Q3 营收 $115.8B），但 11 天内辞任又复职暴露出对核心人物的高度依赖；若信用评级受损，将波及下游数千亿美元算力建设链条。",
+    tags: ["治理风波", "关键人物依赖"],
+    title: "英伟达黄仁勋辞任与复职风波",
+    why: "英伟达财报基本面依旧强劲，但黄仁勋短期辞任又迅速复职，暴露出公司对核心创始人的高度依赖与治理短板，也反映出整个 AI 算力链条存在一定的连锁传导风险。",
     background: "导火索源于美国国会及媒体对新加坡云商 Megaspeed 芯片转运与黄仁勋私人关系的审查，触发剧烈波动。",
     chartType: "a3Nvidia",
     timeline: [
       { time: "11-09", text: "董事会启动独立调查（涉芯片转运报道），黄仁勋致信致歉并承诺配合。", hot: false },
       { time: "11-12", text: "黄仁勋辞去总裁、CEO 及董事，CFO Kress 暂代；股价连跌六周，市值回撤约 $1.7T。", hot: true },
       { time: "11-20–21", text: "加州总检察长送达调查传票；媒体曝监管审查其财务处理，股价单日跌 14.01%。", hot: true },
-      { time: "11-23–26", text: "董事会一致恢复黄仁勋全部职务，股价单日大涨 31.48%；标普将其评级列入负面观察，定于 12-03 参院作证。", hot: true }
+      { time: "11-23–26", text: "董事会一致恢复黄仁勋全部职务，股价单日大涨 31.48%；评级机构随即提示信用风险，黄仁勋定于 12 月初在参院作证。", hot: true }
     ],
     factSources: [
       { label: "NVIDIA 复职公告", url: "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director" },
       { label: "NVIDIA 离任公告", url: "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition" },
-      { label: "CNBC 11-13", url: "https://www.cnbc.com/2026/11/13/nvidia-stock-jensen-affair-ai.html" },
-      { label: "加州司法部 11-20", url: "https://oag.ca.gov/news/press-releases/attorney-general-bonta-serves-investigative-subpoena-nvidia" }
+      { label: "CNBC", url: "https://www.cnbc.com/2026/11/13/nvidia-stock-jensen-affair-ai.html" },
+      { label: "加州司法部公告", url: "https://oag.ca.gov/news/press-releases/attorney-general-bonta-serves-investigative-subpoena-nvidia" }
     ],
     views: {
-      bull: "穆迪维持原评级，认为复职迅速消除领导真空；司法部未对本人立案，下一代 Rubin 芯片量产与需求无损。",
-      bear: "标普警示高管监督薄弱且缺继任安排；英伟达为下游 $5,000 亿算力融资提供 25% 担保，若降级将推高全行业建集群成本。"
+      bull: "部分机构认为黄仁勋复职迅速消除了领导层真空，且司法部未对其本人立案，下一代 Rubin 芯片量产与下游算力需求并未受损。",
+      bear: "也有机构警示公司高管监督薄弱且缺乏继任安排；由于英伟达为下游数千亿美元算力建设提供担保，若其信用受损将抬高全行业建集群成本。"
     },
     viewSources: [
-      { label: "TechCrunch (S&P 11-25)", url: "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/" },
-      { label: "CNA / Reuters (Moody's)", url: "https://www.channelnewsasia.com/business/moodys-says-nvidias-huang-reinstatement-eases-uncertainty-ratings-unchanged-6582956" }
+      { label: "TechCrunch", url: "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/" },
+      { label: "CNA / Reuters", url: "https://www.channelnewsasia.com/business/moodys-says-nvidias-huang-reinstatement-eases-uncertainty-ratings-unchanged-6582956" }
     ]
   },
   {

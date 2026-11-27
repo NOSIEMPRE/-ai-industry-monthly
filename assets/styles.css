@@ -912,8 +912,8 @@ h1, h2, h3, h4 {
 
 /* ========================= Part Dividers (Carbon Brutalist Architectural Interlude) ========================= */
 .screen.part-divider {
-  min-height: 34vh;
-  padding: 64px max(32px, 4.5vw);
+  min-height: 22vh;
+  padding: 46px max(32px, 4.5vw);
   background: var(--slate-dark);
   color: #FFFFFF;
   overflow: hidden;
@@ -959,7 +959,7 @@ h1, h2, h3, h4 {
 
 .part-head-row {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 28px;
 }
 

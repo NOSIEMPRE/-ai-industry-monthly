@@ -122,10 +122,9 @@
     return (
       '<section class="screen" id="' + esc(ex.id) + '" data-nav-group="01 本月核心研判" data-nav-code="' + esc(ex.code) + '" data-nav-title="本月核心研判">' +
         '<div class="wrap">' +
-          renderEyebrow(ex.code, ["EXECUTIVE TAKEAWAYS", "四条收敛主线"], "2026.11") +
+          renderEyebrow(ex.code, ["本月核心研判"], "2026.11") +
           '<h2 class="slide-title reveal"><span>' + esc(ex.title) + "</span></h2>" +
-          '<p class="why-line reveal d1">' + esc(ex.subtitle) + "</p>" +
-          '<div class="exec-grid reveal d2">' + cardsHtml + "</div>" +
+          '<div class="exec-grid reveal d1">' + cardsHtml + "</div>" +
         "</div>" +
       "</section>"
     );
@@ -135,13 +134,11 @@
     return (
       '<section class="screen part-divider" id="' + esc(part.id) + '" data-nav-group="' + esc(part.code + " " + part.title) + '" data-nav-code="' + esc(part.code) + '" data-nav-title="' + esc(part.title) + '">' +
         '<div class="wrap">' +
-          '<div class="part-kicker reveal">SECTION // ' + esc(part.code) + " — 2026.11</div>" +
           '<div class="part-head-row">' +
             '<div class="part-code reveal">' + esc(part.code) + "</div>" +
             '<div class="part-title-wrap">' +
               '<h2 class="reveal d1">' + esc(part.title) + "</h2>" +
               '<div class="part-rule reveal d1" aria-hidden="true"></div>' +
-              '<p class="reveal d2">' + esc(part.intro) + "</p>" +
             "</div>" +
           "</div>" +
         "</div>" +
@@ -167,7 +164,7 @@
     return (
       '<section class="screen" id="' + esc(item.id) + '" data-nav-group="M 宏观环境" data-nav-code="' + esc(item.code) + '" data-nav-title="' + esc(item.title) + '">' +
         '<div class="wrap">' +
-          renderEyebrow(item.code, item.tags, item.date) +
+          renderEyebrow(item.code, item.tags, "") +
           '<h2 class="slide-title reveal"><span>' + esc(item.title) + "</span></h2>" +
           renderVerdict(item.verdict, "核心判断") +
           '<div class="chart-card reveal d2">' +
@@ -175,8 +172,8 @@
             '<p class="chart-caption">' + esc(item.chartCaption) + "</p>" +
           "</div>" +
           '<div class="two-col reveal d3">' +
-            '<div class="card"><div class="card-head"><h3>' + esc(item.factsTitle) + "</h3><small>MACRO FACTS</small></div>" + renderBulletList(item.facts) + "</div>" +
-            '<div class="card blue-wash"><div class="card-head"><h3>' + esc(item.impactTitle) + "</h3><small>AI IMPACT</small></div>" + renderBulletList(item.impacts) + "</div>" +
+            '<div class="card"><div class="card-head"><h3>' + esc(item.factsTitle) + "</h3></div>" + renderBulletList(item.facts) + "</div>" +
+            '<div class="card blue-wash"><div class="card-head"><h3>' + esc(item.impactTitle) + "</h3></div>" + renderBulletList(item.impacts) + "</div>" +
           "</div>" +
           renderSources(item.sources) +
         "</div>" +
@@ -226,26 +223,26 @@
     return (
       '<section class="screen" id="' + esc(item.id) + '" data-nav-group="A 本月重点新闻" data-nav-code="' + esc(item.code) + '" data-nav-title="' + esc(item.title) + '">' +
         '<div class="wrap">' +
-          renderEyebrow(item.code, item.tags, item.date) +
+          renderEyebrow(item.code, item.tags, "") +
           '<h2 class="slide-title reveal"><span>' + esc(item.title) + "</span></h2>" +
           renderVerdict(item.why, "核心判断") +
           '<div class="news-bg-strip reveal d1">' +
-            '<span class="news-bg-label">背景 // BG</span>' +
+            '<span class="news-bg-label">背景</span>' +
             "<p>" + esc(item.background) + "</p>" +
           "</div>" +
           '<div class="news-body-grid reveal d2">' +
             '<div class="card" style="display:flex;flex-direction:column">' +
-              '<div class="card-head"><h3>事实与时间线</h3><small>FACTS &amp; VISUAL</small></div>' +
+              '<div class="card-head"><h3>事实与时间线</h3></div>' +
               liveQuoteHtml +
               microChartHtml +
               '<div class="timeline">' + tlHtml + "</div>" +
               renderSources(item.factSources) +
             "</div>" +
             '<div class="card" style="display:flex;flex-direction:column">' +
-              '<div class="card-head"><h3>市场看法</h3><small>BULL / BEAR</small></div>' +
+              '<div class="card-head"><h3>市场看法</h3></div>' +
               '<div class="view-stack">' +
-                '<div class="view-card bull"><span class="view-badge">BULL CASE · 偏乐观</span><div>' + esc(item.views.bull) + "</div></div>" +
-                '<div class="view-card bear"><span class="view-badge">BEAR CASE · 偏谨慎</span><div>' + esc(item.views.bear) + "</div></div>" +
+                '<div class="view-card bull"><span class="view-badge">偏乐观视角</span><div>' + esc(item.views.bull) + "</div></div>" +
+                '<div class="view-card bear"><span class="view-badge">偏谨慎视角</span><div>' + esc(item.views.bear) + "</div></div>" +
               "</div>" +
               renderSources(item.viewSources) +
             "</div>" +
@@ -282,7 +279,7 @@
             '<p class="chart-caption">' + esc(item.chartCaption) + "</p>" +
           "</div>" +
           '<div class="card reveal d3">' +
-            '<div class="card-head"><h3>' + esc(item.chinaContextTitle) + "</h3><small>CHINA CONTEXT</small></div>" +
+            '<div class="card-head"><h3>' + esc(item.chinaContextTitle) + "</h3></div>" +
             '<div class="china-strip">' + chinaHtml + "</div>" +
             renderSources(item.sources) +
           "</div>" +
@@ -568,10 +565,9 @@
     return (
       '<section class="screen" id="' + esc(tp.id) + '" data-nav-group="E 重点议题" data-nav-code="' + esc(tp.code) + '" data-nav-title="本月重点研讨议题">' +
         '<div class="wrap">' +
-          renderEyebrow(tp.code, ["SEMINAR TOPICS", "商业趋势 · 产品形态 · 产业路径"], "") +
+          renderEyebrow(tp.code, ["重点研讨议题"], "") +
           '<h2 class="slide-title reveal"><span>' + esc(tp.title) + "</span></h2>" +
-          '<p class="why-line reveal d1">' + esc(tp.subtitle) + "</p>" +
-          '<div class="topics-grid reveal d2">' + cards + "</div>" +
+          '<div class="topics-grid reveal d1">' + cards + "</div>" +
         "</div>" +
       "</section>"
     );

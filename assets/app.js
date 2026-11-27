@@ -547,7 +547,7 @@
     .join("");
   document.getElementById("ticker").innerHTML = tickerHtml + tickerHtml;
 
-  /* ==================== Build Hidden Retractable Side Drawer ==================== */
+  /* ==================== Build Hidden Retractable Side Drawer (Merged Section Headers) ==================== */
   var screens = [].slice.call(document.querySelectorAll(".screen"));
   var drawerBody = document.getElementById("drawerBody");
   var groups = [];
@@ -555,30 +555,48 @@
 
   screens.forEach(function (sec) {
     var g = sec.getAttribute("data-nav-group") || "目录";
-    if (!groupIndex[g]) {
-      groupIndex[g] = { label: g, items: [] };
-      groups.push(groupIndex[g]);
-    }
-    groupIndex[g].items.push({
+    var isDivider = sec.classList.contains("part-divider") || sec.id === "cover" || sec.id === "e1";
+    var item = {
       id: sec.id,
       code: sec.getAttribute("data-nav-code") || "",
       title: sec.getAttribute("data-nav-title") || ""
-    });
+    };
+    if (!groupIndex[g]) {
+      groupIndex[g] = { label: g, head: null, children: [] };
+      groups.push(groupIndex[g]);
+    }
+    if (isDivider && !groupIndex[g].head) {
+      groupIndex[g].head = item;
+    } else {
+      groupIndex[g].children.push(item);
+    }
   });
 
   drawerBody.innerHTML = groups
     .map(function (grp) {
-      var links = grp.items
-        .map(function (it) {
-          return (
-            '<a class="drawer-link" href="#' + esc(it.id) + '" data-target="' + esc(it.id) + '">' +
-              '<span class="drawer-code">' + esc(it.code) + "</span>" +
-              '<span class="drawer-text">' + esc(it.title) + "</span>" +
-            "</a>"
-          );
-        })
-        .join("");
-      return '<div><div class="drawer-group-label">' + esc(grp.label) + "</div>" + links + "</div>";
+      var head = grp.head || grp.children[0];
+      var headHtml =
+        '<a class="drawer-group-link" href="#' + esc(head.id) + '" data-target="' + esc(head.id) + '">' +
+          '<span class="drawer-group-badge">' + esc(head.code) + "</span>" +
+          '<span class="drawer-text">' + esc(head.title) + "</span>" +
+        "</a>";
+
+      var childrenHtml = grp.children.length
+        ? '<div class="drawer-children">' +
+            grp.children
+              .map(function (it) {
+                return (
+                  '<a class="drawer-link" href="#' + esc(it.id) + '" data-target="' + esc(it.id) + '">' +
+                    '<span class="drawer-code">' + esc(it.code) + "</span>" +
+                    '<span class="drawer-text">' + esc(it.title) + "</span>" +
+                  "</a>"
+                );
+              })
+              .join("") +
+          "</div>"
+        : "";
+
+      return '<div class="drawer-group">' + headHtml + childrenHtml + "</div>";
     })
     .join("");
 
@@ -619,7 +637,7 @@
   /* ==================== Deck Counter, Progress, Scrollspy & Reveal ==================== */
   var pc = document.getElementById("pc");
   var progressBar = document.getElementById("progress");
-  var drawerLinks = [].slice.call(drawerBody.querySelectorAll(".drawer-link"));
+  var drawerLinks = [].slice.call(drawerBody.querySelectorAll("a[data-target]"));
   var curIndex = 0;
 
   function pad(n) {

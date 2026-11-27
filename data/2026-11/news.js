@@ -67,6 +67,36 @@ window.MONTHLY_DATA.news = [
   {
     id: "a3",
     code: "A3",
+    tags: ["治理震荡", "关键人物风险"],
+    date: "11-09 至 11-26",
+    title: "英伟达治理震荡：黄仁勋辞任 11 日后复职，标普将评级列入负面观察",
+    why: "英伟达财报基本面依旧强劲（Q3 营收 $1,158 亿、同比 +103%），但 11 天离任又复职暴露出极端关键人物依赖与治理短板；标普负面观察更揭示其对 $5,000 亿 AI 算力融资担保链的系统性外溢风险。",
+    background: "事件导火索源于美国国会及媒体对新加坡算力商 Megaspeed 涉嫌向中国转运受控芯片及黄仁勋私人关系的审查。同期英伟达刚发布 Q3 营收同比翻倍的强劲财报，但治理危机与监管调查引发剧烈估值波动。",
+    chartType: "a3Nvidia",
+    timeline: [
+      { time: "11-09", text: "英伟达董事会宣布启动独立调查（涉外国情报与芯片转运报道），黄仁勋致信员工致歉并承诺配合。", hot: false },
+      { time: "11-12", text: "公司宣布黄仁勋辞去总裁、CEO 及董事职务，CFO Colette Kress 任临时 CEO；股价连跌六周，较 10 月初市值蒸发约 1.7 万亿美元。", hot: true },
+      { time: "11-20–21", text: "加州总检察长向英伟达送达调查传票；媒体曝 SEC 聚焦其会计处理，股价周五单日收跌 14.01%。", hot: true },
+      { time: "11-23–26", text: "董事会一致表决恢复黄仁勋全部职务，股价当日大涨 31.48%；标普随即将 AA 评级列入负面观察，穆迪维持 Aa1；黄仁勋定于 12 月 3 日在参院公开作证。", hot: true }
+    ],
+    factSources: [
+      { label: "NVIDIA 复职公告", url: "https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director" },
+      { label: "NVIDIA 离任公告", url: "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition" },
+      { label: "CNBC 11-13", url: "https://www.cnbc.com/2026/11/13/nvidia-stock-jensen-affair-ai.html" },
+      { label: "加州司法部 11-20", url: "https://oag.ca.gov/news/press-releases/attorney-general-bonta-serves-investigative-subpoena-nvidia" }
+    ],
+    views: {
+      bull: "穆迪与部分机构投资人（Altimeter、Atreides）认为黄仁勋复职迅速消除了战略执行与领导层真空风险，且司法部目前未对其本人立案，Rubin 量产与下游算力需求基本面未受损。",
+      bear: "标普警示此次反复暴露高管监督薄弱与缺乏继任规划；英伟达为高盛、Apollo 等 $5,000 亿 AI 基建融资提供 25% 担保，若评级下调将直接推高下游新云融资成本并叠加国会听证与反垄断监管压力。"
+    },
+    viewSources: [
+      { label: "TechCrunch (S&P 11-25)", url: "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/" },
+      { label: "CNA / Reuters (Moody's)", url: "https://www.channelnewsasia.com/business/moodys-says-nvidias-huang-reinstatement-eases-uncertainty-ratings-unchanged-6582956" }
+    ]
+  },
+  {
+    id: "a4",
+    code: "A4",
     tags: ["算力信用", "成本传导"],
     date: "10 月中至 11 月",
     title: "新云债务承压：CoreWeave 债券收益率突破 16%",
@@ -92,10 +122,10 @@ window.MONTHLY_DATA.news = [
     ]
   },
   {
-    id: "a4",
-    code: "A4",
+    id: "a5",
+    code: "A5",
     tags: ["出口管制", "跨境算力"],
-    date: "11-13 至 11-24",
+    date: "11-13 至 11-27",
     title: "美国收紧东南亚算力出口与海外远程使用管制",
     why: "海外云端租卡通道实质性封堵，国内前沿预训练短期弹性受阻，但倒逼国产算力超节点与异构推理从“备选方案”转为刚需。",
     background: "自 2024 年起美国商务部持续调查东南亚云商 Megaspeed；2025 年 6 月英伟达停供，7 月马来西亚要求高性能芯片再出口须获许可。11 月 BIS 正式封堵“海外远程云租用”通道。",
@@ -104,7 +134,7 @@ window.MONTHLY_DATA.news = [
       { time: "11-16", text: "BIS 发布规则：限制中国等总部企业远程使用海外美制先进芯片，并对印尼、马来、新加坡、泰国、巴西增设许可。", hot: true },
       { time: "11-17–18", text: "美司法部与商务部通报 Megaspeed 调查；媒体报道其通过马来西亚数据中心提供远程算力接入。", hot: false },
       { time: "11-19", text: "远程使用限制正式生效；同日报道月之暗面取消一笔约 1.5 亿美元、经印尼租用 B300 的合约。", hot: true },
-      { time: "11-23–24", text: "美国将 7 家东南亚实体（含 Megaspeed 关联方及阿里新加坡子公司 Apex）列入清单；阿里回应称将通过法律途径维权。", hot: true }
+      { time: "11-23–27", text: "美将 7 家东南亚实体（含 Megaspeed 关联方及阿里新加坡子公司 Apex）列入清单；11-27 媒体称英伟达要求戴尔等暂停向东南亚四国发运服务器并收紧对华租卡供货标准。", hot: true }
     ],
     factSources: [
       { label: "U.S. BIS 官网", url: "https://www.bis.gov/" },
@@ -119,8 +149,8 @@ window.MONTHLY_DATA.news = [
     ]
   },
   {
-    id: "a5",
-    code: "A5",
+    id: "a6",
+    code: "A6",
     tags: ["中国市场", "大额私募与港股"],
     date: "10 月底至 11 月",
     title: "中国大模型加速大额私募与港股资本化",
@@ -129,7 +159,7 @@ window.MONTHLY_DATA.news = [
     chartType: "a5ChinaCap",
     timeline: [
       { time: "11 月初", text: "Crunchbase 月报披露 DeepSeek 完成 159 亿美元融资，工商变更显示新增 31 名股东（媒体称含腾讯、中国移动、宁德时代）。", hot: true },
-      { time: "11-13", text: "市场消息称月之暗面正评估 2027 年初赴港上市，传闻目标估值约 500 亿美元。", hot: true },
+      { time: "11-13", text: "市场消息称月之暗面正评估 2027 年初赴港上市，传闻目标估值约 500 亿美元，并注销开曼控股架构将股权迁入境内主体。", hot: true },
       { time: "行业格局", text: "国内头部大模型从纯财务 VC 驱动转向“互联网大厂 + 运营商 + 产业巨头 + 港股 18C”复合输血。", hot: false }
     ],
     factSources: [
@@ -139,7 +169,7 @@ window.MONTHLY_DATA.news = [
     ],
     views: {
       bull: "互联网、运营商与产业龙头直接入股，不仅锁定长期低成本资金，更为模型落地带来了真实的政企与行业场景。",
-      bear: "在海外算力远程租赁受限（见 A4）的背景下，巨额账面资金能否高效转化为先进训练算力，仍是决定迭代速度的核心不确定性。"
+      bear: "在海外算力远程租赁受限（见 A5）的背景下，巨额账面资金能否高效转化为先进训练算力，仍是决定迭代速度的核心不确定性。"
     },
     viewSources: [
       { label: "Crunchbase News", url: "https://news.crunchbase.com/venture/october-2026-global-startup-funding-strong-china-deepseek/" },

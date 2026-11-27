@@ -305,34 +305,58 @@ window.MONTHLY_CHARTS = {
 
   a4Impact: function () {
     return `
-      <svg viewBox="0 0 560 94" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="美国东南亚算力出口管制传导链路">
-        <rect width="560" height="94" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
-        <g transform="translate(14, 16)">
-          <rect width="120" height="62" rx="8" fill="#FFFFFF" stroke="#CBD5E1"/>
-          <text x="10" y="21" font-size="9.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#1D4ED8">11-16 规则</text>
-          <text x="10" y="40" font-size="12" font-weight="800" fill="#0F172A">5 国增设许可</text>
-          <text x="10" y="54" font-size="9.5" fill="#64748B">马/新/印/泰/巴</text>
+      <svg viewBox="0 0 920 214" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="美国东南亚与远程算力管制传导链及对中国产业链的短期与中长期影响">
+        <rect width="920" height="214" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+
+        <!-- Row 1: 4-step self-explanatory event chain -->
+        <text x="20" y="24" font-size="11" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">管制升级路径</text>
+
+        <g transform="translate(20, 34)">
+          <rect width="198" height="62" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+          <text x="12" y="20" font-size="10" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#1D4ED8">STEP 01 · 出口扩围</text>
+          <text x="12" y="39" font-size="13" font-weight="800" fill="#0A0F1C">东南亚多国增设许可</text>
+          <text x="12" y="54" font-size="10.5" fill="#64748B">覆盖马来、新加坡、印尼、泰国等</text>
         </g>
-        <text x="143" y="51" font-size="14" font-weight="800" fill="#2563EB">→</text>
-        <g transform="translate(158, 16)">
-          <rect width="124" height="62" rx="8" fill="#EFF6FF" stroke="#93C5FD"/>
-          <text x="10" y="21" font-size="9.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#1D4ED8">11-19 生效</text>
-          <text x="10" y="40" font-size="12" font-weight="800" fill="#0F172A">远程云算力纳管</text>
-          <text x="10" y="54" font-size="9.5" fill="#475569">封堵海外租卡</text>
+        <text x="226" y="69" font-size="14" font-weight="800" fill="#1D4ED8">→</text>
+
+        <g transform="translate(246, 34)">
+          <rect width="204" height="62" rx="4" fill="#EFF6FF" stroke="#93C5FD"/>
+          <text x="12" y="20" font-size="10" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#1D4ED8">STEP 02 · 远程限制</text>
+          <text x="12" y="39" font-size="13" font-weight="800" fill="#0A0F1C">封堵海外云端租卡</text>
+          <text x="12" y="54" font-size="10.5" fill="#475569">限制远程调用海外美制芯片</text>
         </g>
-        <text x="291" y="51" font-size="14" font-weight="800" fill="#2563EB">→</text>
-        <g transform="translate(306, 16)">
-          <rect width="114" height="62" rx="8" fill="#FFFFFF" stroke="#CBD5E1"/>
-          <text x="10" y="21" font-size="9.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F296B">直接冲击</text>
-          <text x="10" y="40" font-size="12" font-weight="800" fill="#0F172A">$150M 取消</text>
-          <text x="10" y="54" font-size="9.5" fill="#64748B">传月之暗面 B300</text>
+        <text x="458" y="69" font-size="14" font-weight="800" fill="#1D4ED8">→</text>
+
+        <g transform="translate(478, 34)">
+          <rect width="200" height="62" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+          <text x="12" y="20" font-size="10" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F296B">STEP 03 · 租约取消</text>
+          <text x="12" y="39" font-size="13" font-weight="800" fill="#0A0F1C">海外算力租约受阻</text>
+          <text x="12" y="54" font-size="10.5" fill="#64748B">月之暗面被曝取消 $1.5 亿租约</text>
         </g>
-        <text x="429" y="51" font-size="14" font-weight="800" fill="#2563EB">→</text>
-        <g transform="translate(444, 16)">
-          <rect width="102" height="62" rx="8" fill="#1D4ED8"/>
-          <text x="10" y="21" font-size="9.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#BFDBFE">11-23 执法</text>
-          <text x="10" y="40" font-size="12" font-weight="800" fill="#FFFFFF">7 家实体清单</text>
-          <text x="10" y="54" font-size="9.5" fill="#DBEAFE">含 Megaspeed/Apex</text>
+        <text x="686" y="69" font-size="14" font-weight="800" fill="#1D4ED8">→</text>
+
+        <g transform="translate(706, 34)">
+          <rect width="194" height="62" rx="4" fill="#0F296B"/>
+          <text x="12" y="20" font-size="10" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#93C5FD">STEP 04 · 实体清单</text>
+          <text x="12" y="39" font-size="13" font-weight="800" fill="#FFFFFF">拉黑 7 家东南亚云商</text>
+          <text x="12" y="54" font-size="10.5" fill="#DBEAFE">含 Megaspeed 及阿里关联方</text>
+        </g>
+
+        <!-- Row 2: Impact on China AI Industry (Short-term Pressure vs Long-term Beneficiaries) -->
+        <g transform="translate(20, 114)">
+          <rect width="430" height="82" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+          <rect x="0" y="0" width="4" height="82" fill="#475569"/>
+          <text x="16" y="22" font-size="11.5" font-weight="800" fill="#0A0F1C">短期承压环节（对中国产业直接冲击）</text>
+          <text x="16" y="44" font-size="11" fill="#334155">· <tspan font-weight="700" fill="#0A0F1C">前沿大模型研发商：</tspan>海外高阶算力租用受阻，预训练弹性下降</text>
+          <text x="16" y="65" font-size="11" fill="#334155">· <tspan font-weight="700" fill="#0A0F1C">跨境算力中介与海外云托管：</tspan>东南亚转口通道收紧，合规风险激增</text>
+        </g>
+
+        <g transform="translate(470, 114)">
+          <rect width="430" height="82" rx="4" fill="#EFF6FF" stroke="#93C5FD"/>
+          <rect x="0" y="0" width="4" height="82" fill="#1D4ED8"/>
+          <text x="16" y="22" font-size="11.5" font-weight="800" fill="#1D4ED8">中长期利好环节（倒逼国产算力加速本土化）</text>
+          <text x="16" y="44" font-size="11" fill="#1E293B">· <tspan font-weight="700" fill="#0F296B">国产 AI 芯片厂商：</tspan>华为昇腾、寒武纪、平头哥等从备选转为刚需</text>
+          <text x="16" y="65" font-size="11" fill="#1E293B">· <tspan font-weight="700" fill="#0F296B">国内智算基建与推理栈：</tspan>运营商集群、超节点互联与国产推理软件受益</text>
         </g>
       </svg>
     `;

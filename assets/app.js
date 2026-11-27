@@ -146,13 +146,12 @@
     );
   }
 
-  function renderCollapsible(label, hint, innerHtml) {
+  function renderCollapsible(label, innerHtml) {
     return (
       '<div class="fold-block reveal d2" data-fold="closed">' +
         '<button type="button" class="fold-trigger" aria-expanded="false">' +
           '<span class="fold-icon" aria-hidden="true">+</span>' +
           '<span class="fold-label">' + esc(label) + "</span>" +
-          (hint ? '<span class="fold-hint">' + esc(hint) + "</span>" : "") +
           '<span class="fold-state">展开</span>' +
         "</button>" +
         '<div class="fold-panel">' +
@@ -194,7 +193,7 @@
             '<div class="chart-box">' + chartSvg + "</div>" +
             '<p class="chart-caption">' + esc(item.chartCaption) + "</p>" +
           "</div>" +
-          renderCollapsible("深度拆解", item.factsTitle + " · " + item.impactTitle + " · 一手来源", detailHtml) +
+          renderCollapsible("深度拆解", detailHtml) +
         "</div>" +
       "</section>"
     );
@@ -245,7 +244,7 @@
           '<h2 class="slide-title reveal"><span>' + esc(item.title) + "</span></h2>" +
           renderVerdict(item.why, "核心判断") +
           microChartHtml +
-          renderCollapsible("事件脉络与各方观点", "背景 · 关键时间线 · 多空观点 · 一手来源", detailHtml) +
+          renderCollapsible("事件脉络与各方观点", detailHtml) +
         "</div>" +
       "</section>"
     );
@@ -284,7 +283,7 @@
             '<div class="chart-box">' + chartSvg + "</div>" +
             '<p class="chart-caption">' + esc(item.chartCaption) + "</p>" +
           "</div>" +
-          renderCollapsible("报告细项与国内对照", "增量数据 · " + item.chinaContextTitle + " · 原文链接", detailHtml) +
+          renderCollapsible("报告细项与国内对照", detailHtml) +
         "</div>" +
       "</section>"
     );
@@ -330,7 +329,7 @@
             '<div class="card"><div class="card-head"><h3>海外 11 月大额股权与 IPO 分布</h3></div><div class="chart-box">' + usChart + "</div></div>" +
             '<div class="card"><div class="card-head"><h3>中国 11 月硬科技与 AI4S 分布</h3></div><div class="chart-box">' + cnChart + "</div></div>" +
           "</div>" +
-          renderCollapsible("四维趋势拆解", "海外资金 · 中国格局 · 巨头并购 · 借贷与供给风险", detailHtml) +
+          renderCollapsible("四维趋势拆解", detailHtml) +
         "</div>" +
       "</section>"
     );
@@ -603,6 +602,17 @@
   ].join("");
 
   document.getElementById("deck").innerHTML = deckHtml;
+
+  // Trigger choreographed cover-to-deck opening unfold on first paint
+  if (prefersReducedMotion) {
+    document.body.classList.add("deck-ready");
+  } else {
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        document.body.classList.add("deck-ready");
+      });
+    });
+  }
 
   /* ==================== Dynamic Chronological Topbar Ticker (11-01 -> 11-27) ==================== */
   function parseDateKey(str) {

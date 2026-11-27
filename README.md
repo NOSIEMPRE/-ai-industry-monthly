@@ -115,4 +115,5 @@ git remote add origin <你的 GitHub 仓库地址>
 git push -u origin main
 ```
 
-- **远程仓库地址**：`<创建仓库后替换此处>`
+- **远程仓库地址**：`https://github.com/NOSIEMPRE/-ai-industry-monthly.git`
+- **GitHub Pages 在线访问**：`https://nosiempre.github.io/-ai-industry-monthly/`（在仓库 `Settings → Pages` 开启 `main / (root)` 后生效）

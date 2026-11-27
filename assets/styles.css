@@ -2542,6 +2542,140 @@ h1, h2, h3, h4 {
   .dot-rail { display: none; }
 }
 
+/* ========================= Kinetic Collapsible Progressive-Disclosure Drawers ========================= */
+.fold-all-btn {
+  flex: none;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 2px;
+  border: 1.5px solid var(--ink);
+  background: #FFFFFF;
+  color: var(--ink);
+  font: 700 11.5px/1 var(--font-body);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.16s var(--ease), box-shadow 0.16s var(--ease), background 0.16s var(--ease), color 0.16s var(--ease);
+}
+
+.fold-all-btn:hover,
+.fold-all-btn.active {
+  background: var(--ink);
+  color: #FFFFFF;
+  transform: translate(-1.5px, -1.5px);
+  box-shadow: 2.5px 2.5px 0 var(--blue-bright);
+}
+
+.fold-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.fold-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: 2px;
+  border: 1.5px solid var(--line-strong);
+  background: #FFFFFF;
+  color: var(--ink);
+  font-family: var(--font-body);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease), border-color 0.18s var(--ease), background 0.18s var(--ease);
+}
+
+.fold-trigger:hover {
+  border-color: var(--ink);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--blue-bright);
+}
+
+.fold-block[data-fold="open"] .fold-trigger {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #FFFFFF;
+}
+
+.fold-block[data-fold="open"] .fold-trigger:hover {
+  transform: none;
+  box-shadow: 3px 3px 0 var(--blue-bright);
+}
+
+.fold-icon {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 2px;
+  background: var(--ink);
+  color: #FFFFFF;
+  font: 700 15px/1 var(--font-mono);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), transform 0.28s var(--ease);
+}
+
+.fold-block[data-fold="open"] .fold-icon {
+  background: var(--blue-bright);
+  color: #FFFFFF;
+}
+
+.fold-label {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.fold-hint {
+  font: 500 12px/1.3 var(--font-mono);
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fold-block[data-fold="open"] .fold-hint {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.fold-state {
+  margin-left: auto;
+  flex: none;
+  font: 700 11.5px/1 var(--font-mono);
+  letter-spacing: 0.06em;
+  color: var(--blue-bright);
+  white-space: nowrap;
+}
+
+.fold-block[data-fold="open"] .fold-state {
+  color: #93C5FD;
+}
+
+.fold-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition: grid-template-rows 0.42s var(--ease), opacity 0.32s var(--ease);
+}
+
+.fold-block[data-fold="open"] .fold-panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.fold-inner {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fold-block[data-fold="open"] .fold-inner {
+  padding-top: 16px;
+}
+
 /* ========================= Responsive Breakpoints ========================= */
 @media (max-width: 1180px) {
   .agenda-grid { grid-template-columns: repeat(3, 1fr); }
@@ -2564,6 +2698,14 @@ h1, h2, h3, h4 {
     font-size: 11.5px;
     gap: 5px;
     height: 30px;
+  }
+  .fold-all-btn {
+    padding: 0 7px;
+    font-size: 11px;
+    height: 26px;
+  }
+  .fold-hint {
+    display: none;
   }
   .counter {
     gap: 4px;

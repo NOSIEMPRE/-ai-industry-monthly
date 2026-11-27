@@ -41,7 +41,7 @@ window.MONTHLY_CHARTS = {
           <text x="174" y="43" font-size="13" font-weight="800" fill="#2563EB">→</text>
           <rect x="196" y="27" width="176" height="24" rx="6" fill="#1D4ED8"/>
           <text x="284" y="43" text-anchor="middle" font-size="11" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#FFFFFF">12月预期 4.00–4.25%</text>
-          <text x="14" y="67" font-size="9.8" fill="#64748B">10 月 FOMC 10–2 票决（2 票赞成加息）· 纽约联储提示 2027 进一步加息风险</text>
+          <text x="14" y="67" font-size="9.8" fill="#64748B">10 月利率维持高位 · 市场预期 12 月重启加息，2027 仍存收紧可能</text>
         </g>
 
         <!-- Vertical divider -->
@@ -152,60 +152,44 @@ window.MONTHLY_CHARTS = {
   /* ==================== PART A: NEWS VISUAL MICRO-CHARTS (Replacing Bulky Number Cards) ==================== */
 
   a1Valuation: function () {
-    // Price axis mapped linearly from $70 (x=308) to $116 (x=542) -> 5.087px per dollar
     return `
-      <svg viewBox="0 0 560 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anthropic IPO 估值跃迁与破发价格区间">
-        <rect width="560" height="128" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
-        <!-- Left: Valuation leap -->
-        <text x="16" y="22" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">10 个月估值跃迁 (≈3.9×)</text>
-        <text x="16" y="45" font-size="11" fill="#475569">年初私募</text>
-        <rect x="76" y="34" width="142" height="14" rx="4" fill="#E2E8F0"/>
-        <rect class="svg-bar-grow" x="76" y="34" width="36" height="14" rx="4" fill="#94A3B8"/>
-        <text x="224" y="45" font-size="11" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#475569">$380B</text>
+      <svg viewBox="0 0 880 152" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anthropic 估值跃迁与上市首周节点">
+        <rect width="880" height="152" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <!-- Left: Valuation Jump -->
+        <text x="24" y="28" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">10 个月估值跃迁（≈3.9×）</text>
+        <text x="24" y="62" font-size="12" fill="#475569">年初私募</text>
+        <rect class="svg-bar-grow" x="98" y="49" width="76" height="16" rx="3" fill="#94A3B8"/>
+        <text x="184" y="62" font-size="12" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#475569">$380B</text>
 
-        <text x="16" y="71" font-size="11" font-weight="700" fill="#0F172A">IPO 发行</text>
-        <rect x="76" y="60" width="142" height="14" rx="4" fill="#DBEAFE"/>
-        <rect class="svg-bar-grow" style="transition-delay:0.1s" x="76" y="60" width="142" height="14" rx="4" fill="#1D4ED8"/>
-        <text x="224" y="71" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#1D4ED8">≈$1.5T</text>
+        <text x="24" y="96" font-size="12" font-weight="700" fill="#0F172A">上市估值</text>
+        <rect class="svg-bar-grow" style="transition-delay:0.1s" x="98" y="83" width="248" height="16" rx="3" fill="#1D4ED8"/>
+        <text x="356" y="96" font-size="12.5" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#1D4ED8">≈$1.5T</text>
 
-        <text x="16" y="102" font-size="10.5" fill="#64748B">募资额对比：Anthropic <tspan font-weight="800" fill="#1D4ED8">$81.3B</tspan> &gt; SpaceX 6月 <tspan font-weight="700" fill="#475569">$75B</tspan></text>
+        <text x="24" y="130" font-size="11" fill="#64748B">总募资对比：Anthropic <tspan font-weight="700" fill="#1D4ED8">$81.3B</tspan> &gt; SpaceX 6 月上市 <tspan font-weight="700" fill="#334155">$75B</tspan></text>
 
         <!-- Divider -->
-        <line x1="286" y1="16" x2="286" y2="112" stroke="#E2E8F0"/>
+        <line x1="440" y1="20" x2="440" y2="132" stroke="#E2E8F0"/>
 
-        <!-- Right: IPO Price Range Track ($70 -> $116) -->
-        <text x="302" y="22" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">首周股价区间与发行价基准 (USD)</text>
-        <!-- Below-IPO zone shading ($70-$83) -->
-        <rect x="308" y="60" width="66" height="16" rx="4" fill="#E2E8F0"/>
-        <line x1="308" y1="68" x2="542" y2="68" stroke="#CBD5E1" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- Right: IPO Week Key Milestones -->
+        <text x="466" y="28" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">上市首周关键节点（NASDAQ: ANT）</text>
 
-        <!-- Intraday low 75.61 (x=337) -->
-        <circle cx="337" cy="68" r="4" fill="#64748B"/>
-        <text x="330" y="92" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono,monospace" fill="#64748B">$75.6</text>
-        <text x="330" y="105" text-anchor="middle" font-size="9" fill="#94A3B8">盘中低</text>
+        <line x1="516" y1="82" x2="808" y2="82" stroke="#CBD5E1" stroke-width="2"/>
+        <line x1="516" y1="82" x2="662" y2="82" stroke="#1D4ED8" stroke-width="3"/>
 
-        <!-- IPO line $83 (x=374) -->
-        <line x1="374" y1="54" x2="374" y2="82" stroke="#0F172A" stroke-width="1.8" stroke-dasharray="2 2"/>
-        <text x="386" y="92" text-anchor="middle" font-size="10" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#0F172A">$83 发行</text>
+        <circle cx="516" cy="82" r="6.5" fill="#0F172A"/>
+        <text x="516" y="62" text-anchor="middle" font-size="13" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#0F172A">$83</text>
+        <text x="516" y="107" text-anchor="middle" font-size="11" fill="#334155" font-weight="600">11-18 发行价</text>
+        <text x="516" y="124" text-anchor="middle" font-size="10" fill="#64748B">高于市场此前指引</text>
 
-        <!-- Day 1 Close $97 (x=445) -->
-        <circle cx="445" cy="68" r="4" fill="#60A5FA"/>
-        <text x="445" y="54" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono,monospace" fill="#3B82F6">$97</text>
-        <text x="445" y="92" text-anchor="middle" font-size="9" fill="#64748B">首日收</text>
+        <circle cx="662" cy="82" r="6.5" fill="#1D4ED8"/>
+        <text x="662" y="62" text-anchor="middle" font-size="13" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#1D4ED8">+17%</text>
+        <text x="662" y="107" text-anchor="middle" font-size="11" fill="#1D4ED8" font-weight="700">11-19 首日挂牌</text>
+        <text x="662" y="124" text-anchor="middle" font-size="10" fill="#64748B">纳斯达克首日收涨</text>
 
-        <!-- Peak $115.1 (x=537) -->
-        <circle cx="534" cy="68" r="4" fill="#93C5FD"/>
-        <text x="528" y="54" text-anchor="middle" font-size="9.5" font-family="IBM Plex Mono,monospace" fill="#64748B">$115.1</text>
-        <text x="528" y="92" text-anchor="middle" font-size="9" fill="#64748B">高点</text>
-
-        <!-- Live/Latest Marker (default $81.91 -> x=368.6, dynamically updated by live quote fetcher) -->
-        <g id="antLiveMarker" transform="translate(368.6, 68)">
-          <circle r="7.5" fill="rgba(29, 78, 216, 0.2)"/>
-          <circle r="4.8" fill="#1D4ED8" stroke="#FFFFFF" stroke-width="1.5"/>
-          <text id="antLiveSvgText" y="-14" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#1D4ED8">$81.91</text>
-        </g>
-
-        <text x="302" y="118" font-size="9.2" fill="#94A3B8">灰区为破发区间（&lt;$83）；蓝点自动对接实时股价</text>
+        <circle cx="808" cy="82" r="6.5" fill="#FFFFFF" stroke="#0F296B" stroke-width="3"/>
+        <text x="808" y="62" text-anchor="middle" font-size="13" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#0F296B">&lt; $83</text>
+        <text x="808" y="107" text-anchor="middle" font-size="11" fill="#0F296B" font-weight="700">11-24 跌破发行价</text>
+        <text x="808" y="124" text-anchor="middle" font-size="10" fill="#64748B">上市第四个交易日</text>
       </svg>
     `;
   },
@@ -288,36 +272,33 @@ window.MONTHLY_CHARTS = {
 
   a3Cds: function () {
     return `
-      <svg viewBox="0 0 560 124" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CoreWeave 5年期 CDS 利差与利息缺口对比">
-        <rect width="560" height="124" rx="10" fill="#F8FAFC" stroke="#E2E8F0"/>
-        <!-- Left: CDS Spread comparison -->
-        <text x="16" y="22" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">5 年期 CDS 信用利差对比 (bp)</text>
-        <text x="16" y="47" font-size="11" font-weight="700" fill="#0F172A">CoreWeave</text>
-        <rect class="svg-bar-grow" x="92" y="36" width="154" height="14" rx="4" fill="#1D4ED8"/>
-        <text x="252" y="47" font-size="11" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#1D4ED8">1,289bp</text>
+      <svg viewBox="0 0 880 148" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CoreWeave 经营利润与利息支出倒挂及借贷成本飙升">
+        <rect width="880" height="148" rx="6" fill="#F8FAFC" stroke="#E2E8F0"/>
+        <!-- Left: Profit vs Interest -->
+        <text x="24" y="28" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">CoreWeave 单季经营利润 vs 利息支出（4× 倒挂）</text>
+        <text x="24" y="64" font-size="12" fill="#475569">经营利润</text>
+        <rect class="svg-bar-grow" x="98" y="51" width="66" height="16" rx="3" fill="#60A5FA"/>
+        <text x="174" y="64" font-size="12" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#1D4ED8">$2.07 亿</text>
 
-        <text x="16" y="73" font-size="11" fill="#475569">Oracle</text>
-        <rect class="svg-bar-grow" style="transition-delay:0.08s" x="92" y="62" width="38" height="14" rx="4" fill="#60A5FA"/>
-        <text x="136" y="73" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#475569">298bp</text>
+        <text x="24" y="98" font-size="12" font-weight="700" fill="#0F172A">利息支出</text>
+        <rect class="svg-bar-grow" style="transition-delay:0.1s" x="98" y="85" width="268" height="16" rx="3" fill="#0F296B"/>
+        <text x="376" y="98" font-size="12.5" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#0F296B">$8.46 亿</text>
 
-        <text x="16" y="99" font-size="11" fill="#475569">NVIDIA</text>
-        <rect class="svg-bar-grow" style="transition-delay:0.15s" x="92" y="88" width="18" height="14" rx="4" fill="#94A3B8"/>
-        <text x="116" y="99" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">139bp</text>
+        <text x="24" y="130" font-size="11" fill="#64748B">利息支出约为经营利润的 4.1 倍，借钱买卡的盈利模型明显承压</text>
 
-        <line x1="316" y1="16" x2="316" y2="108" stroke="#E2E8F0"/>
+        <line x1="452" y1="20" x2="452" y2="128" stroke="#E2E8F0"/>
 
-        <!-- Right: Operating profit vs Net Interest -->
-        <text x="332" y="22" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#64748B">单季利润 vs 净利息（总债 $51.6B）</text>
-        <text x="332" y="48" font-size="10.5" fill="#475569">经营利润</text>
-        <rect class="svg-bar-grow" style="transition-delay:0.1s" x="392" y="38" width="34" height="13" rx="4" fill="#60A5FA"/>
-        <text x="432" y="48" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#334155">$2.07亿</text>
+        <!-- Right: Cost Pressure -->
+        <text x="478" y="28" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#0F172A">中游算力借贷成本与产业传导</text>
+        <rect x="478" y="44" width="180" height="82" rx="4" fill="#FFFFFF" stroke="#CBD5E1"/>
+        <text x="494" y="66" font-size="11" fill="#64748B">长期借贷融资成本</text>
+        <text x="494" y="98" font-size="24" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#1D4ED8">&gt; 16%</text>
+        <text x="494" y="116" font-size="10.5" fill="#475569">显著高于科技巨头</text>
 
-        <text x="332" y="74" font-size="10.5" font-weight="700" fill="#0F172A">净利息支出</text>
-        <rect class="svg-bar-grow" style="transition-delay:0.18s" x="392" y="64" width="110" height="13" rx="4" fill="#0F296B"/>
-        <text x="508" y="74" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#0F296B">$8.46亿</text>
-
-        <rect x="332" y="90" width="212" height="22" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
-        <text x="438" y="105" text-anchor="middle" font-size="10.5" font-family="IBM Plex Mono,monospace" font-weight="700" fill="#1D4ED8">2032 债券收益率突破 &gt;16%</text>
+        <rect x="674" y="44" width="182" height="82" rx="4" fill="#EFF6FF" stroke="#BFDBFE"/>
+        <text x="690" y="66" font-size="11" fill="#1D4ED8" font-weight="700">2027 全球算力借贷预测</text>
+        <text x="690" y="98" font-size="24" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#0F296B">$685B</text>
+        <text x="690" y="116" font-size="10.5" fill="#334155">同比 +31% · 成本倒逼涨价</text>
       </svg>
     `;
   },

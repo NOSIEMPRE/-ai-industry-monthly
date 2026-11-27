@@ -146,6 +146,22 @@
     );
   }
 
+  function renderCollapsible(label, hint, innerHtml) {
+    return (
+      '<div class="fold-block reveal d2" data-fold="closed">' +
+        '<button type="button" class="fold-trigger" aria-expanded="false">' +
+          '<span class="fold-icon" aria-hidden="true">+</span>' +
+          '<span class="fold-label">' + esc(label) + "</span>" +
+          (hint ? '<span class="fold-hint">' + esc(hint) + "</span>" : "") +
+          '<span class="fold-state">展开</span>' +
+        "</button>" +
+        '<div class="fold-panel">' +
+          '<div class="fold-inner">' + innerHtml + "</div>" +
+        "</div>" +
+      "</div>"
+    );
+  }
+
   function renderMacroSlide(item) {
     var chartSvg = item.chartType && charts[item.chartType] ? charts[item.chartType]() : "";
 
@@ -161,6 +177,13 @@
       );
     };
 
+    var detailHtml =
+      '<div class="two-col">' +
+        '<div class="card"><div class="card-head"><h3>' + esc(item.factsTitle) + "</h3></div>" + renderBulletList(item.facts) + "</div>" +
+        '<div class="card blue-wash"><div class="card-head"><h3>' + esc(item.impactTitle) + "</h3></div>" + renderBulletList(item.impacts) + "</div>" +
+      "</div>" +
+      renderSources(item.sources);
+
     return (
       '<section class="screen" id="' + esc(item.id) + '" data-nav-group="M 宏观环境" data-nav-code="' + esc(item.code) + '" data-nav-title="' + esc(item.title) + '">' +
         '<div class="wrap">' +
@@ -171,42 +194,16 @@
             '<div class="chart-box">' + chartSvg + "</div>" +
             '<p class="chart-caption">' + esc(item.chartCaption) + "</p>" +
           "</div>" +
-          '<div class="two-col reveal d3">' +
-            '<div class="card"><div class="card-head"><h3>' + esc(item.factsTitle) + "</h3></div>" + renderBulletList(item.facts) + "</div>" +
-            '<div class="card blue-wash"><div class="card-head"><h3>' + esc(item.impactTitle) + "</h3></div>" + renderBulletList(item.impacts) + "</div>" +
-          "</div>" +
-          renderSources(item.sources) +
+          renderCollapsible("深度拆解", item.factsTitle + " · " + item.impactTitle + " · 一手来源", detailHtml) +
         "</div>" +
       "</section>"
     );
   }
 
   function renderNewsSlide(item) {
-    var liveQuoteHtml = "";
-    if (item.liveQuote) {
-      var lq = item.liveQuote;
-      var pct = (((lq.fallbackPrice - lq.ipoPrice) / lq.ipoPrice) * 100).toFixed(2);
-      var isBelow = lq.fallbackPrice < lq.ipoPrice;
-      liveQuoteHtml =
-        '<div class="live-quote-bar" id="antLiveBar" data-symbol="' + esc(lq.symbol) + '" data-ipo="' + lq.ipoPrice + '">' +
-          '<div class="lq-left">' +
-            '<span class="lq-symbol"><span class="lq-dot"></span>' + esc(lq.exchange) + ": " + esc(lq.symbol) + "</span>" +
-            '<span class="lq-price" id="antLivePrice">$' + lq.fallbackPrice.toFixed(2) + "</span>" +
-            '<span class="lq-diff ' + (isBelow ? "below" : "above") + '" id="antLiveDiff">' +
-              (pct >= 0 ? "+" : "") + pct + "% vs $83 发行价 · " + (isBelow ? "已破发" : "高于发行价") +
-            "</span>" +
-          "</div>" +
-          '<div class="lq-right">' +
-            '<span id="antLiveStatus">' + esc(lq.fallbackLabel) + "</span>" +
-            '<button type="button" class="lq-refresh" id="antRefreshBtn">↻ 实时刷新</button>' +
-            '<a class="lq-link" href="' + esc(lq.quoteUrl) + '" target="_blank" rel="noopener noreferrer">行情 ↗</a>' +
-          "</div>" +
-        "</div>";
-    }
-
     var microChartHtml =
       item.chartType && charts[item.chartType]
-        ? '<div class="chart-box" style="margin-bottom:14px">' + charts[item.chartType]() + "</div>"
+        ? '<div class="chart-card reveal d2"><div class="chart-box">' + charts[item.chartType]() + "</div></div>"
         : "";
 
     var tlHtml = item.timeline
@@ -220,33 +217,35 @@
       })
       .join("");
 
+    var detailHtml =
+      '<div class="news-bg-strip">' +
+        '<span class="news-bg-label">背景</span>' +
+        "<p>" + esc(item.background) + "</p>" +
+      "</div>" +
+      '<div class="news-body-grid">' +
+        '<div class="card" style="display:flex;flex-direction:column">' +
+          '<div class="card-head"><h3>事实与时间线</h3></div>' +
+          '<div class="timeline">' + tlHtml + "</div>" +
+          renderSources(item.factSources) +
+        "</div>" +
+        '<div class="card" style="display:flex;flex-direction:column">' +
+          '<div class="card-head"><h3>各方观点</h3></div>' +
+          '<div class="view-stack">' +
+            '<div class="view-card bull"><span class="view-badge">偏乐观视角</span><div>' + esc(item.views.bull) + "</div></div>" +
+            '<div class="view-card bear"><span class="view-badge">偏谨慎视角</span><div>' + esc(item.views.bear) + "</div></div>" +
+          "</div>" +
+          renderSources(item.viewSources) +
+        "</div>" +
+      "</div>";
+
     return (
       '<section class="screen" id="' + esc(item.id) + '" data-nav-group="A 本月重点新闻" data-nav-code="' + esc(item.code) + '" data-nav-title="' + esc(item.title) + '">' +
         '<div class="wrap">' +
           renderEyebrow(item.code, item.tags, "") +
           '<h2 class="slide-title reveal"><span>' + esc(item.title) + "</span></h2>" +
           renderVerdict(item.why, "核心判断") +
-          '<div class="news-bg-strip reveal d1">' +
-            '<span class="news-bg-label">背景</span>' +
-            "<p>" + esc(item.background) + "</p>" +
-          "</div>" +
-          '<div class="news-body-grid reveal d2">' +
-            '<div class="card" style="display:flex;flex-direction:column">' +
-              '<div class="card-head"><h3>事实与时间线</h3></div>' +
-              liveQuoteHtml +
-              microChartHtml +
-              '<div class="timeline">' + tlHtml + "</div>" +
-              renderSources(item.factSources) +
-            "</div>" +
-            '<div class="card" style="display:flex;flex-direction:column">' +
-              '<div class="card-head"><h3>市场看法</h3></div>' +
-              '<div class="view-stack">' +
-                '<div class="view-card bull"><span class="view-badge">偏乐观视角</span><div>' + esc(item.views.bull) + "</div></div>" +
-                '<div class="view-card bear"><span class="view-badge">偏谨慎视角</span><div>' + esc(item.views.bear) + "</div></div>" +
-              "</div>" +
-              renderSources(item.viewSources) +
-            "</div>" +
-          "</div>" +
+          microChartHtml +
+          renderCollapsible("事件脉络与各方观点", "背景 · 关键时间线 · 多空观点 · 一手来源", detailHtml) +
         "</div>" +
       "</section>"
     );
@@ -267,22 +266,25 @@
       })
       .join("");
 
+    var detailHtml =
+      '<div class="delta-pair">' + deltaHtml + "</div>" +
+      '<div class="card">' +
+        '<div class="card-head"><h3>' + esc(item.chinaContextTitle) + "</h3></div>" +
+        '<div class="china-strip">' + chinaHtml + "</div>" +
+        renderSources(item.sources) +
+      "</div>";
+
     return (
       '<section class="screen" id="' + esc(item.id) + '" data-nav-group="B 机构趋势" data-nav-code="' + esc(item.code) + '" data-nav-title="' + esc(item.title) + '">' +
         '<div class="wrap">' +
           renderEyebrow(item.code, [item.org], item.reportTitle) +
           '<h2 class="slide-title reveal"><span>' + esc(item.title) + "</span></h2>" +
           renderVerdict(item.quote, "核心判断") +
-          '<div class="delta-pair reveal d1">' + deltaHtml + "</div>" +
           '<div class="chart-card reveal d2">' +
             '<div class="chart-box">' + chartSvg + "</div>" +
             '<p class="chart-caption">' + esc(item.chartCaption) + "</p>" +
           "</div>" +
-          '<div class="card reveal d3">' +
-            '<div class="card-head"><h3>' + esc(item.chinaContextTitle) + "</h3></div>" +
-            '<div class="china-strip">' + chinaHtml + "</div>" +
-            renderSources(item.sources) +
-          "</div>" +
+          renderCollapsible("报告细项与国内对照", "增量数据 · " + item.chinaContextTitle + " · 原文链接", detailHtml) +
         "</div>" +
       "</section>"
     );
@@ -313,6 +315,10 @@
     var usChart = charts.fundingBars ? charts.fundingBars(ov.sectorChart, usMax, true) : "";
     var cnChart = charts.fundingBars ? charts.fundingBars(ov.cnMixChart, cnMax, false) : "";
 
+    var detailHtml =
+      '<div class="two-col">' + synHtml + "</div>" +
+      renderSources(ov.sources);
+
     return (
       '<section class="screen" id="' + esc(ov.id) + '" data-nav-group="C 投融资跟踪" data-nav-code="' + esc(ov.code) + '" data-nav-title="11 月投融资总览">' +
         '<div class="wrap">' +
@@ -324,8 +330,7 @@
             '<div class="card"><div class="card-head"><h3>海外 11 月大额股权与 IPO 分布</h3><small>USD BILLIONS (SQRT)</small></div><div class="chart-box">' + usChart + "</div></div>" +
             '<div class="card"><div class="card-head"><h3>中国 11 月硬科技与 AI4S 分布</h3><small>亿元级重点轮次</small></div><div class="chart-box">' + cnChart + "</div></div>" +
           "</div>" +
-          '<div class="two-col reveal d3">' + synHtml + "</div>" +
-          renderSources(ov.sources) +
+          renderCollapsible("四维趋势拆解", "海外资金 · 中国格局 · 巨头并购 · 借贷与供给风险", detailHtml) +
         "</div>" +
       "</section>"
     );
@@ -1089,116 +1094,53 @@
     });
   });
 
-  /* ==================== Live Free Stock Quote Fetcher (NASDAQ: ANT) ==================== */
-  var antBar = document.getElementById("antLiveBar");
-  if (antBar) {
-    var priceEl = document.getElementById("antLivePrice");
-    var diffEl = document.getElementById("antLiveDiff");
-    var statusEl = document.getElementById("antLiveStatus");
-    var refreshBtn = document.getElementById("antRefreshBtn");
-    var ipoPrice = parseFloat(antBar.getAttribute("data-ipo")) || 83.0;
+  /* ==================== Interactive Collapsible Detail Drawers + Global Mode Toggle ==================== */
+  var foldBlocks = [].slice.call(document.querySelectorAll(".fold-block"));
 
-    function applyAntQuote(price, label) {
-      if (!isFinite(price) || price <= 0) return;
-      var pct = ((price - ipoPrice) / ipoPrice) * 100;
-      var isBelow = price < ipoPrice;
-      priceEl.textContent = "$" + price.toFixed(2);
-      diffEl.textContent = (pct >= 0 ? "+" : "") + pct.toFixed(2) + "% vs $" + ipoPrice + " 发行价 · " + (isBelow ? "已破发" : "高于发行价");
-      diffEl.className = "lq-diff " + (isBelow ? "below" : "above");
-      statusEl.textContent = label;
+  function setFoldState(block, open) {
+    block.setAttribute("data-fold", open ? "open" : "closed");
+    var btn = block.querySelector(".fold-trigger");
+    var icon = block.querySelector(".fold-icon");
+    var state = block.querySelector(".fold-state");
+    if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (icon) icon.textContent = open ? "−" : "+";
+    if (state) state.textContent = open ? "收起" : "展开";
+  }
 
-      // Sync SVG live marker position ($70 -> x=308, $116 -> x=542)
-      var marker = document.getElementById("antLiveMarker");
-      var svgText = document.getElementById("antLiveSvgText");
-      if (marker && svgText) {
-        var clamped = Math.max(70, Math.min(116, price));
-        var xPos = 308 + ((clamped - 70) / 46) * 234;
-        marker.setAttribute("transform", "translate(" + xPos.toFixed(1) + ", 68)");
-        svgText.textContent = "$" + price.toFixed(2);
-      }
-    }
+  foldBlocks.forEach(function (block) {
+    var btn = block.querySelector(".fold-trigger");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var isOpen = block.getAttribute("data-fold") === "open";
+      setFoldState(block, !isOpen);
+      syncGlobalFoldButton();
+    });
+  });
 
-    function fetchWithTimeout(url, ms) {
-      return new Promise(function (resolve, reject) {
-        var timer = setTimeout(function () { reject(new Error("timeout")); }, ms);
-        fetch(url, { cache: "no-store" })
-          .then(function (r) {
-            clearTimeout(timer);
-            if (!r.ok) throw new Error("http " + r.status);
-            return r.text();
-          })
-          .then(resolve)
-          .catch(function (err) {
-            clearTimeout(timer);
-            reject(err);
-          });
-      });
-    }
+  // Inject compact global toggle button in Topbar before slide counter
+  var globalFoldBtn = null;
+  var topbarCounter = document.querySelector(".topbar .counter");
+  if (topbarCounter && foldBlocks.length) {
+    globalFoldBtn = document.createElement("button");
+    globalFoldBtn.type = "button";
+    globalFoldBtn.className = "fold-all-btn";
+    globalFoldBtn.textContent = "+ 全部展开";
+    globalFoldBtn.setAttribute("aria-pressed", "false");
+    topbarCounter.parentNode.insertBefore(globalFoldBtn, topbarCounter);
 
-    function parseYahooJson(text) {
-      var json = JSON.parse(text);
-      var meta = json && json.chart && json.chart.result && json.chart.result[0] && json.chart.result[0].meta;
-      if (!meta || !meta.regularMarketPrice) return null;
-      var d = meta.regularMarketTime ? new Date(meta.regularMarketTime * 1000) : new Date();
-      var stamp = (d.getMonth() + 1) + "-" + pad(d.getDate()) + " " + pad(d.getHours()) + ":" + pad(d.getMinutes());
-      return { price: Number(meta.regularMarketPrice), label: "LIVE 实时 · Yahoo (" + stamp + ")" };
-    }
+    globalFoldBtn.addEventListener("click", function () {
+      var anyClosed = foldBlocks.some(function (b) { return b.getAttribute("data-fold") !== "open"; });
+      foldBlocks.forEach(function (b) { setFoldState(b, anyClosed); });
+      syncGlobalFoldButton();
+    });
+  }
 
-    function parseStooqCsv(text) {
-      var lines = String(text || "").trim().split(/\r?\n/);
-      if (lines.length < 2) return null;
-      var cols = lines[1].split(",");
-      // Symbol,Date,Time,Open,High,Low,Close,Volume
-      var close = parseFloat(cols[6]);
-      if (!isFinite(close) || close <= 0) return null;
-      return { price: close, label: "LIVE 实时 · Stooq (" + (cols[1] || "") + ")" };
-    }
-
-    function refreshAntQuote(manual) {
-      if (manual) {
-        statusEl.textContent = "正在拉取实时行情…";
-        refreshBtn.disabled = true;
-      }
-      var yahooDirect = "https://query1.finance.yahoo.com/v8/finance/chart/ANT?interval=1d&range=5d";
-      var yahooCors = "https://api.allorigins.win/raw?url=" + encodeURIComponent(yahooDirect);
-      var stooqCors = "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://stooq.com/q/l/?s=ant.us&f=sd2t2ohlcv&h&e=csv");
-
-      fetchWithTimeout(yahooCors, 5500)
-        .then(function (txt) {
-          var parsed = parseYahooJson(txt);
-          if (parsed) return parsed;
-          throw new Error("no yahoo cors data");
-        })
-        .catch(function () {
-          return fetchWithTimeout(stooqCors, 5500).then(function (txt) {
-            var parsed = parseStooqCsv(txt);
-            if (parsed) return parsed;
-            throw new Error("no stooq data");
-          });
-        })
-        .catch(function () {
-          return fetchWithTimeout(yahooDirect, 4000).then(function (txt) {
-            var parsed = parseYahooJson(txt);
-            if (parsed) return parsed;
-            throw new Error("no direct yahoo");
-          });
-        })
-        .then(function (res) {
-          applyAntQuote(res.price, res.label);
-        })
-        .catch(function () {
-          if (manual) {
-            statusEl.textContent = "11-24 破发收盘快照（离线/受限时点击右侧直达行情）";
-          }
-        })
-        .finally(function () {
-          refreshBtn.disabled = false;
-        });
-    }
-
-    refreshBtn.addEventListener("click", function () { refreshAntQuote(true); });
-    // Auto-fetch live quote on page load
-    refreshAntQuote(false);
+  function syncGlobalFoldButton() {
+    if (!globalFoldBtn) return;
+    var allOpen = foldBlocks.every(function (b) { return b.getAttribute("data-fold") === "open"; });
+    globalFoldBtn.textContent = allOpen ? "− 极简视图" : "+ 全部展开";
+    globalFoldBtn.classList.toggle("active", allOpen);
+    globalFoldBtn.setAttribute("aria-pressed", allOpen ? "true" : "false");
   }
 
   /* ==================== Subtle Cursor Light Sheen on Cards ==================== */

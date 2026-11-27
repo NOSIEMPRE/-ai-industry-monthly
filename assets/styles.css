@@ -53,8 +53,8 @@ body {
   background-size: 32px 32px;
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 14.5px;
-  line-height: 1.65;
+  font-size: 15px;
+  line-height: 1.68;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -441,10 +441,10 @@ button:focus-visible {
   text-overflow: ellipsis;
 }
 
-/* ========================= Screen Sections ========================= */
+/* ========================= Screen Sections (Balanced Full-Frame Rhythm, Zero Bottom Void) ========================= */
 .screen {
-  min-height: 100vh;
-  padding: calc(68px + env(safe-area-inset-top, 0px)) max(28px, 4vw) 42px;
+  min-height: auto;
+  padding: calc(74px + env(safe-area-inset-top, 0px)) max(32px, 4.5vw) 68px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -452,13 +452,17 @@ button:focus-visible {
   border-bottom: 1px solid rgba(203, 213, 225, 0.55);
 }
 
+.screen.cover {
+  min-height: 100vh;
+}
+
 .wrap {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1260px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 18px;
   position: relative;
   z-index: 2;
 }
@@ -691,7 +695,8 @@ h1, h2, h3, h4 {
 
 /* ========================= Part Dividers (Kinetic Architectural Canvas) ========================= */
 .screen.part-divider {
-  min-height: 56vh;
+  min-height: 36vh;
+  padding: 64px max(32px, 4.5vw);
   background: linear-gradient(132deg, #09101E 0%, #10234E 55%, #1D4ED8 100%);
   color: #FFFFFF;
   overflow: hidden;
@@ -756,7 +761,7 @@ h1, h2, h3, h4 {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
-  padding: 20px 22px;
+  padding: 24px 26px;
   box-shadow: var(--shadow-sm);
   min-width: 0;
   transition: transform 0.28s var(--ease), box-shadow 0.28s var(--ease), border-color 0.28s var(--ease);
@@ -1465,12 +1470,12 @@ h1, h2, h3, h4 {
   width: 100%;
   min-width: 780px;
   border-collapse: collapse;
-  font-size: 13.5px;
+  font-size: 14px;
 }
 
 .data-table th {
   text-align: left;
-  padding: 12px 14px;
+  padding: 14px 16px;
   background: var(--surface-soft);
   border-bottom: 1px solid var(--line);
   font: 600 11.5px/1.2 var(--font-mono);
@@ -1480,7 +1485,7 @@ h1, h2, h3, h4 {
 }
 
 .data-table td {
-  padding: 13px 14px;
+  padding: 16px 16px;
   border-bottom: 1px solid var(--line);
   color: var(--ink-secondary);
   vertical-align: middle;
@@ -1591,10 +1596,10 @@ h1, h2, h3, h4 {
 }
 
 .matrix-cell {
-  padding: 15px 16px;
+  padding: 19px 18px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--ink-secondary);
 }
 
@@ -1604,15 +1609,15 @@ h1, h2, h3, h4 {
 .matrix-cell b {
   display: block;
   color: var(--ink);
-  font-size: 13.5px;
-  margin-bottom: 5px;
+  font-size: 14px;
+  margin-bottom: 6px;
 }
 
 .chip-group {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .co-chip {
@@ -1634,11 +1639,11 @@ h1, h2, h3, h4 {
 .case-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13.2px;
+  font-size: 13.8px;
 }
 
 .case-table td {
-  padding: 8px 6px;
+  padding: 11px 8px;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
 }
@@ -2170,9 +2175,14 @@ h1, h2, h3, h4 {
 }
 
 @media (max-width: 900px) {
-  .screen {
+  .screen,
+  .screen.cover,
+  .screen.part-divider {
     min-height: auto;
     padding: calc(70px + env(safe-area-inset-top, 0px)) 16px 40px;
+  }
+  .card {
+    padding: 18px 16px;
   }
   .edge-tab { display: none; }
   .ticker { display: none; }

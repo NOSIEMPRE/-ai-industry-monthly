@@ -524,7 +524,7 @@ window.MONTHLY_CHARTS = {
       var y = 14 + i * rowH;
       var val = it.value != null ? it.value : it.amount;
       var ratio = Math.min(1, Math.sqrt(val / maxVal));
-      var barW = Math.max(24, ratio * 230);
+      var barW = Math.max(24, ratio * 300);
       return `
         <g transform="translate(0, ${y})">
           <text x="0" y="13" font-size="12" font-weight="600" fill="#1E293B">${it.label}</text>
@@ -539,7 +539,7 @@ window.MONTHLY_CHARTS = {
   },
 
   /**
-   * C1: Compact Global AI Share & US vs China Funding Structure Visual Strip (Replaces 4 Bulky KPI Boxes)
+   * C1: Compact Global AI Share & Overseas vs China Funding Structure Visual Strip (Replaces 4 Bulky KPI Boxes)
    */
   c1SummaryRibbon: function () {
     return `
@@ -552,29 +552,29 @@ window.MONTHLY_CHARTS = {
           <text y="4" text-anchor="middle" font-size="11.5" font-family="IBM Plex Mono,monospace" font-weight="800" fill="#1D4ED8">66%</text>
         </g>
         <text x="92" y="38" font-size="12" font-weight="800" fill="#0F172A">全球创投 AI 占比基准</text>
-        <text x="92" y="57" font-size="10.5" fill="#64748B">Crunchbase 10 月全球 $59B</text>
+        <text x="92" y="57" font-size="10.5" fill="#64748B">前三季近 $680B · 算力债 &gt;$680B</text>
 
         <line x1="258" y1="18" x2="258" y2="74" stroke="#E2E8F0"/>
 
-        <!-- Middle: US $95.1B Composition Bar -->
-        <text x="278" y="31" font-size="11.5" font-weight="800" fill="#0F172A">美国 11 月监测大额事件 $95.1B 结构</text>
+        <!-- Middle: Overseas $148.8B Composition Bar -->
+        <text x="278" y="31" font-size="11.5" font-weight="800" fill="#0F172A">海外 11 月监测股权与 IPO $148.8B（22 笔）</text>
         <rect x="278" y="42" width="320" height="14" rx="4" fill="#EFF6FF"/>
-        <rect class="svg-bar-grow" x="278" y="42" width="274" height="14" rx="4" fill="#1D4ED8"/>
-        <rect class="svg-bar-grow" style="transition-delay:0.1s" x="554" y="42" width="36" height="14" rx="3" fill="#60A5FA"/>
-        <rect class="svg-bar-grow" style="transition-delay:0.18s" x="592" y="42" width="12" height="14" rx="2" fill="#0F296B"/>
-        <text x="278" y="74" font-size="10" fill="#475569"><tspan font-weight="700" fill="#1D4ED8">■ Anthropic IPO $81.3B</tspan> · <tspan font-weight="700" fill="#3B82F6">■ OpenAI $11B</tspan> · <tspan font-weight="700" fill="#0F296B">■ 3 笔早中期 $2.8B</tspan></text>
+        <rect class="svg-bar-grow" x="278" y="42" width="256" height="14" rx="4" fill="#1D4ED8"/>
+        <rect class="svg-bar-grow" style="transition-delay:0.1s" x="536" y="42" width="23" height="14" rx="3" fill="#60A5FA"/>
+        <rect class="svg-bar-grow" style="transition-delay:0.18s" x="561" y="42" width="37" height="14" rx="3" fill="#0F296B"/>
+        <text x="278" y="74" font-size="9.8" fill="#475569"><tspan font-weight="700" fill="#1D4ED8">■ Anthropic $119.5B</tspan> · <tspan font-weight="700" fill="#3B82F6">■ OpenAI $11B</tspan> · <tspan font-weight="700" fill="#0F296B">■ 20 笔非基座 $18.3B</tspan></text>
 
         <line x1="636" y1="18" x2="636" y2="74" stroke="#E2E8F0"/>
 
         <!-- Right: China Focus -->
-        <text x="656" y="31" font-size="11.5" font-weight="800" fill="#0F172A">中国 11 月亿元级资金结构</text>
+        <text x="656" y="31" font-size="11.5" font-weight="800" fill="#0F172A">中国 11 月重点资本流向</text>
         <rect x="656" y="42" width="90" height="22" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
-        <text x="701" y="57" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">AI 芯片/存算</text>
+        <text x="701" y="57" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">模型/AI 芯片</text>
         <rect x="754" y="42" width="88" height="22" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
-        <text x="798" y="57" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">Token 推理</text>
+        <text x="798" y="57" text-anchor="middle" font-size="10.5" font-weight="700" fill="#1D4ED8">AI4S/推理</text>
         <rect x="850" y="42" width="92" height="22" rx="6" fill="#F1F5FB" stroke="#CBD5E1"/>
         <text x="896" y="57" text-anchor="middle" font-size="10.5" font-weight="700" fill="#334155">具身零部件</text>
-        <text x="656" y="79" font-size="10" fill="#64748B">国资 + 产业战投领投占比显著提升</text>
+        <text x="656" y="79" font-size="10" fill="#64748B">国资 + 产业巨头 + 中东主权基金联动</text>
       </svg>
     `;
   }

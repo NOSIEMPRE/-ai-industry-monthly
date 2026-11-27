@@ -4,59 +4,126 @@ window.MONTHLY_DATA.funding = {
   overview: {
     id: "c1",
     code: "C1",
-    title: "11 月全球 AI 投融资趋势：头部资本化提速，早期重仓三大硬核方向",
+    title: "11 月全球 AI 投融资与产业格局：公开化、巨额并购与算力加杠杆并行",
     kpis: [
-      { value: "$95.1B", label: "11 月美国监测大额事件总额（含 Anthropic IPO）" },
-      { value: "3 笔", label: "美国单笔 ≥$500M 早中期轮次（研发/推理/具身）" },
-      { value: "66%", label: "全球创投流向 AI 占比基准（Crunchbase 10 月）" },
-      { value: "芯片·推理·具身", label: "11 月中国亿元级融资核心集中赛道" }
+      { value: "$148.8B", label: "11 月海外监测 ≥$100M 股权与 IPO 总额（22 笔）" },
+      { value: "10 笔", label: "海外非基座单笔 ≥$500M 大额轮次（制药/具身/智能体/推理）" },
+      { value: ">$680B", label: "2026 前 10 月 AI 算力基础设施债务发行额（美联储 11 月）" },
+      { value: "大模型·芯片·AI4S", label: "11 月中国重点资本与主权基金核心投向" }
     ],
     synthesis: [
       {
-        title: "美国：两极分化加剧",
-        text: "基座层由私募转向公开市场（Anthropic $81.3B IPO 与 OpenAI 下调私募目标并存）；早中期大额资金高度聚焦自动化 AI 研发、推理平台与具身智能，薄壳应用明显降温。"
+        title: "海外股权与上市：基座公开化，早中期向五大硬核赛道扩散",
+        text: "Anthropic 纳斯达克上市交割募资 $93.5B（含绿鞋），叠加英伟达、微软、谷歌、台积电等 $26B 同步私募，合计 $119.5B；OpenAI 据报道完成 $11B 首笔私募交割。非基座资金密集流向 AI 制药（Isomorphic Labs $5B）、具身与自主系统（Shield AI $2.5B、Zipline $1.5B、Agility 上市）、推理芯片（fal $1.65B、英国 Fractile $720M）、客服智能体（Sierra $1.75B）与研发数据（Mirendil $1B、Mercor $750M）。另据媒体报道，Databricks（$225B 估值）、Cognition（$75B 估值融资 $2B+）与 ElevenLabs（$33B 估值）正洽谈新一轮融资。"
       },
       {
-        title: "中国：产业资本主导硬科技底座",
-        text: "国资、互联网与产业战投成为主力，单笔十亿元级融资集中在 Token 推理基础设施（趋境科技）与存算一体芯片（微纳核芯）；具身赛道笔数密集但单轮规模偏向亿元级零部件与细分场景。"
+        title: "中国市场：头部模型重资本化，产业与主权资本加码硬科技与 AI4S",
+        text: "国内基座模型与芯片加速资本化：据媒体报道 DeepSeek 以 $92B 估值完成近 $16B 融资（腾讯、宁德时代、长鑫存储及国有机构参投，尚未获官方确认）；阿里公告分拆平头哥赴港上市（9 月已保密递表）；月之暗面被曝注销开曼控股架构筹备上市。一级市场单笔大额资金集中在 AI4S 自动化实验室（镁伽科技近 $200M 获阿曼主权基金参投、青葵智造亿元 A 轮）、Token 推理（趋境科技 >13 亿元）、AI 芯片（微纳核芯 >10 亿元、灵睿智芯数亿元）与具身零部件集群。"
+      },
+      {
+        title: "11 月重点产业并购：全栈整合、光互连与智能体安全成主线",
+        text: "巨头并购明显提速：Marvell 宣布以 $115B 企业价值全股票收购光器件商 Lumentum 补齐 AI 光互连；CrowdStrike 宣布约 $43.9B 全股票收购云安全商 Zscaler 构建智能体零信任控制平面；AMD 正式交割空间智能实验室 World Labs（约 $8.2B，李飞飞出任 EVP 兼首席科学家）与推理芯片商 Taalas（约 $2.9B）；亚马逊宣布买下 Decart 优化软件栈并接收创始团队（彭博称约 $7.5B）；Shield AI 以 $5.3B 收购雷达公司 Echodyne；Palo Alto Networks 拟 $4.5B 收购模型定制商 Applied Compute；Stripe 完成收购模型路由平台 OpenRouter。"
+      },
+      {
+        title: "算力杠杆与产业风险：债务规模激增，治理与出口管制扰动加剧",
+        text: "美联储 11 月《金融稳定报告》披露截至 10 月先进算力相关发债已超 $680B（约为 2023 年 5 倍）；本月 Apollo 与高盛为 SpaceX 完成约 $44B GPU 债务定价，Oracle 申请 $20B 股债融资，Meta 被曝发债 $20B–$25B；英格兰银行 11-26 警示 AI 循环融资与非投资级利差走阔风险。供给与治理侧同步承压：英伟达月内经历黄仁勋辞任又复职及 SEC 调查风波，并在美远程算力新规生效后被曝暂停向马/新/泰/印发运服务器及收紧对华算力租赁供货标准；得州数据中心许可冻结亦牵动 2028 年近三成美国新增容量。"
       }
     ],
     sectorChart: [
-      { label: "前沿基座模型 (US IPO+私募)", value: 92.3, display: "$92.3B", region: "us" },
-      { label: "推理与生成媒体平台 (US)", value: 1.3, display: "$1.3B", region: "us" },
-      { label: "AI 研发自动化 / RSI (US)", value: 1.0, display: "$1.0B", region: "us" },
-      { label: "具身智能单笔标杆 (US)", value: 0.5, display: "$0.5B", region: "us" }
+      { label: "基座模型 (Anthropic IPO+私募 · OpenAI)", value: 130.5, display: "$130.5B", region: "us" },
+      { label: "具身与自主系统 (6 笔 · 含 Agility 上市)", value: 5.38, display: "$5.38B", region: "us" },
+      { label: "AI 制药 (Isomorphic $5B · Boltz)", value: 5.11, display: "$5.11B", region: "us" },
+      { label: "推理与芯片 (fal · Fractile · Marlowe)", value: 2.65, display: "$2.65B", region: "us" },
+      { label: "研发数据 & AI 安全 (Mirendil · Cyera 等 5 笔)", value: 2.79, display: "$2.79B", region: "us" },
+      { label: "智能体与软件 (Sierra · LangChain 等 4 笔)", value: 2.41, display: "$2.41B", region: "us" }
     ],
     cnMixChart: [
+      { label: "AI4S 自动化实验室（镁伽科技）", amount: 14, display: "近 $200M" },
       { label: "Token 推理服务（趋境科技）", amount: 13, display: ">13 亿元" },
       { label: "存算一体 AI 芯片（微纳核芯）", amount: 10, display: ">10 亿元" },
-      { label: "RISC-V / 智能体 CPU（灵睿智芯）", amount: 4, display: "数亿元" },
-      { label: "中性原子量子计算（向量奇点）", amount: 4, display: "数亿元" },
-      { label: "具身零部件集群（3 家单轮亿元级）", amount: 3, display: "各亿元级" }
+      { label: "智能体 CPU / 量子计算（灵睿 · 向量奇点）", amount: 8, display: "各数亿元" },
+      { label: "具身零部件集群（章鱼 · 傲意 · 英汉思）", amount: 3, display: "各亿元级" },
+      { label: "AI 科研实验室（青葵智造 A 轮）", amount: 1.5, display: "亿元级" }
     ],
     sources: [
-      { label: "Crunchbase News", url: "https://news.crunchbase.com/venture/october-2026-global-startup-funding-strong-china-deepseek/" },
+      { label: "AI 前沿动态追踪 (11 月日报)", url: "https://ai-daily.ihainan.me/" },
+      { label: "Anthropic IPO 交割公告", url: "https://www.anthropic.com/news/ipo-close" },
+      { label: "美联储 11 月金融稳定报告", url: "https://www.federalreserve.gov/publications/files/financial-stability-report-20261113.pdf" },
+      { label: "英格兰银行 11 月金融稳定报告", url: "https://www.bankofengland.co.uk/financial-stability-report/2026/november-2026" },
+      { label: "Crunchbase Q3/10 月报告", url: "https://news.crunchbase.com/venture/q3-2026-charts-funding-amounts-vs-round-counts/" },
       { label: "21 财经 11-26", url: "https://m.21jingji.com/article/20261126/herald/a1e1b4404c6a9c33087bb82064ad2456.html" }
     ]
   },
   us: {
     id: "c2",
     code: "C2",
-    title: "美国 11 月重点交易：头部 IPO 与 $500M+ 早期大额轮次",
-    period: "2026-11-01 至 11-27 · 单笔 ≥$500M",
+    title: "海外 11 月重点交易：Anthropic 创纪录上市，制药·具身·智能体大额频出",
+    period: "2026-11-01 至 11-27 · 单笔 ≥$100M 股权融资与 IPO（22 笔）",
     deals: [
       {
         date: "11-03",
         company: "fal",
-        sector: "推理平台",
-        round: "F 轮",
-        amount: "$1.3B",
-        valuation: "$16B",
-        investors: "Bessemer 领投；英伟达参投",
-        tier: "主流媒体",
-        tierCode: "t2",
-        sourceLabel: "Tech Funding News",
-        sourceUrl: "https://techfundingnews.com/fal-1-3b-series-f-16b-valuation-ai-inference/"
+        sector: "推理与芯片",
+        round: "E+F 轮",
+        amount: "$1.65B",
+        valuation: "未披露（媒报 $16B）",
+        investors: "红杉领投 E 轮、Bessemer 领投 F 轮；英伟达跟投（生成式媒体推理）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "fal 官方公告",
+        sourceUrl: "https://x.com/fal/status/2117679688860508283"
+      },
+      {
+        date: "11-03",
+        company: "Traversal",
+        sector: "智能体与软件",
+        round: "B 轮",
+        amount: "$120M",
+        valuation: "$1B",
+        investors: "Kleiner Perkins、Redpoint、Khosla 联合领投（AI SRE 运维）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Traversal 博客",
+        sourceUrl: "https://www.traversal.com/blog/traversal-series-b-120-million-ai-sre"
+      },
+      {
+        date: "11-05",
+        company: "Agility Robotics",
+        sector: "具身与自主系统",
+        round: "SPAC 上市",
+        amount: "$465M",
+        valuation: "纳斯达克 AGLT",
+        investors: "与 Churchill XI 合并上市；富士康领投 PIPE（Digit 5 订单逾 $300M）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Agility 公告",
+        sourceUrl: "https://www.agilityrobotics.com/content/agility-becomes-first-u-s-publicly-listed-pure-play-humanoid-robotics-company-begins-trading-today-on-nasdaq-as-aglt"
+      },
+      {
+        date: "11-05",
+        company: "Zipline",
+        sector: "具身与自主系统",
+        round: "成长轮",
+        amount: "$1.5B",
+        valuation: "$21.5B",
+        investors: "Paradigm、WCM、Layer Global 领投；Uber、摩根大通参投（与沃尔玛增 300 站）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Zipline 公告",
+        sourceUrl: "https://www.zipline.com/newsroom/zipline-raises-1-5-billion-to-build-nationwide-drone-delivery-network"
+      },
+      {
+        date: "11-06",
+        company: "Shield AI",
+        sector: "具身与自主系统",
+        round: "H 轮+结构化融资",
+        amount: "$2.5B",
+        valuation: "$28.8B",
+        investors: "$1B H 轮 + Blackstone $1B 结构化股权 + 摩根大通 $500M 债（同步 $5.3B 收购 Echodyne）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Shield AI 公告",
+        sourceUrl: "https://shield.ai/shield-to-acquire-echodyne-in-a-transaction-valued-at-5-3-billion-and-raise-2-5-billion-at-a-28-8-billion-valuation/"
       },
       {
         date: "11-06",
@@ -65,59 +132,241 @@ window.MONTHLY_DATA.funding = {
         round: "私募首笔交割",
         amount: "$11B",
         valuation: "$1.25T",
-        investors: "未披露（目标总额调至约 $20B）",
+        investors: "据媒体报道由阿联酋投资方与 Coatue 领投（目标总额下调至至多 $20B）",
         tier: "主流媒体",
         tierCode: "t2",
-        sourceLabel: "Bloomberg / Investing",
-        sourceUrl: "https://www.investing.com/news/stock-market-news/openai-closes-11-billion-funding-at-125-trillion-valuation--report-5009147"
+        sourceLabel: "Reuters / Bloomberg",
+        sourceUrl: "https://www.reuters.com/business/openai-secures-11-billion-funding-125-trillion-valuation-bloomberg-news-reports-2026-11-06/"
       },
       {
-        date: "11-12",
+        date: "11-09",
+        company: "Nominal",
+        sector: "智能体与软件",
+        round: "C 轮",
+        amount: "$240M",
+        valuation: "$3B",
+        investors: "Lightspeed 领投、Insight Partners 联合领投（复杂硬件工程 AI 平台）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Nominal 博客",
+        sourceUrl: "https://nominal.io/blog/series-c"
+      },
+      {
+        date: "11-09",
+        company: "Cyera",
+        sector: "AI 安全",
+        round: "私募轮（媒报）",
+        amount: "$800M",
+        valuation: "$20B",
+        investors: "据 The Information 报道（AI 数据安全与威胁防御，尚未见官方公告）",
+        tier: "主流媒体",
+        tierCode: "t2",
+        sourceLabel: "The Information",
+        sourceUrl: "https://www.theinformation.com/newsletters/dealmaker/cyeras-800-million-haul-shows-cyber-fever-broken"
+      },
+      {
+        date: "11-10",
+        company: "Mercor",
+        sector: "研发与数据",
+        round: "D 轮",
+        amount: "$750M",
+        valuation: "$20B",
+        investors: "Benchmark、General Catalyst、英伟达、Salesforce、Zoom 等（含老股转让）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Mercor 博客",
+        sourceUrl: "https://www.mercor.com/blog/series-d/"
+      },
+      {
+        date: "11-10",
+        company: "Path Robotics",
+        sector: "具身与自主系统",
+        round: "E 轮",
+        amount: "$300M",
+        valuation: "$2.45B",
+        investors: "Georgian 领投；Tiger Global、Yamaha Motor Ventures、D. E. Shaw 等参投",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Path Robotics 公告",
+        sourceUrl: "https://www.path-robotics.com/news/path-robotics-announces-300-million-series-e-led-by-georgian"
+      },
+      {
+        date: "11-11",
+        company: "Fractile（英国）",
+        sector: "推理与芯片",
+        round: "C 轮",
+        amount: "$720M",
+        valuation: "$7B",
+        investors: "Thrive、Founders Fund、Lightspeed、Redpoint 领投；CapitalG、贝莱德等跟投",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Balderton 公告",
+        sourceUrl: "https://www.balderton.com/news/fractile-raises-720m-to-build-the-hardware-that-pushes-ais-frontier-forward/"
+      },
+      {
+        date: "11-13",
         company: "Mirendil",
-        sector: "AI 研发自动化",
+        sector: "研发与数据",
         round: "A 轮",
         amount: "$1B",
         valuation: "未披露",
-        investors: "Kleiner Perkins、Clearlake 领投；谷歌参投",
+        investors: "Kleiner Perkins、Clearlake 领投；谷歌、Battery 等参投（自动化 AI 研发）",
         tier: "公司公告",
         tierCode: "t1",
-        sourceLabel: "AI Weekly",
-        sourceUrl: "https://aiweekly.co/alerts/mirendil-raises-1b-series-a-at-5b-from-kleiner-perkins-and-clearlake-to"
+        sourceLabel: "Mirendil 公告",
+        sourceUrl: "https://mirendil.com/news/series-a/"
+      },
+      {
+        date: "11-14",
+        company: "LangChain",
+        sector: "智能体与软件",
+        round: "C 轮",
+        amount: "$300M",
+        valuation: "$3B",
+        investors: "Alphabet 旗下 CapitalG 领投；GIC、DFJ Growth、红杉、Benchmark 等参投",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "LangChain 博客",
+        sourceUrl: "https://blog.langchain.com/series-c/"
+      },
+      {
+        date: "11-16",
+        company: "Corma",
+        sector: "AI 安全",
+        round: "A 轮",
+        amount: "$125M",
+        valuation: "$1B",
+        investors: "NEA 领投；红杉、Khosla、Coatue 跟投（防御型网络安全基础模型）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Corma 博客",
+        sourceUrl: "https://corma.ai/blog/three-months-in"
+      },
+      {
+        date: "11-17",
+        company: "Isomorphic Labs",
+        sector: "AI 制药",
+        round: "C 轮",
+        amount: "$5B",
+        valuation: "未披露",
+        investors: "Greenoaks、红杉联合领投；Alphabet、a16z、Thrive、MGX、淡马锡等参投",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Isomorphic 公告",
+        sourceUrl: "https://www.isomorphiclabs.com/articles/isomorphic-labs-announces-series-c-investment-round"
       },
       {
         date: "11-17",
         company: "Genesis AI",
-        sector: "具身智能",
+        sector: "具身与自主系统",
         round: "A 轮",
         amount: "$500M",
         valuation: "$3.5B",
-        investors: "Premji、Khosla、Eclipse 领投；英伟达、AMD 参投",
+        investors: "Premji Invest、Khosla、Eclipse 联合领投；Durable Capital 参投",
         tier: "公司公告",
         tierCode: "t1",
-        sourceLabel: "TechCrunch",
-        sourceUrl: "https://techcrunch.com/2026/11/17/genesis-ai-raises-500-million-to-deploy-electric-glove-wearing-robots/"
+        sourceLabel: "PR Newswire",
+        sourceUrl: "https://www.prnewswire.com/news-releases/genesis-ai-raises-500m-series-a-at-3-5b-valuation-to-master-human-level-dexterity-in-general-purpose-robots-and-deploy-at-scale-302941249.html"
+      },
+      {
+        date: "11-17",
+        company: "Noeri",
+        sector: "研发与数据",
+        round: "首轮披露",
+        amount: "$110M",
+        valuation: "未披露",
+        investors: "Menlo Ventures 领投；英伟达、NEA、思科、Snowflake 等（崔艺珍联合创办）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Noeri 官网",
+        sourceUrl: "https://noeri.ai"
       },
       {
         date: "11-18",
+        company: "Boltz",
+        sector: "AI 制药",
+        round: "A 轮",
+        amount: "$110M",
+        valuation: "未披露",
+        investors: "Bessemer 领投（AI 生物分子设计，合作覆盖 6 家全球 20 强药企）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Boltz 公告",
+        sourceUrl: "https://boltz.com/series-a"
+      },
+      {
+        date: "11-18–20",
         company: "Anthropic",
         sector: "基座模型",
-        round: "IPO",
-        amount: "$81.3B",
+        round: "IPO + 同步私募",
+        amount: "$119.5B",
         valuation: "≈$1.5T",
-        investors: "纳斯达克公开发行（代码 ANT）",
-        tier: "主流媒体",
-        tierCode: "t2",
-        sourceLabel: "CNBC",
-        sourceUrl: "https://www.cnbc.com/2026/11/18/anthropic-ipo-ai-offering-price.html"
+        investors: "纳斯达克上市（ANT）：IPO 含绿鞋 $93.5B + 英伟达/谷歌/微软/AMD/博通/美光/台积电同步私募 $26B",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Anthropic 交割公告",
+        sourceUrl: "https://www.anthropic.com/news/ipo-close"
+      },
+      {
+        date: "11-23",
+        company: "Sierra",
+        sector: "智能体与软件",
+        round: "F 轮",
+        amount: "$1.75B",
+        valuation: "$30B",
+        investors: "Greenoaks、Lightspeed 领投；Benchmark、红杉、GV、Tiger 全员加码（ARR >$400M）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Sierra 博客",
+        sourceUrl: "https://sierra.ai/blog/series-f-30b"
+      },
+      {
+        date: "11-23",
+        company: "Marlowe",
+        sector: "推理与芯片",
+        round: "种子轮",
+        amount: "$277M",
+        valuation: "未披露",
+        investors: "Accel 领投；Bessemer、Altimeter、Atreides、Valor、Eclipse 参投（多芯片推理工厂）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Marlowe 官网",
+        sourceUrl: "https://marlowe.ai/introducing-marlowe.html"
+      },
+      {
+        date: "11-24",
+        company: "Embo",
+        sector: "具身与自主系统",
+        round: "种子轮",
+        amount: "$110M",
+        valuation: "未披露",
+        investors: "a16z 领投；Khosla、DST Global、英伟达参投（Dreamer 作者创办机器人世界模型）",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "Embo 官网",
+        sourceUrl: "https://embo.com/introducing-embo"
       }
-    ]
+    ],
+    footnote: "注：本表仅统计 11 月已宣布完成或交割（含媒体披露完成）的单笔 ≥$100M 海外股权融资与 IPO；尚处早期洽谈的超大轮次（Databricks 洽谈 $225B 估值、Cognition 洽谈 $75B 估值融资 $2B+、ElevenLabs 洽谈 $33B 估值）及重点战略并购（Marvell $115B 购 Lumentum、CrowdStrike $43.9B 购 Zscaler、AMD 交割 World Labs 与 Taalas 等）与算力债务融资见 C1 总览。"
   },
   china: {
     id: "c3",
     code: "C3",
-    title: "中国 11 月重点交易：聚焦推理引擎、AI 芯片与具身零部件",
-    period: "2026-11-01 至 11-27 · 亿元级以上",
+    title: "中国 11 月重点交易：聚焦大模型资本化、推理芯片、AI4S 与具身零部件",
+    period: "2026-11-01 至 11-27 · 亿元级以上融资与重点上市进展（9 项）",
     deals: [
+      {
+        date: "10 月底–11 月",
+        company: "DeepSeek",
+        sector: "基座模型",
+        round: "私募轮（媒报）",
+        amount: "近 $16B",
+        investors: "据 The Information 与 Crunchbase 报道估值约 $92B，腾讯、宁德时代、长鑫存储及国有机构参投（未获官方确认）",
+        tier: "主流媒体",
+        tierCode: "t2",
+        sourceLabel: "The Information",
+        sourceUrl: "https://www.theinformation.com/articles/behind-deepseeks-16-billion-funding-chinese-tech-titans-state-players"
+      },
       {
         date: "11-01",
         company: "趋境科技",
@@ -143,6 +392,18 @@ window.MONTHLY_DATA.funding = {
         sourceUrl: "https://finance.sina.com.cn/roll/2026-11-01/doc-inixeyiz3155017.shtml"
       },
       {
+        date: "11-10",
+        company: "平头哥（阿里）",
+        sector: "AI 芯片",
+        round: "分拆赴港上市",
+        amount: "保密递表 A1",
+        investors: "阿里巴巴港交所公告推进独立上市（9 月 11 日已保密递表，真武 AI 芯片累计出货 56 万颗）",
+        tier: "主流媒体",
+        tierCode: "t2",
+        sourceLabel: "澎湃新闻",
+        sourceUrl: "https://www.thepaper.cn/newsDetail_forward_34447251"
+      },
+      {
         date: "11-13",
         company: "灵睿智芯",
         sector: "AI 芯片",
@@ -153,6 +414,30 @@ window.MONTHLY_DATA.funding = {
         tierCode: "t2",
         sourceLabel: "虎嗅",
         sourceUrl: "https://m.huxiu.com/article/4908774.html"
+      },
+      {
+        date: "11-13",
+        company: "青葵智造",
+        sector: "AI4S 实验室",
+        round: "A 轮（媒报）",
+        amount: "亿元级",
+        investors: "创东方投资、飞荣达股份、金辉大数据参与（AI 科研自驱动实验室）",
+        tier: "主流媒体",
+        tierCode: "t2",
+        sourceLabel: "36氪",
+        sourceUrl: "https://www.36kr.com/newsflashes/4067555949319041"
+      },
+      {
+        date: "11-19",
+        company: "镁伽科技",
+        sector: "AI4S 实验室",
+        round: "新一轮",
+        amount: "近 $200M",
+        investors: "阿曼主权财富基金（OIA）参投；亚投资本、Granite Asia、创新工场跟投，招银国际新进",
+        tier: "公司公告",
+        tierCode: "t1",
+        sourceLabel: "PR Newswire",
+        sourceUrl: "https://www.prnewswire.com/news-releases/megarobo-raises-nearly-us200-million-in-new-funding-to-build-intelligence-infrastructure-for-the-physical-world-302944671.html"
       },
       {
         date: "11-23–24",
@@ -178,6 +463,7 @@ window.MONTHLY_DATA.funding = {
         sourceLabel: "投资界",
         sourceUrl: "https://news.pedaily.cn/202611/572475.shtml"
       }
-    ]
+    ],
+    footnote: "注：除上述股权融资与上市进展外，据《华尔街日报》11-13 报道，月之暗面正注销开曼群岛控股公司并将投资人股权迁入境内运营主体，为上市铺路；中国硬科技与 AI4S 赛道呈现「国资基金 + 互联网/产业巨头 + 中东主权基金」联合领投特征。"
   }
 };

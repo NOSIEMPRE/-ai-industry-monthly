@@ -211,8 +211,10 @@
       .join("");
 
     var ribbonSvg = charts.c1SummaryRibbon ? charts.c1SummaryRibbon() : "";
-    var usChart = charts.fundingBars ? charts.fundingBars(ov.sectorChart, 92.3, true) : "";
-    var cnChart = charts.fundingBars ? charts.fundingBars(ov.cnMixChart, 13, false) : "";
+    var usMax = Math.max.apply(null, ov.sectorChart.map(function (it) { return it.value || 1; }));
+    var cnMax = Math.max.apply(null, ov.cnMixChart.map(function (it) { return it.amount || 1; }));
+    var usChart = charts.fundingBars ? charts.fundingBars(ov.sectorChart, usMax, true) : "";
+    var cnChart = charts.fundingBars ? charts.fundingBars(ov.cnMixChart, cnMax, false) : "";
 
     return (
       '<section class="screen" id="' + esc(ov.id) + '" data-nav-group="C 投融资跟踪" data-nav-code="' + esc(ov.code) + '" data-nav-title="11 月投融资趋势总览">' +
@@ -221,8 +223,8 @@
           '<h2 class="slide-title reveal"><span class="num">' + esc(ov.code) + "</span><span>" + esc(ov.title) + "</span></h2>" +
           '<div class="chart-box reveal d1">' + ribbonSvg + "</div>" +
           '<div class="two-col reveal d2">' +
-            '<div class="card"><div class="card-head"><h3>美国 11 月大额资金分布</h3><small>USD BILLIONS (平方根比例)</small></div><div class="chart-box">' + usChart + "</div></div>" +
-            '<div class="card"><div class="card-head"><h3>中国 11 月亿元级重点分布</h3><small>RMB 亿元级别示意</small></div><div class="chart-box">' + cnChart + "</div></div>" +
+            '<div class="card"><div class="card-head"><h3>海外 11 月大额股权与 IPO 分布</h3><small>USD BILLIONS (平方根比例)</small></div><div class="chart-box">' + usChart + "</div></div>" +
+            '<div class="card"><div class="card-head"><h3>中国 11 月硬科技与 AI4S 分布</h3><small>亿元级重点轮次示意</small></div><div class="chart-box">' + cnChart + "</div></div>" +
           "</div>" +
           '<div class="two-col reveal d3">' + synHtml + "</div>" +
           renderSources(ov.sources) +
@@ -490,7 +492,7 @@
     data.trends.map(renderTrendSlide).join(""),
     renderPartDivider(partsMap.C),
     renderFundingOverview(),
-    renderDealsTableSlide("us", "美国", true),
+    renderDealsTableSlide("us", "美国 / 海外", true),
     renderDealsTableSlide("china", "中国", false),
     renderPartDivider(partsMap.D),
     renderEmbodiedMap(),
@@ -530,10 +532,15 @@
       })
     )
     .concat([
+      { sortKey: 1102.5, html: "11-02 · Marvell 全股票收购 Lumentum <b>$115B</b>" },
       { sortKey: 1106.5, html: "11-06 · CoreWeave 债券收益率突破 <b>16%</b>" },
       { sortKey: 1116, html: "11-16 · BIS 发布东南亚及远程算力管制新规" },
+      { sortKey: 1117.5, html: "11-17 · AMD 交割 World Labs <b>$8.2B</b> &amp; Taalas <b>$2.9B</b>" },
       { sortKey: 1119, html: "11-19 · 远程算力使用限制正式生效" },
-      { sortKey: 1123.5, html: "11-23 · 美实体清单新增 <b>7 家</b>东南亚企业" }
+      { sortKey: 1121, html: "11-21 · Apollo/高盛完成 SpaceX <b>$44B</b> GPU 债务定价" },
+      { sortKey: 1123.2, html: "11-23 · CrowdStrike 全股票收购 Zscaler <b>$43.9B</b>" },
+      { sortKey: 1123.5, html: "11-23 · 美实体清单新增 <b>7 家</b>东南亚企业" },
+      { sortKey: 1124.5, html: "11-24 · 黄仁勋复职英伟达 CEO，股价单日大涨 <b>31.5%</b>" }
     ]);
 
   rawTickerItems.sort(function (a, b) {

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "skills": {
+    "ai-daily-search": {
+      "source": "annielxy2000-glitch/ai-daily-search-skill",
+      "commit": "348d5900fa9a5b9e85ecde64050c1a340821de9a",
+      "sourceType": "github",
+      "skillPath": "skills/ai-daily-search/SKILL.md",
+      "computedHash": "fa4caa87318f442b9144d07414b0087b965824eb9f4d3dfa041d2b713e1be879"
+    }
+  }
+}

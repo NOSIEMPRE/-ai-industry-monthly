@@ -155,7 +155,7 @@ button:focus-visible {
   white-space: nowrap;
   font: 500 11.5px/1 var(--font-mono);
   color: var(--muted);
-  animation: tickerScroll 68s linear infinite;
+  animation: tickerScroll 130s linear infinite;
 }
 
 .ticker:hover .ticker-track {

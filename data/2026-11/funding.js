@@ -14,19 +14,35 @@ window.MONTHLY_DATA.funding = {
     synthesis: [
       {
         title: "海外股权与上市：基座公开化，早中期向五大硬核赛道扩散",
-        text: "Anthropic 纳斯达克上市交割募资 $93.5B（含绿鞋），叠加英伟达、微软、谷歌、台积电等 $26B 同步私募，合计 $119.5B；OpenAI 据报道完成 $11B 首笔私募交割。非基座资金密集流向 AI 制药（Isomorphic Labs $5B）、具身与自主系统（Shield AI $2.5B、Zipline $1.5B、Agility 上市）、推理芯片（fal $1.65B、英国 Fractile $720M）、客服智能体（Sierra $1.75B）与研发数据（Mirendil $1B、Mercor $750M）。另据媒体报道，Databricks（$225B 估值）、Cognition（$75B 估值融资 $2B+）与 ElevenLabs（$33B 估值）正洽谈新一轮融资。"
+        bullets: [
+          { lead: "基座公开化", text: "Anthropic 纳斯达克上市交割募资 $93.5B（含绿鞋），叠加芯片与云巨头 $26B 同步私募，合计 $119.5B；OpenAI 据报道完成 $11B 首笔私募交割。" },
+          { lead: "五大硬核主线", text: "非基座大额轮次集中在 AI 制药（Isomorphic Labs $5B）、具身与自主系统（Shield AI $2.5B、Zipline $1.5B、Agility 上市）、推理芯片（fal $1.65B、英国 Fractile $720M）、智能体（Sierra $1.75B）与研发数据（Mirendil $1B、Mercor $750M）。" },
+          { lead: "高估值在谈", text: "据媒体报道，Databricks（$225B 估值）、Cognition（$75B 估值融资 $2B+）与 ElevenLabs（$33B 估值）正洽谈新一轮融资。" }
+        ]
       },
       {
         title: "中国市场：头部模型重资本化，产业与主权资本加码硬科技与 AI4S",
-        text: "国内基座模型与芯片加速资本化：据媒体报道 DeepSeek 以 $92B 估值完成近 $16B 融资（腾讯、宁德时代、长鑫存储及国有机构参投）；阿里公告分拆平头哥赴港上市（9 月已保密递表）；月之暗面被曝注销开曼控股架构筹备上市。一级市场单笔大额资金集中在 AI4S 自动化实验室（镁伽科技近 $200M 获阿曼主权基金参投、青葵智造亿元 A 轮）、Token 推理（趋境科技 >13 亿元）、AI 芯片（微纳核芯 >10 亿元、灵睿智芯数亿元）与具身零部件集群。"
+        bullets: [
+          { lead: "模型与芯片资本化", text: "据媒体报道 DeepSeek 以 $92B 估值完成近 $16B 融资（腾讯、宁德时代、长鑫存储及国有机构参投）；阿里公告分拆平头哥赴港上市（9 月已保密递表）；月之暗面被曝注销开曼架构筹备上市。" },
+          { lead: "AI4S 与推理领跑", text: "镁伽科技获阿曼主权基金参投近 $200M，青葵智造完成亿元 A 轮；趋境科技完成 >13 亿元 Token 推理 B 轮。" },
+          { lead: "芯片与具身落子", text: "微纳核芯（>10 亿元存算芯片）、灵睿智芯（数亿元）、向量奇点（数亿元量子计算）及章鱼动力等 3 家亿元级具身零部件企业获国资与产业战投押注。" }
+        ]
       },
       {
         title: "11 月重点产业并购：全栈整合、光互连与智能体安全成主线",
-        text: "巨头并购明显提速：Marvell 宣布以 $115B 企业价值全股票收购光器件商 Lumentum 补齐 AI 光互连；CrowdStrike 宣布约 $43.9B 全股票收购云安全商 Zscaler 构建智能体零信任控制平面；AMD 正式交割空间智能实验室 World Labs（约 $8.2B，李飞飞出任 EVP 兼首席科学家）与推理芯片商 Taalas（约 $2.9B）；亚马逊宣布买下 Decart 优化软件栈并接收创始团队（彭博称约 $7.5B）；Shield AI 以 $5.3B 收购雷达公司 Echodyne；Palo Alto Networks 拟 $4.5B 收购模型定制商 Applied Compute；Stripe 完成收购模型路由平台 OpenRouter。"
+        bullets: [
+          { lead: "基建与安全超级并购", text: "Marvell 宣布以 $115B 企业价值全股票收购光器件商 Lumentum 补齐 AI 光互连；CrowdStrike 宣布约 $43.9B 全股票收购 Zscaler 构建智能体零信任安全。" },
+          { lead: "芯片/云巨头全栈补齐", text: "AMD 正式交割 World Labs（约 $8.2B，李飞飞任 EVP 兼首席科学家）与推理芯片商 Taalas（约 $2.9B）；亚马逊买下 Decart 优化软件栈并接收创始团队（彭博称约 $7.5B）。" },
+          { lead: "垂直生态整合", text: "Shield AI 以 $5.3B 收购雷达公司 Echodyne；Palo Alto Networks 拟 $4.5B 收购模型定制商 Applied Compute；Stripe 完成收购模型路由平台 OpenRouter。" }
+        ]
       },
       {
         title: "算力杠杆与产业风险：债务规模激增，治理与出口管制扰动加剧",
-        text: "美联储 11 月《金融稳定报告》披露截至 10 月先进算力相关发债已超 $680B（约为 2023 年 5 倍）；本月 Apollo 与高盛为 SpaceX 完成约 $44B GPU 债务定价，Oracle 申请 $20B 股债融资，Meta 被曝发债 $20B–$25B；英格兰银行 11-26 警示 AI 循环融资与非投资级利差走阔风险。供给与治理侧同步承压：英伟达月内经历黄仁勋辞任又复职及 SEC 调查风波，并在美远程算力新规生效后被曝暂停向马/新/泰/印发运服务器及收紧对华算力租赁供货标准；得州数据中心许可冻结亦牵动 2028 年近三成美国新增容量。"
+        bullets: [
+          { lead: "算力债务飙升", text: "美联储 11 月《金融稳定报告》披露前 10 月先进算力发债超 $680B（约为 2023 年 5 倍）；本月 Apollo/高盛为 SpaceX 定价 $44B GPU 债，Oracle 申请 $20B 股债，Meta 被曝发债 $20B–$25B。" },
+          { lead: "央行警示循环融资", text: "英格兰银行 11-26 金融稳定报告指出 AI 融资日益复杂循环，非投资级借款人信用利差显著走阔。" },
+          { lead: "治理与供给扰动", text: "英伟达月内经历黄仁勋辞任复职及 SEC 调查风波，美远程算力新规生效后被曝暂停向马/新/泰/印发运服务器并收紧对华租卡供货；得州数据中心许可冻结亦牵动 2028 年近三成美国新增容量。" }
+        ]
       }
     ],
     sectorChart: [

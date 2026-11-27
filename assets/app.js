@@ -206,7 +206,17 @@
 
     var synHtml = ov.synthesis
       .map(function (s) {
-        return '<div class="card soft"><div class="card-head"><h3>' + esc(s.title) + '</h3></div><p class="syn-text">' + esc(s.text) + "</p></div>";
+        var bodyHtml =
+          s.bullets && s.bullets.length
+            ? '<ul class="clean-list syn-list">' +
+                s.bullets
+                  .map(function (b) {
+                    return '<li><strong class="syn-lead">' + esc(b.lead) + "：</strong>" + esc(b.text) + "</li>";
+                  })
+                  .join("") +
+              "</ul>"
+            : '<p class="syn-text">' + esc(s.text) + "</p>";
+        return '<div class="card soft"><div class="card-head"><h3>' + esc(s.title) + "</h3></div>" + bodyHtml + "</div>";
       })
       .join("");
 

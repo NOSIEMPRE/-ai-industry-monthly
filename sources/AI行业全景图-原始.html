@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI产业全景图</title>
+  <style>
+    :root {
+      --ink: #14213d;
+      --muted: #66738f;
+      --blue: #1557d6;
+      --blue-deep: #0b3fa4;
+      --blue-soft: #edf4ff;
+      --cyan: #0da9c7;
+      --purple: #7c5ce5;
+      --line: #dce5f2;
+      --dash: #b9c9df;
+      --canvas: #f4f7fb;
+      --card: #ffffff;
+      --shadow: 0 12px 30px rgba(35, 60, 100, .08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 28px;
+      color: var(--ink);
+      background: var(--canvas);
+      font-family: "Inter", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+    }
+
+    .canvas {
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      padding: 34px 38px 38px;
+      border: 1px solid #e4ebf5;
+      border-radius: 26px;
+      background: #fff;
+      box-shadow: 0 24px 60px rgba(32, 55, 94, .10);
+    }
+
+    .topline { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+    .title-wrap { display: flex; align-items: center; gap: 16px; }
+    .title-mark { width: 16px; height: 32px; border-radius: 8px; background: linear-gradient(180deg, #2671ee, #1245b3); }
+    h1 { margin: 0; font-size: clamp(28px, 3vw, 42px); letter-spacing: -.04em; line-height: 1; }
+    .subtitle { margin: 5px 0 0; color: var(--muted); font-size: 14px; letter-spacing: .02em; }
+    .legend { padding: 10px 14px; border: 1px solid #e2eaf5; border-radius: 12px; color: var(--muted); font-size: 13px; background: #f8fbff; }
+
+    .section { margin-top: 28px; padding: 22px; border: 1px solid #e0e8f4; border-radius: 22px; background: linear-gradient(180deg, #fbfdff, #f8fbff); }
+    .section-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+    .section-title { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 800; letter-spacing: -.02em; }
+    .section-title .glyph { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 9px; color: #fff; background: var(--blue-deep); font-size: 14px; }
+    .section-note { color: var(--muted); font-size: 13px; }
+
+    .layers { display: grid; grid-template-columns: 1.05fr 1.2fr .94fr; gap: 14px; }
+    .layer { position: relative; min-height: 285px; padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); box-shadow: var(--shadow); }
+    .layer::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: linear-gradient(135deg, rgba(21,87,214,.06), transparent 42%); }
+    .layer-head { position: relative; display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .layer-num { color: var(--blue); font: 800 14px/1 "IBM Plex Mono", monospace; }
+    .layer-name { font-size: 18px; font-weight: 800; }
+    .layer-tag { margin-left: auto; padding: 6px 10px; border-radius: 999px; color: var(--blue-deep); background: var(--blue-soft); font-size: 12px; font-weight: 700; }
+
+    .dashed { border: 1px dashed var(--dash); border-radius: 14px; }
+    .subpanel { position: relative; padding: 14px; background: #fff; }
+    .subpanel-title { margin-bottom: 10px; color: var(--blue-deep); font-size: 13px; font-weight: 800; }
+    .pair-grid { display: grid; gap: 8px; }
+    .pair-row { display: grid; grid-template-columns: 1fr 24px 1fr; gap: 6px; align-items: center; }
+    .mini { min-height: 30px; display: grid; place-items: center; padding: 6px 8px; border: 1px solid #dfe8f4; border-radius: 9px; color: #334155; background: #f8fbff; font-size: 12px; text-align: center; }
+    .mini.use { background: #f0f9ff; }
+    .arrow { color: #8aa0bf; font-size: 17px; font-weight: 900; text-align: center; }
+
+    .compute-flow { display: grid; grid-template-columns: 1fr 1.04fr; gap: 12px; }
+    .model-flow { display: grid; gap: 12px; }
+    .flow-main { display: flex; align-items: center; gap: 8px; }
+    .flow-main .mini { flex: 1; font-weight: 700; }
+    .flow-arrow { color: var(--blue); font-size: 20px; font-weight: 900; }
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 10px; }
+    .feature { padding: 7px 8px; border-radius: 8px; color: #52637d; background: #f8fafc; font-size: 12px; text-align: center; }
+    .vertical-base { display: grid; gap: 10px; }
+    .base-card { min-height: 62px; display: grid; place-items: center; border: 1px solid #ded8ff; border-radius: 12px; color: #4c36a5; background: #f7f5ff; font-size: 13px; font-weight: 700; text-align: center; }
+
+    .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
+    .app { display: flex; align-items: center; gap: 8px; min-height: 43px; padding: 9px 10px; border: 1px solid #dcecf5; border-radius: 11px; background: linear-gradient(180deg, #f5fbff, #eef8ff); font-size: 13px; font-weight: 700; }
+    .app i { width: 22px; height: 22px; display: grid; place-items: center; border-radius: 7px; color: #087fbd; background: #dff5ff; font-style: normal; font-size: 12px; }
+
+    .industry-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .industry-grid .industry:nth-child(n+5) { grid-column: span 1.333; }
+    .industry { min-height: 142px; padding: 15px; border: 1px solid var(--line); border-radius: 17px; background: #fff; box-shadow: 0 8px 20px rgba(35,60,100,.06); }
+    .industry-head { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+    .industry-icon { color: var(--cyan); font-size: 16px; }
+    .industry-name { font-size: 16px; font-weight: 800; }
+    .pills { display: flex; flex-wrap: wrap; gap: 7px; padding: 12px; }
+    .pill { padding: 7px 10px; border: 1px solid #dbe5f1; border-radius: 9px; color: #3e4d66; background: #fbfdff; font-size: 12px; box-shadow: 0 3px 8px rgba(35,60,100,.05); }
+
+    @media (max-width: 1100px) {
+      body { padding: 12px; }
+      .canvas { padding: 24px; }
+      .layers { grid-template-columns: 1fr; }
+      .layer { min-height: auto; }
+      .industry-grid { grid-template-columns: repeat(2, 1fr); }
+      .industry-grid .industry:nth-child(n+5) { grid-column: auto; }
+    }
+    @media (max-width: 650px) {
+      .topline, .section-head { align-items: flex-start; flex-direction: column; }
+      .industry-grid { grid-template-columns: 1fr; }
+      .compute-flow { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="canvas">
+    <header class="topline">
+      <div>
+        <div class="title-wrap"><span class="title-mark"></span><h1>AI产业全景图</h1></div>
+        <p class="subtitle">从基础设施、模型能力到行业应用的两层架构</p>
+      </div>
+      <div class="legend">蓝色箭头表示能力传递，虚线框表示同一子领域</div>
+    </header>
+
+    <section class="section">
+      <div class="section-head"><div class="section-title"><span class="glyph">AI</span>AI产业本身</div><div class="section-note">基础设施与核心技术层</div></div>
+      <div class="layers">
+        <article class="layer">
+          <div class="layer-head"><span class="layer-num">01</span><span class="layer-name">算力层</span><span class="layer-tag">硬件基础</span></div>
+          <div class="compute-flow">
+            <div class="subpanel dashed"><div class="subpanel-title">产品路线</div><div class="pair-grid">
+              <div class="mini">CPU 通用处理器</div><div class="mini">GPU 并行计算</div><div class="mini">ASIC / FPGA / NPU</div>
+            </div></div>
+            <div class="subpanel dashed"><div class="subpanel-title">核心用途</div><div class="pair-grid">
+              <div class="mini use">智算：训练与推理</div><div class="mini use">超算：科学计算</div><div class="mini use">端侧：机器人与智驾</div>
+            </div></div>
+          </div>
+        </article>
+
+        <article class="layer">
+          <div class="layer-head"><span class="layer-num">02</span><span class="layer-name">模型层</span><span class="layer-tag">能力底座</span></div>
+          <div class="model-flow">
+            <div class="subpanel dashed"><div class="subpanel-title">通用智能体系统</div><div class="flow-main"><div class="mini">LLM ＋ Harness</div><span class="flow-arrow">→</span><div class="mini">通用智能体</div></div><div class="feature-grid"><div class="feature">工具调用</div><div class="feature">记忆系统</div><div class="feature">任务编排</div><div class="feature">执行环境</div></div></div>
+            <div class="vertical-base"><div class="base-card">具身智能基座</div><div class="base-card">AI for Science</div></div>
+          </div>
+        </article>
+
+        <article class="layer">
+          <div class="layer-head"><span class="layer-num">03</span><span class="layer-name">AI应用</span><span class="layer-tag">场景落地</span></div>
+          <div class="app-grid">
+            <div class="app"><i>◎</i>客户服务</div><div class="app"><i>↗</i>销售营销</div>
+            <div class="app"><i>⚖</i>法律合规</div><div class="app"><i>&lt;/&gt;</i>软件研发</div>
+            <div class="app"><i>▣</i>办公知识</div><div class="app"><i>✦</i>内容创意</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div class="section-title"><span class="glyph" style="background:#078b87">＋</span>AI＋产业</div><div class="section-note">七大实体产业板块深度赋能</div></div>
+      <div class="industry-grid">
+        <article class="industry"><div class="industry-head"><span class="industry-icon">◈</span><span class="industry-name">能源材料</span></div><div class="pills dashed"><span class="pill">煤炭</span><span class="pill">石油石化</span><span class="pill">基础化工</span><span class="pill">钢铁</span><span class="pill">有色金属</span><span class="pill">建筑材料</span></div></article>
+        <article class="industry"><div class="industry-head"><span class="industry-icon">✣</span><span class="industry-name">工业制造</span></div><div class="pills dashed"><span class="pill">机械设备</span><span class="pill">电力设备</span><span class="pill">汽车</span><span class="pill">国防军工</span></div></article>
+        <article class="industry"><div class="industry-head"><span class="industry-icon">▣</span><span class="industry-name">消费服务</span></div><div class="pills dashed"><span class="pill">餐饮旅游</span><span class="pill">食品饮料</span><span class="pill">家用电器</span><span class="pill">纺织服饰</span><span class="pill">轻工制造</span><span class="pill">商贸零售</span><span class="pill">社会服务</span><span class="pill">美容护理</span></div></article>
+        <article class="industry"><div class="industry-head"><span class="industry-icon">♥</span><span class="industry-name">医药健康</span></div><div class="pills dashed"><span class="pill">化学制药</span><span class="pill">中药</span><span class="pill">生物制品</span><span class="pill">医药商业</span><span class="pill">医疗器械</span><span class="pill">医疗服务</span></div></article>
+        <article class="industry"><div class="industry-head"><span class="industry-icon">▤</span><span class="industry-name">金融地产</span></div><div class="pills dashed"><span class="pill">银行</span><span class="pill">非银金融</span><span class="pill">房地产</span></div></article>
+        <article class="industry"><div class="industry-head"><span class="industry-icon">⌁</span><span class="industry-name">TMT</span></div><div class="pills dashed"><span class="pill">电子</span><span class="pill">计算机</span><span class="pill">通信</span><span class="pill">传媒</span></div></article>
+        <article class="industry"><div class="industry-head"><span class="industry-icon">▦</span><span class="industry-name">公用环保</span></div><div class="pills dashed"><span class="pill">公用事业</span><span class="pill">环保</span><span class="pill">交通运输</span><span class="pill">建筑装饰</span></div></article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

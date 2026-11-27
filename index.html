@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AI 产业月度研讨 · 2026.11</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+  <!-- Top Chrome -->
+  <header class="topbar" aria-label="顶部导航">
+    <button class="nav-trigger" id="navTrigger" type="button" aria-expanded="false" aria-controls="sideDrawer">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+        <line x1="2" y1="4" x2="14" y2="4"/>
+        <line x1="2" y1="8" x2="14" y2="8"/>
+        <line x1="2" y1="12" x2="10" y2="12"/>
+      </svg>
+      <span>目录</span>
+    </button>
+    <div class="brand-pill">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span>AI 产业月度研讨 · 2026.11</span>
+    </div>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="ticker"></div>
+    </div>
+    <div class="counter">
+      <button id="prev" type="button" aria-label="上一页">◀</button>
+      <span id="pc">01 / 19</span>
+      <button id="next" type="button" aria-label="下一页">▶</button>
+    </div>
+  </header>
+  <div class="progress-bar" id="progress"></div>
+
+  <!-- Retractable Left-Edge Handle (Zero Content Overlap) -->
+  <button class="edge-tab" id="edgeTab" type="button" aria-label="展开侧边目录">
+    <span>目录</span>
+  </button>
+
+  <!-- Hidden Slide-Out Navigation Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="side-drawer" id="sideDrawer" aria-label="全页快速跳转" aria-hidden="true">
+    <div class="drawer-head">
+      <span class="drawer-head-title">INDEX · 2026.11</span>
+      <button class="drawer-close" id="drawerClose" type="button" aria-label="关闭目录">✕</button>
+    </div>
+    <nav class="drawer-body" id="drawerBody"></nav>
+  </aside>
+
+  <!-- Main Deck Container (Data-Driven) -->
+  <main id="deck"></main>
+
+  <!-- Monthly Data Modules (Rolling Update: Only Edit Files Inside data/YYYY-MM/) -->
+  <script src="data/2026-11/meta.js"></script>
+  <script src="data/2026-11/news.js"></script>
+  <script src="data/2026-11/trends.js"></script>
+  <script src="data/2026-11/funding.js"></script>
+  <script src="data/2026-11/maps.js"></script>
+  <script src="data/2026-11/topics.js"></script>
+
+  <!-- Visualization, Brand Marks & Interactive Deck Engine -->
+  <script src="assets/logos.js"></script>
+  <script src="assets/charts.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

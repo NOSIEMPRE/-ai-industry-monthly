@@ -22,7 +22,7 @@ window.MONTHLY_DATA.maps = {
             companies: [{ name: "Figure", hot: false }]
           },
           {
-            heading: "“机器人大脑”独立融资",
+            heading: "机器人大脑独立融资",
             text: "通用基础模型与硬件本体开始分工，软件/模型层公司估值迅速抬升。",
             companies: [
               { name: "Physical Intelligence", hot: false },
@@ -82,7 +82,7 @@ window.MONTHLY_DATA.maps = {
     id: "d2",
     code: "D2",
     title: "具身标杆对照：Genesis AI 与星尘智能的两种商业化起点",
-    verdict: "两家标杆勾勒出两条迥异的胜负路径：Genesis AI 凭早期 $500M 重资博弈“通用泛化能力上限”，星尘智能以 8.99 万元量产定价率先验证“商业订单与成本闭环”。",
+    verdict: "两家标杆勾勒出两条迥异的发展路径：Genesis AI 凭借早期 $500M 重资押注通用泛化能力上限，星尘智能则以 8.99 万元量产定价率先跑通商业订单与成本闭环。",
     cases: [
       {
         name: "Genesis AI",
@@ -124,7 +124,7 @@ window.MONTHLY_DATA.maps = {
     id: "d3",
     code: "D3",
     title: "AI 算力全产业链图谱：从核心芯片到模型应用商业化的价值分布与瓶颈迁移",
-    thesis: "价值捕获高度集中于上游核心芯片、HBM 与先进封装；新增装机容量不等于可售算力，电力并网交付、Neocloud 信用融资与下游应用商业变现已成为决定行业斜率的三大关键变量。",
+    thesis: "全产业链核心利润仍高度集中于上游芯片、HBM 与先进封装；新增装机容量并不等同于可售算力，电力并网交付、Neocloud 信用融资与下游企业应用商业变现已成为决定行业扩张节奏的三大关键变量。",
     stages: [
       {
         code: "上游 · L1",
@@ -139,12 +139,12 @@ window.MONTHLY_DATA.maps = {
             tag: "核心利润池",
             lenses: ["profit", "china"],
             logos: ["NVIDIA", "AMD", "Broadcom", "Huawei", "Cambricon"],
-            detail: "NVIDIA Q2 FY27 数据中心收入 $890.2 亿（GAAP 毛利率 75.0%），Rubin 全面量产；Broadcom Q3 FY26 AI 半导体 $167 亿（同比 +221%），FY27 锁量约 $1,150 亿；国内华为昇腾推出 Atlas 950 超节点，寒武纪 Q3 营收 35.3 亿元（同比 +104%），阿里平头哥真武芯片累计出货 56 万颗并分拆赴港上市。"
+            detail: "NVIDIA Q2 FY27 数据中心收入 $890.2 亿（GAAP 毛利率 75.0%），Rubin 全面量产；Broadcom Q3 FY26 AI 半导体 $167 亿（同比 +221%），FY27 订单锁定约 $1,150 亿；国内华为昇腾推出 Atlas 950 超节点，寒武纪 Q3 营收 35.3 亿元（同比 +104%），阿里平头哥真武芯片累计出货 56 万颗并分拆赴港上市。"
           },
           {
             title: "晶圆代工与先进封装",
             sub: "先进制程 · CoWoS · 设备",
-            tag: "产能锁量",
+            tag: "产能紧缺",
             lenses: ["profit", "bottleneck", "china"],
             logos: ["TSMC", "ASML", "AMAT", "SMIC"],
             detail: "TSMC Q3 2026 HPC 占比达 68%、营业利润率 58.7%，全年 CapEx $600–640 亿；ASML 称 2027–28 年产能仍无法完全满足需求；国内中芯国际 Q3 产能利用率升至 97.3%，国产先进封装与光刻设备加速推进。"
@@ -152,7 +152,7 @@ window.MONTHLY_DATA.maps = {
           {
             title: "高带宽存储（HBM）",
             sub: "HBM · 企业级 SSD",
-            tag: "长约锁量",
+            tag: "长约锁定",
             lenses: ["profit", "bottleneck"],
             logos: ["SKHynix", "Samsung", "Micron", "CXMT"],
             detail: "解码阶段受显存带宽硬约束，NVIDIA 单季供应与产能承诺跃升至 $2,790 亿用于锁定 HBM 产能；SK 海力士正持续扩产 HBM4，国内长鑫存储（CXMT）加速 DRAM 与高带宽存储追赶，仍是国产链条核心攻坚环节。"
@@ -268,9 +268,9 @@ window.MONTHLY_DATA.maps = {
       }
     ],
     migration: [
-      { step: "上游 · 核心硬件锁量", text: "HBM、CoWoS 先进封装与光刻设备持续锁量，定价权与高毛利集中在芯片与晶圆代工龙头。" },
-      { step: "中游 · 智算基建与信用", text: "电力并网、液冷机电交期与 Neocloud 高息债务融资成为新增可售算力的核心约束。" },
-      { step: "下游 · 模型与应用变现", text: "基础模型调用量与企业软件真实付费增速，决定前期数千亿美元 CapEx 的投入产出斜率。" }
+      { step: "上游 · 核心硬件产能紧张", text: "HBM、CoWoS 先进封装与光刻设备产能持续偏紧，定价权与高毛利集中在芯片与晶圆代工龙头。" },
+      { step: "中游 · 智算基建与信用约束", text: "电力并网、液冷机电交期与 Neocloud 高息债务融资成为新增可售算力的核心约束。" },
+      { step: "下游 · 模型与应用商业变现", text: "大模型调用量与企业软件真实付费增速，决定了前期数千亿美元资本开支的回报周期。" }
     ],
     cashflow: "企业与个人应用付费 → 模型与智算云平台 → AIDC 基建与上游芯片硬件",
     sources: [

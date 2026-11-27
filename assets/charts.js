@@ -601,7 +601,7 @@ window.MONTHLY_CHARTS = {
         <rect class="svg-bar-grow" x="278" y="42" width="256" height="14" rx="4" fill="#1D4ED8"/>
         <rect class="svg-bar-grow" style="transition-delay:0.1s" x="536" y="42" width="23" height="14" rx="3" fill="#60A5FA"/>
         <rect class="svg-bar-grow" style="transition-delay:0.18s" x="561" y="42" width="37" height="14" rx="3" fill="#0F296B"/>
-        <text x="278" y="74" font-size="9.8" fill="#475569"><tspan font-weight="700" fill="#1D4ED8">■ Anthropic $119.5B</tspan> · <tspan font-weight="700" fill="#3B82F6">■ OpenAI $11B</tspan> · <tspan font-weight="700" fill="#0F296B">■ 非基座 20 笔 $18.3B</tspan></text>
+        <text x="278" y="74" font-size="9.8" fill="#475569"><tspan font-weight="700" fill="#1D4ED8">■ Anthropic $119.5B</tspan> · <tspan font-weight="700" fill="#3B82F6">■ OpenAI $11B</tspan> · <tspan font-weight="700" fill="#0F296B">■ 其余 20 笔 $18.3B</tspan></text>
 
         <line x1="636" y1="18" x2="636" y2="74" stroke="#E2E8F0"/>
 

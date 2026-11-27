@@ -84,7 +84,7 @@ window.MONTHLY_DATA.trends = [
     chinaContext: [
       { label: "国内医疗支付框架", text: "国内公立医院以医保 DRG/DIP 按病种打包为核心，PMPM 订阅与结果付费目前更贴近商保健康管理、慢病随访与特药服务。" },
       { label: "外包单价与毛利约束", text: "国内人力外包与 IT 实施单价显著低于欧美，纯替代初级人力的软件毛利偏薄，更考验高客单复杂垂直场景的交付壁垒。" },
-      { label: "11 月早中期重金印证", text: "本月美国 ≥$500M 早中期融资集中于 AI 研发自动化（Mirendil $1B）、多模态推理底座（fal $1.3B）与具身数据闭环（Genesis AI $500M），薄壳工具显著降温。" }
+      { label: "11 月早中期大额融资印证", text: "本月美国 ≥$500M 早中期融资集中于 AI 研发自动化（Mirendil $1B）、多模态推理平台（fal $1.65B）与具身数据闭环（Genesis AI $500M），浅层套壳工具显著降温。" }
     ],
     sources: [
       { label: "a16z: Infinite Healthcare", url: "https://a16z.com/infinite-healthcare-whats-it-worth/" },
